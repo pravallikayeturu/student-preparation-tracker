@@ -1,0 +1,585 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.welcome-page {
+  min-height: 100vh;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  background: #f7faff;
+
+  color: #172554;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  width: 100%;
+  height: 75px;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  padding: 0 55px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid #e5eaf3;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+
+/* Center Logo */
+
+.logo {
+  text-align: center;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  color: #1d4ed8;
+
+  white-space: nowrap;
+}
+
+
+/* Right Side */
+
+.nav-right {
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+
+/* Sign Up */
+
+.signup-btn {
+  text-decoration: none;
+
+  padding: 11px 23px;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 570px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
+
+  padding: 70px 10%;
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(59, 130, 246, 0.12),
+      transparent 35%
+    ),
+    #f7faff;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+  max-width: 580px;
+}
+
+
+/* Small Heading */
+
+.small-title {
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 18px;
+}
+
+
+/* Main Heading */
+
+.hero h1 {
+  font-size: 56px;
+
+  line-height: 1.12;
+
+  font-weight: 750;
+
+  color: #172554;
+
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #2563eb;
+}
+
+
+/* Description */
+
+.hero-description {
+  max-width: 540px;
+
+  color: #64748b;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  margin-bottom: 32px;
+}
+
+
+/* ================= GET STARTED ================= */
+
+.hero-btn {
+  display: inline-block;
+
+  text-decoration: none;
+
+  padding: 14px 27px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border-radius: 9px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+
+/* ================= STUDENT CARD ================= */
+
+.hero-image {
+  width: 420px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.student-card {
+  width: 390px;
+
+  padding: 40px;
+
+  border-radius: 25px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 25px 60px rgba(30, 64, 175, 0.12);
+
+  text-align: center;
+
+  transform: rotate(2deg);
+
+  transition: all 0.4s ease;
+}
+
+.student-card:hover {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+
+/* Book Icon */
+
+.book-icon {
+  width: 80px;
+
+  height: 80px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eff6ff;
+
+  border-radius: 20px;
+
+  font-size: 42px;
+}
+
+
+/* Card Heading */
+
+.student-card h2 {
+  font-size: 25px;
+
+  color: #172554;
+
+  margin-bottom: 12px;
+}
+
+
+/* Card Text */
+
+.student-card p {
+  color: #64748b;
+
+  line-height: 1.6;
+
+  font-size: 15px;
+}
+
+
+/* ================= PROGRESS ================= */
+
+.progress-box {
+  margin-top: 30px;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: #f8fafc;
+
+  text-align: left;
+}
+
+.progress-info {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+  color: #475569;
+
+  font-size: 14px;
+}
+
+.progress-info strong {
+  color: #2563eb;
+}
+
+
+/* Progress Background */
+
+.progress-bar {
+  width: 100%;
+
+  height: 8px;
+
+  background: #dbeafe;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+
+/* Progress */
+
+.progress {
+  width: 75%;
+
+  height: 100%;
+
+  background: #2563eb;
+
+  border-radius: 10px;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+  padding: 80px 8%;
+
+  text-align: center;
+
+  background: white;
+}
+
+
+/* Features Heading */
+
+.features h2 {
+  font-size: 34px;
+
+  color: #172554;
+
+  margin-bottom: 12px;
+}
+
+
+/* Features Subtitle */
+
+.features-subtitle {
+  color: #64748b;
+
+  margin-bottom: 45px;
+}
+
+
+/* Feature Container */
+
+.feature-container {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+
+/* Feature Card */
+
+.feature-card {
+  padding: 30px 22px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  background: white;
+
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 15px 35px rgba(30, 64, 175, 0.09);
+}
+
+
+/* Feature Icon */
+
+.feature-icon {
+  width: 60px;
+
+  height: 60px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eff6ff;
+
+  border-radius: 15px;
+
+  font-size: 28px;
+}
+
+
+/* Feature Heading */
+
+.feature-card h3 {
+  font-size: 18px;
+
+  margin-bottom: 12px;
+
+  color: #1e3a8a;
+}
+
+
+/* Feature Description */
+
+.feature-card p {
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* ================= BOTTOM SECTION ================= */
+
+.bottom-section {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: #172554;
+
+  color: white;
+}
+
+
+/* Bottom Heading */
+
+.bottom-section h2 {
+  font-size: 34px;
+
+  margin-bottom: 14px;
+}
+
+
+/* Bottom Description */
+
+.bottom-section p {
+  color: #cbd5e1;
+
+  margin-bottom: 20px;
+
+  font-size: 16px;
+}
+
+
+/* Create Account - Plain Text */
+
+.bottom-text {
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #93c5fd;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 60px 30px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .feature-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .signup-btn {
+    padding: 9px 14px;
+
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .student-card {
+    width: 100%;
+
+    max-width: 350px;
+
+    padding: 30px;
+  }
+
+  .feature-container {
+    grid-template-columns: 1fr;
+  }
+
+  .features h2 {
+    font-size: 27px;
+  }
+
+  .bottom-section h2 {
+    font-size: 27px;
+  }
+}

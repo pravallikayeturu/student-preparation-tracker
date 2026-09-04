@@ -1,0 +1,1513 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+}
+
+
+/* =====================================================
+   HOMEPAGE
+===================================================== */
+
+.homepage {
+  min-height: 100vh;
+  background: #f1f5f9;
+  display: flex;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.homepage-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 255px;
+  height: 100vh;
+
+  background: #172554;
+  color: white;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 1000;
+
+  padding: 25px 16px;
+}
+
+
+/* LOGO */
+
+.homepage-logo {
+  font-size: 21px;
+  line-height: 1.4;
+
+  text-align: center;
+
+  margin: 0 0 30px;
+
+  color: #ffffff;
+
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+
+/* NAVIGATION */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+/* SIDEBAR LINKS */
+
+.sidebar-link,
+.home-sidebar-link {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border-radius: 10px;
+
+  color: #dbeafe;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+/* ICON */
+
+.nav-icon,
+.home-nav-icon {
+  width: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+/* HOVER */
+
+.sidebar-link:hover,
+.home-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+
+/* ACTIVE */
+
+.sidebar-link.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+
+/* LOGOUT */
+
+.logout-link {
+  margin-top: 15px;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.homepage-main {
+  margin-left: 255px;
+
+  width: calc(100% - 255px);
+
+  min-height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.homepage-header {
+  min-height: 82px;
+
+  padding: 18px 35px;
+
+  background: #f8fafc;
+
+  border-bottom: 1px solid #dbe3ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+
+/* WELCOME */
+
+.header-welcome p {
+  margin: 0;
+
+  font-size: 21px;
+
+  color: #172554;
+
+  font-weight: 600;
+}
+
+.header-welcome strong {
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   PROFILE SECTION
+===================================================== */
+
+.profile-section {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* PROFILE WRAPPER */
+
+.profile-picture-wrapper {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-picture,
+.profile-placeholder {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #2563eb;
+}
+
+
+/* PLACEHOLDER */
+
+.profile-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* EDIT ICON */
+
+.profile-edit {
+  position: absolute;
+
+  right: -5px;
+  bottom: -4px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  border: 2px solid #f8fafc;
+}
+
+
+/* PROFILE INFO */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.profile-info strong {
+  font-size: 14px;
+
+  color: #172554;
+
+  font-weight: 700;
+}
+
+.profile-info span {
+  font-size: 12px;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.homepage-content {
+  padding: 35px;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   WELCOME CARD
+===================================================== */
+
+.welcome-card {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4338ca
+  );
+
+  color: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 32px;
+
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 14px 30px rgba(37, 99, 235, 0.20);
+}
+
+.welcome-card h2 {
+  margin: 0 0 10px;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+.welcome-card p {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  opacity: 0.95;
+}
+
+
+/* =====================================================
+   TODAY'S MOTIVATION
+===================================================== */
+
+.today-motivation {
+  text-align: center;
+
+  padding: 45px 25px;
+
+  margin-bottom: 40px;
+
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #e0e7ff
+  );
+
+  border-radius: 18px;
+
+  border: 1px solid #bfdbfe;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.10);
+}
+
+
+/* LABEL */
+
+.motivation-label {
+  display: inline-block;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #2563eb;
+
+  margin-bottom: 15px;
+}
+
+
+/* MOTIVATION TITLE */
+
+.today-motivation h2 {
+  max-width: 700px;
+
+  margin: 0 auto 15px;
+
+  font-size: 28px;
+
+  line-height: 1.45;
+
+  color: #172554;
+
+  font-weight: 700;
+}
+
+
+/* MOTIVATION TEXT */
+
+.today-motivation p {
+  margin: 0;
+
+  font-size: 16px;
+
+  color: #475569;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   STUDENTS WHO INSPIRE
+===================================================== */
+
+.students-inspire {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.students-inspire > h2 {
+  margin: 0 0 28px;
+
+  font-size: 25px;
+
+  color: #172554;
+
+  font-weight: 700;
+}
+
+
+/* GRID */
+
+.student-inspire-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   STUDENT CARDS
+===================================================== */
+
+.student-inspire-card {
+  background: #f8fbff;
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  border: 1px solid #dbe7f5;
+
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* LEARN */
+
+.student-inspire-card:nth-child(1) {
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #eff6ff
+  );
+
+  border-color: #93c5fd;
+}
+
+
+/* PRACTICE */
+
+.student-inspire-card:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    #ede9fe,
+    #f5f3ff
+  );
+
+  border-color: #c4b5fd;
+}
+
+
+/* ACHIEVE */
+
+.student-inspire-card:nth-child(3) {
+  background: linear-gradient(
+    135deg,
+    #dcfce7,
+    #f0fdf4
+  );
+
+  border-color: #86efac;
+}
+
+
+.student-inspire-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+
+/* IMAGE WRAPPER */
+
+.student-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 230px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  margin-bottom: 15px;
+
+  background: #e2e8f0;
+}
+
+
+/* STUDENT IMAGE */
+
+.student-inspire-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.3s ease;
+}
+
+.student-inspire-card:hover
+.student-inspire-image {
+  transform: scale(1.05);
+}
+
+
+/* ICON */
+
+.student-icon {
+  position: absolute;
+
+  bottom: 10px;
+  left: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+
+/* CARD TITLE */
+
+.student-inspire-card h3 {
+  margin: 0;
+
+  font-size: 16px;
+
+  letter-spacing: 1.5px;
+
+  color: #1d4ed8;
+
+  font-weight: 800;
+}
+
+
+/* DIFFERENT TITLE COLORS */
+
+.student-inspire-card:nth-child(2) h3 {
+  color: #6d28d9;
+}
+
+.student-inspire-card:nth-child(3) h3 {
+  color: #15803d;
+}
+
+
+/* =====================================================
+   DISCIPLINE BANNER
+   ALL CARD SIZES KEPT EXACTLY SAME
+===================================================== */
+
+.discipline-banner {
+  width: 100%;
+  max-width: none;
+
+  height: 430px;
+
+  margin: 0 0 35px 0;
+
+  padding: 0;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #7dd3fc;
+
+  box-shadow:
+    0 8px 22px rgba(14, 116, 144, 0.10);
+
+  display: block;
+
+  align-self: stretch;
+}
+
+
+/* =====================================================
+   ONLY IMAGE FITTING IS CHANGED
+===================================================== */
+
+.discipline-banner img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  object-fit: fill;
+  object-position: center;
+
+  transform: none !important;
+}
+
+
+/* NO HOVER ZOOM */
+
+.discipline-banner:hover img {
+  transform: none !important;
+}
+
+
+/* =====================================================
+   FINAL MOTIVATION
+===================================================== */
+
+.final-motivation {
+  text-align: center;
+
+  padding: 45px 20px 55px;
+
+  margin-bottom: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #172554,
+    #1e40af,
+    #312e81
+  );
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px rgba(23, 37, 84, 0.20);
+}
+
+.final-motivation h2 {
+  margin: 0 0 12px;
+
+  font-size: 27px;
+
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.final-motivation p {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+
+  color: #dbeafe;
+
+  font-weight: 500;
+}
+
+.final-motivation span {
+  font-size: 14px;
+
+  color: #bfdbfe;
+}
+
+
+/* =====================================================
+   PROFILE PHOTO VIEWER
+===================================================== */
+
+.profile-view-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(15, 23, 42, 0.82);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2000;
+
+  padding: 20px;
+}
+
+
+/* REMOVE WHITE BOX */
+
+.profile-view-container {
+  position: relative;
+
+  width: auto;
+
+  max-width: none;
+
+  max-height: none;
+
+  overflow: visible;
+
+  background: transparent;
+
+  border-radius: 0;
+
+  padding: 0;
+
+  text-align: center;
+}
+
+
+/* CLOSE */
+
+.profile-view-close {
+  position: absolute;
+
+  top: -15px;
+  right: -15px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+
+/* COMPLETE CIRCLE PHOTO */
+
+.profile-view-image-wrapper {
+  width: 450px;
+  height: 450px;
+
+  max-width: 80vw;
+  max-height: 80vw;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  margin: 0;
+
+  position: relative;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+.profile-view-image-wrapper.adjusting {
+  cursor: grab;
+}
+
+
+.profile-view-image-wrapper.adjusting:active {
+  cursor: grabbing;
+}
+
+
+/* LARGE IMAGE */
+
+.profile-view-large {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 50%;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transition: transform 0.15s ease;
+}
+
+
+/* REMOVE NAME */
+
+.profile-view-name {
+  display: none;
+}
+
+
+/* REMOVE EMAIL */
+
+.profile-view-email {
+  display: none;
+}
+
+
+/* REMOVE DOUBLE CLICK TEXT */
+
+.profile-view-hint {
+  display: none !important;
+}
+
+.adjusting-hint {
+  display: none !important;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+  background: #0f172a;
+}
+
+
+body.dark-mode .homepage {
+  background: #0f172a;
+}
+
+
+/* SIDEBAR */
+
+body.dark-mode .homepage-sidebar {
+  background: #020617;
+}
+
+
+/* HEADER */
+
+body.dark-mode .homepage-header {
+  background: #0f172a;
+
+  border-bottom-color: #334155;
+}
+
+
+body.dark-mode .header-welcome p {
+  color: #f8fafc;
+}
+
+
+body.dark-mode .header-welcome strong {
+  color: #60a5fa;
+}
+
+
+body.dark-mode .profile-info strong {
+  color: #f8fafc;
+}
+
+
+body.dark-mode .profile-info span {
+  color: #94a3b8;
+}
+
+
+body.dark-mode .profile-placeholder {
+  background: #1e3a8a;
+
+  color: #bfdbfe;
+}
+
+
+/* WELCOME CARD */
+
+body.dark-mode .welcome-card {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #4338ca
+  );
+}
+
+
+/* COMMON CARDS */
+
+body.dark-mode .today-motivation,
+body.dark-mode .student-inspire-card {
+  background: #1e293b;
+
+  border-color: #334155;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* DISCIPLINE IMAGE CARD */
+
+body.dark-mode .discipline-banner {
+  background: #1e293b;
+
+  border-color: #334155;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* MOTIVATION */
+
+body.dark-mode .today-motivation h2 {
+  color: #f8fafc;
+}
+
+
+body.dark-mode .today-motivation p {
+  color: #cbd5e1;
+}
+
+
+/* STUDENTS */
+
+body.dark-mode .students-inspire > h2 {
+  color: #f8fafc;
+}
+
+
+body.dark-mode .student-inspire-card h3 {
+  color: #60a5fa;
+}
+
+
+body.dark-mode .student-icon {
+  background: #f8fafc;
+}
+
+
+/* FINAL */
+
+body.dark-mode .final-motivation {
+  background: linear-gradient(
+    135deg,
+    #020617,
+    #172554
+  );
+}
+
+
+body.dark-mode .final-motivation h2 {
+  color: #f8fafc;
+}
+
+
+body.dark-mode .final-motivation p {
+  color: #cbd5e1;
+}
+
+
+body.dark-mode .final-motivation span {
+  color: #94a3b8;
+}
+
+
+/* PROFILE VIEWER */
+
+body.dark-mode .profile-view-container {
+  background: transparent;
+}
+
+
+body.dark-mode .profile-view-name {
+  color: #f8fafc;
+}
+
+
+body.dark-mode .profile-view-email,
+body.dark-mode .profile-view-hint {
+  color: #94a3b8;
+}
+
+
+body.dark-mode .adjusting-hint {
+  color: #60a5fa;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .homepage-sidebar {
+    width: 220px;
+  }
+
+  .homepage-main {
+    margin-left: 220px;
+
+    width: calc(100% - 220px);
+  }
+
+  .homepage-content {
+    padding: 28px;
+  }
+
+  .student-inspire-grid {
+    max-width: 100%;
+  }
+
+
+  /* DISCIPLINE */
+
+  .discipline-banner {
+    width: 100%;
+
+    height: 380px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .homepage-sidebar {
+    width: 190px;
+
+    padding: 20px 12px;
+  }
+
+  .homepage-main {
+    margin-left: 190px;
+
+    width: calc(100% - 190px);
+  }
+
+  .homepage-logo {
+    font-size: 17px;
+  }
+
+  .sidebar-link,
+  .home-sidebar-link {
+    font-size: 13px;
+
+    padding: 11px 10px;
+  }
+
+  .homepage-header {
+    padding: 16px 22px;
+  }
+
+  .homepage-content {
+    padding: 22px;
+  }
+
+  .student-inspire-grid {
+    gap: 15px;
+  }
+
+  .student-image-wrapper {
+    height: 180px;
+  }
+
+
+  /* DISCIPLINE */
+
+  .discipline-banner {
+    width: 100%;
+
+    height: 330px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .homepage {
+    display: block;
+  }
+
+
+  /* SIDEBAR */
+
+  .homepage-sidebar {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    height: auto;
+
+    max-height: none;
+
+    padding: 18px 15px;
+  }
+
+
+  .homepage-logo {
+    margin-bottom: 18px;
+
+    font-size: 19px;
+  }
+
+
+  .sidebar-nav {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+
+  .sidebar-link,
+  .home-sidebar-link {
+    font-size: 13px;
+
+    padding: 10px;
+
+    justify-content: flex-start;
+  }
+
+
+  .logout-link {
+    margin-top: 0;
+  }
+
+
+  /* MAIN */
+
+  .homepage-main {
+    margin-left: 0;
+
+    width: 100%;
+
+    min-height: auto;
+  }
+
+
+  /* HEADER */
+
+  .homepage-header {
+    position: relative;
+
+    padding: 18px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .profile-section {
+    width: 100%;
+  }
+
+
+  /* CONTENT */
+
+  .homepage-content {
+    padding: 18px;
+  }
+
+
+  /* WELCOME */
+
+  .welcome-card {
+    padding: 25px;
+
+    border-radius: 15px;
+  }
+
+
+  .welcome-card h2 {
+    font-size: 23px;
+  }
+
+
+  .welcome-card p {
+    font-size: 14px;
+  }
+
+
+  /* TODAY'S MOTIVATION */
+
+  .today-motivation {
+    padding: 35px 18px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .today-motivation h2 {
+    font-size: 22px;
+  }
+
+
+  /* STUDENTS */
+
+  .student-inspire-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 100%;
+
+    gap: 18px;
+  }
+
+
+  .student-image-wrapper {
+    height: 220px;
+  }
+
+
+  /* =================================================
+     DISCIPLINE
+     SIZE UNCHANGED
+  ================================================= */
+
+  .discipline-banner {
+    width: 100%;
+    max-width: none;
+
+    height: 280px;
+    min-height: 280px;
+
+    margin: 0 0 25px 0;
+
+    border-radius: 15px;
+
+    display: block;
+  }
+
+
+  .discipline-banner img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: none;
+
+    display: block;
+
+    object-fit: fill;
+
+    object-position: center;
+
+    transform: none !important;
+  }
+
+
+  /* FINAL */
+
+  .final-motivation {
+    padding: 35px 10px 45px;
+  }
+
+
+  .final-motivation h2 {
+    font-size: 22px;
+  }
+
+
+  .final-motivation p {
+    font-size: 15px;
+  }
+
+
+  /* PROFILE VIEWER */
+
+  .profile-view-container {
+    padding: 0;
+
+    background: transparent;
+  }
+
+
+  .profile-view-image-wrapper {
+    width: 330px;
+    height: 330px;
+
+    max-width: 82vw;
+    max-height: 82vw;
+
+    border-radius: 50%;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .homepage-logo {
+    font-size: 17px;
+  }
+
+
+  .sidebar-nav {
+    grid-template-columns: 1fr;
+  }
+
+
+  .sidebar-link,
+  .home-sidebar-link {
+    padding: 11px 13px;
+
+    font-size: 14px;
+  }
+
+
+  .homepage-header {
+    padding: 15px;
+  }
+
+
+  .header-welcome p {
+    font-size: 18px;
+  }
+
+
+  .profile-info strong {
+    font-size: 13px;
+  }
+
+
+  .profile-info span {
+    font-size: 11px;
+  }
+
+
+  .homepage-content {
+    padding: 14px;
+  }
+
+
+  .welcome-card {
+    padding: 22px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .welcome-card h2 {
+    font-size: 21px;
+  }
+
+
+  .today-motivation {
+    padding: 30px 15px;
+  }
+
+
+  .today-motivation h2 {
+    font-size: 20px;
+  }
+
+
+  .students-inspire > h2 {
+    font-size: 21px;
+  }
+
+
+  .student-image-wrapper {
+    height: 200px;
+  }
+
+
+  /* =================================================
+     DISCIPLINE
+     SIZE UNCHANGED
+  ================================================= */
+
+  .discipline-banner {
+    width: 100%;
+    max-width: none;
+
+    height: 220px;
+    min-height: 220px;
+
+    border-radius: 13px;
+
+    margin: 0 0 25px 0;
+  }
+
+
+  .discipline-banner img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: none;
+
+    object-fit: fill;
+
+    object-position: center;
+
+    transform: none !important;
+  }
+
+
+  .final-motivation h2 {
+    font-size: 20px;
+  }
+
+
+  /* CIRCLE PROFILE PHOTO - SMALL MOBILE */
+
+  .profile-view-image-wrapper {
+    width: 280px;
+    height: 280px;
+
+    max-width: 85vw;
+    max-height: 85vw;
+
+    border-radius: 50%;
+  }
+
+}

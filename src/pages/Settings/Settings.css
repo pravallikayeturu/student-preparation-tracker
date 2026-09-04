@@ -1,0 +1,1291 @@
+/* ==================================================
+   SETTINGS PAGE
+================================================== */
+
+.settings-page {
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    background: #f1f5f9;
+
+    transition: all 0.3s ease;
+
+    box-sizing: border-box;
+}
+
+.settings-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   PAGE TITLE
+================================================== */
+
+.settings-container > h1 {
+    margin: 0 0 30px 0;
+
+    color: #1e3a8a;
+
+    font-size: 32px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   SUCCESS MESSAGE
+================================================== */
+
+.settings-success-message {
+    margin-bottom: 20px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #86efac;
+
+    border-radius: 10px;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   ERROR MESSAGE
+================================================== */
+
+.settings-error-message {
+    margin-bottom: 20px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #fca5a5;
+
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   SETTINGS CARD
+================================================== */
+
+.settings-card {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 22px;
+
+    padding: 28px;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.settings-card:hover {
+    box-shadow:
+        0 12px 32px rgba(37, 99, 235, 0.12);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   CARD HEADING
+================================================== */
+
+.settings-card h2 {
+    margin: 0 0 22px 0;
+
+    color: #2563eb;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   PROFILE ROW
+================================================== */
+
+/*
+   Desktop:
+
+   Name:
+   ┌───────────────────────────────────┐ ┌──────────┐
+   │ Name                              │ │Save Name │
+   └───────────────────────────────────┘ └──────────┘
+
+   Email:
+   ┌───────────────────────────────────┐
+   │ Email                             │
+   └───────────────────────────────────┘
+
+   Both inputs have the SAME LENGTH.
+*/
+
+.profile-row {
+    display: flex;
+
+    align-items: flex-end;
+
+    width: 100%;
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+
+    box-sizing: border-box;
+}
+
+.profile-row:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   PROFILE INFO
+================================================== */
+
+.profile-info {
+    width: calc(100% - 143px);
+
+    max-width: calc(100% - 143px);
+
+    min-width: 0;
+
+    flex: none;
+}
+
+.profile-info label {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    color: #7c3aed;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   NAME / EMAIL INPUT
+================================================== */
+
+.profile-info input {
+    display: block;
+
+    width: 100% !important;
+
+    max-width: none !important;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.profile-info input::placeholder {
+    color: #94a3b8;
+}
+
+.profile-info input:focus {
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.profile-info input[readonly] {
+    cursor: not-allowed;
+
+    background: #f1f5f9;
+}
+
+
+/* ==================================================
+   SAVE NAME BUTTON
+================================================== */
+
+.save-name-button {
+    flex-shrink: 0;
+
+    width: 125px;
+
+    min-width: 125px;
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #7c3aed;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+.save-name-button:hover {
+    background: #6d28d9;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(124, 58, 237, 0.25);
+}
+
+.save-name-button:active {
+    transform: translateY(0);
+}
+
+.save-name-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ==================================================
+   APPEARANCE / NOTIFICATIONS
+================================================== */
+
+.setting-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    box-sizing: border-box;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-text {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.setting-text h3 {
+    margin: 0 0 6px 0;
+
+    color: #0f766e;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.setting-text p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   TOGGLE SWITCH
+================================================== */
+
+.switch {
+    position: relative;
+
+    width: 52px;
+
+    height: 28px;
+
+    flex-shrink: 0;
+}
+
+.switch input {
+    width: 0;
+
+    height: 0;
+
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 30px;
+
+    background: #cbd5e1;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+
+    height: 22px;
+
+    left: 3px;
+
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.switch input:checked + .slider {
+    background: #0891b2;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+
+/* ==================================================
+   CHANGE PASSWORD HEADER
+================================================== */
+
+.change-password-card {
+    margin-bottom: 22px;
+}
+
+.change-password-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.change-password-header h2 {
+    margin-bottom: 7px;
+}
+
+.change-password-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   CHANGE PASSWORD BUTTON
+================================================== */
+
+.change-password-toggle {
+    flex-shrink: 0;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #0891b2;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+.change-password-toggle:hover {
+    background: #0e7490;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 16px rgba(8, 145, 178, 0.25);
+}
+
+.change-password-toggle:active {
+    transform: translateY(0);
+}
+
+
+/* ==================================================
+   CHANGE PASSWORD FORM
+================================================== */
+
+.change-password-form {
+    margin-top: 25px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e2e8f0;
+
+    animation: passwordFormOpen 0.3s ease;
+}
+
+@keyframes passwordFormOpen {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* ==================================================
+   PASSWORD FIELD
+================================================== */
+
+.password-field {
+    margin-bottom: 20px;
+}
+
+.password-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #db2777;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   PASSWORD INPUT
+================================================== */
+
+.password-input-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-input-wrapper input {
+    display: block;
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 45px 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.password-input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+.password-input-wrapper input:focus {
+    border-color: #0891b2;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 145, 178, 0.12);
+}
+
+
+/* ==================================================
+   PASSWORD EYE ICON
+================================================== */
+
+.password-eye-icon {
+    position: absolute;
+
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.password-eye-icon:hover {
+    color: #0891b2;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* ==================================================
+   UPDATE PASSWORD
+================================================== */
+
+.change-password-button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e11d48;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+.change-password-button:hover {
+    background: #be123c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(225, 29, 72, 0.25);
+}
+
+.change-password-button:active {
+    transform: translateY(0);
+}
+
+.change-password-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ==================================================
+   SAVE SETTINGS
+================================================== */
+
+.settings-save-section {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    margin-bottom: 40px;
+}
+
+.save-settings-button {
+    min-width: 180px;
+
+    padding: 13px 24px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+.save-settings-button:hover {
+    background: #15803d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(22, 163, 74, 0.25);
+}
+
+.save-settings-button:active {
+    transform: translateY(0);
+}
+
+.save-settings-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+body.dark-mode {
+    background: #0f172a;
+
+    color: #f8fafc;
+}
+
+body.dark-mode .settings-page {
+    background: #0f172a;
+}
+
+body.dark-mode .settings-container > h1 {
+    color: #93c5fd;
+}
+
+body.dark-mode .settings-card {
+    background: #1e293b;
+
+    border-color: #334155;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .settings-card:hover {
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .settings-card h2 {
+    color: #60a5fa;
+}
+
+
+/* ==================================================
+   DARK MODE PROFILE
+================================================== */
+
+body.dark-mode .profile-info label {
+    color: #c4b5fd;
+}
+
+body.dark-mode .profile-info input {
+    background: #0f172a;
+
+    color: #f8fafc;
+
+    border-color: #475569;
+}
+
+body.dark-mode .profile-info input::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode .profile-info input[readonly] {
+    background: #111827;
+
+    color: #94a3b8;
+}
+
+
+/* ==================================================
+   DARK MODE SETTINGS
+================================================== */
+
+body.dark-mode .setting-row {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .setting-text h3 {
+    color: #5eead4;
+}
+
+body.dark-mode .setting-text p {
+    color: #94a3b8;
+}
+
+
+/* ==================================================
+   DARK MODE CHANGE PASSWORD
+================================================== */
+
+body.dark-mode .change-password-header p {
+    color: #94a3b8;
+}
+
+body.dark-mode .change-password-form {
+    border-top-color: #334155;
+}
+
+body.dark-mode .password-field label {
+    color: #f9a8d4;
+}
+
+body.dark-mode .password-input-wrapper input {
+    background: #0f172a;
+
+    color: #f8fafc;
+
+    border-color: #475569;
+}
+
+body.dark-mode .password-input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode .password-input-wrapper input:focus {
+    border-color: #22d3ee;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 211, 238, 0.12);
+}
+
+body.dark-mode .password-eye-icon {
+    color: #cbd5e1;
+}
+
+body.dark-mode .password-eye-icon:hover {
+    color: #22d3ee;
+}
+
+
+/* ==================================================
+   DARK MODE MESSAGES
+================================================== */
+
+body.dark-mode .settings-success-message {
+    background: #064e3b;
+
+    color: #a7f3d0;
+
+    border-color: #047857;
+}
+
+body.dark-mode .settings-error-message {
+    background: #7f1d1d;
+
+    color: #fecaca;
+
+    border-color: #b91c1c;
+}
+
+
+/* ==================================================
+   TABLET
+   601px - 768px
+================================================== */
+
+@media (max-width: 768px) {
+
+    .settings-page {
+        padding: 30px 18px;
+    }
+
+    .settings-container {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .settings-container > h1 {
+        font-size: 30px;
+
+        margin-bottom: 26px;
+    }
+
+    .settings-card {
+        padding: 24px;
+    }
+
+
+    /* ----------------------------------------------
+       PROFILE - TABLET
+    ---------------------------------------------- */
+
+    .profile-row {
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: flex-end;
+
+        gap: 14px;
+    }
+
+    .profile-info {
+        width: calc(100% - 129px);
+
+        max-width: calc(100% - 129px);
+
+        flex: none;
+    }
+
+    .profile-info input {
+        width: 100% !important;
+
+        height: 48px;
+
+        box-sizing: border-box;
+    }
+
+    .save-name-button {
+        width: 115px;
+
+        min-width: 115px;
+
+        height: 48px;
+    }
+
+
+    /* ----------------------------------------------
+       CHANGE PASSWORD
+    ---------------------------------------------- */
+
+    .change-password-header {
+        gap: 15px;
+    }
+
+    .change-password-toggle {
+        padding: 11px 17px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+   Below 600px
+================================================== */
+
+@media (max-width: 600px) {
+
+    .settings-page {
+        padding: 25px 12px;
+    }
+
+    .settings-container {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .settings-container > h1 {
+        font-size: 28px;
+
+        margin-bottom: 24px;
+    }
+
+    .settings-card {
+        width: 100%;
+
+        padding: 20px;
+
+        border-radius: 14px;
+    }
+
+
+    /* ----------------------------------------------
+       PROFILE - MOBILE
+       
+       Name:
+       Input
+       Save Name
+
+       Email:
+       Input
+
+       Both inputs FULL WIDTH
+    ---------------------------------------------- */
+
+    .profile-row {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        display: block;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        flex: none;
+    }
+
+    .profile-info label {
+        display: block;
+
+        width: 100%;
+
+        margin-bottom: 8px;
+    }
+
+    .profile-info input {
+        display: block;
+
+        width: 100% !important;
+
+        max-width: none !important;
+
+        height: 48px;
+
+        padding: 0 14px;
+
+        box-sizing: border-box;
+
+        font-size: 15px;
+    }
+
+    .save-name-button {
+        display: block;
+
+        width: 100% !important;
+
+        min-width: 0;
+
+        height: 48px;
+    }
+
+
+    /* ----------------------------------------------
+       SETTING ROW
+    ---------------------------------------------- */
+
+    .setting-row {
+        width: 100%;
+
+        gap: 14px;
+    }
+
+    .setting-text {
+        min-width: 0;
+    }
+
+    .setting-text h3 {
+        font-size: 16px;
+    }
+
+    .setting-text p {
+        font-size: 13px;
+    }
+
+
+    /* ----------------------------------------------
+       CHANGE PASSWORD
+    ---------------------------------------------- */
+
+    .change-password-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        gap: 15px;
+    }
+
+    .change-password-toggle {
+        width: 100%;
+
+        padding: 12px 18px;
+    }
+
+
+    /* ----------------------------------------------
+       PASSWORD
+    ---------------------------------------------- */
+
+    .password-input-wrapper {
+        width: 100%;
+    }
+
+    .password-input-wrapper input {
+        display: block;
+
+        width: 100%;
+
+        height: 48px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ----------------------------------------------
+       SAVE SETTINGS
+    ---------------------------------------------- */
+
+    .settings-save-section {
+        width: 100%;
+
+        justify-content: center;
+
+        align-items: center;
+
+        margin-top: 25px;
+    }
+
+    .save-settings-button {
+        width: 180px;
+
+        min-width: 180px;
+    }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   Below 400px
+================================================== */
+
+@media (max-width: 400px) {
+
+    .settings-page {
+        padding: 20px 8px;
+    }
+
+    .settings-card {
+        padding: 17px;
+
+        border-radius: 13px;
+    }
+
+    .settings-container > h1 {
+        font-size: 25px;
+    }
+
+    .settings-card h2 {
+        font-size: 20px;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* ----------------------------------------------
+       PROFILE
+    ---------------------------------------------- */
+
+    .profile-info input {
+        width: 100% !important;
+
+        height: 46px;
+
+        padding: 0 13px;
+
+        font-size: 14px;
+    }
+
+    .save-name-button {
+        width: 100% !important;
+
+        height: 46px;
+    }
+
+
+    /* ----------------------------------------------
+       SETTINGS TEXT
+    ---------------------------------------------- */
+
+    .setting-text h3 {
+        font-size: 15px;
+    }
+
+    .setting-text p {
+        font-size: 12px;
+    }
+
+
+    /* ----------------------------------------------
+       PASSWORD
+    ---------------------------------------------- */
+
+    .password-input-wrapper input {
+        width: 100%;
+
+        height: 46px;
+
+        padding: 0 45px 0 14px;
+    }
+
+    .change-password-toggle {
+        width: 100%;
+
+        padding: 11px 15px;
+    }
+
+
+    /* ----------------------------------------------
+       SAVE SETTINGS
+    ---------------------------------------------- */
+
+    .save-settings-button {
+        width: 180px;
+
+        min-width: 180px;
+    }
+}

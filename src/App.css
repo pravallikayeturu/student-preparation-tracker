@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.welcome-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/hero.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.welcome-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.welcome-card {
+  position: relative;
+  text-align: center;
+  padding: 50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  width: 90%;
+}
+
+.welcome-card h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.welcome-card p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.welcome-card button {
+  padding: 14px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}

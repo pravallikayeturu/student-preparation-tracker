@@ -1,0 +1,3715 @@
+/* =====================================================
+   DASHBOARD PAGE
+===================================================== */
+
+.dashboard-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 28px 35px 40px;
+
+  background: #f4f7fb;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+
+/* =====================================================
+   DASHBOARD HEADER
+===================================================== */
+
+.dashboard-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 28px;
+}
+
+.dashboard-header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+.dashboard-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 105px;
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.dashboard-home-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #4338ca
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.30);
+}
+
+.dashboard-home-btn:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =====================================================
+   DASHBOARD TITLE
+===================================================== */
+
+.dashboard-header h1 {
+  margin: 0 0 5px;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  color: #172033;
+}
+
+.dashboard-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   DASHBOARD DATE
+===================================================== */
+
+.dashboard-date {
+  flex-shrink: 0;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  color: #4b5563;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.dashboard-error {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 25px;
+  padding: 28px;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #fecaca;
+
+  text-align: center;
+
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.error-icon {
+  font-size: 40px;
+
+  margin-bottom: 8px;
+}
+
+.dashboard-error h2 {
+  margin: 5px 0 8px;
+
+  color: #991b1b;
+
+  font-size: 22px;
+}
+
+.dashboard-error p {
+  margin: 0 0 18px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.retry-button {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 9px;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.retry-button:hover {
+  background: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DASHBOARD STAT CARDS
+===================================================== */
+
+.dashboard-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.stat-card {
+  min-height: 125px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button.stat-card {
+  width: 100%;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+button.stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =====================================================
+   STAT ICON
+===================================================== */
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   STAT CONTENT
+===================================================== */
+
+.stat-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-content span {
+  margin-bottom: 4px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-content strong {
+  margin-bottom: 3px;
+
+  color: #111827;
+
+  font-size: 29px;
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.stat-content small {
+  color: #9ca3af;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   INDIVIDUAL STAT COLORS
+===================================================== */
+
+.today-card {
+  border-top: 4px solid #2563eb;
+}
+
+.today-card .stat-icon {
+  background: #dbeafe;
+}
+
+.total-card {
+  border-top: 4px solid #7c3aed;
+}
+
+.total-card .stat-icon {
+  background: #ede9fe;
+}
+
+.pending-card {
+  border-top: 4px solid #f59e0b;
+}
+
+.pending-card .stat-icon {
+  background: #fef3c7;
+}
+
+.completed-card {
+  border-top: 4px solid #16a34a;
+}
+
+.completed-card .stat-icon {
+  background: #dcfce7;
+}
+
+.streak-card {
+  border-top: 4px solid #ef4444;
+}
+
+.streak-card .stat-icon {
+  background: #fee2e2;
+}
+
+
+/* =====================================================
+   MAIN DASHBOARD GRID
+===================================================== */
+
+.dashboard-main-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 0.85fr);
+
+  gap: 22px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   COMMON DASHBOARD CARD
+===================================================== */
+
+.dashboard-card {
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 20px 22px 16px;
+
+  border-bottom: 1px solid #eef0f4;
+}
+
+.card-heading h2 {
+  margin: 0 0 4px;
+
+  color: #172033;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.card-heading p {
+  margin: 0;
+
+  color: #8a94a6;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   UPCOMING STUDIES CARD
+===================================================== */
+
+.upcoming-card {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   UPCOMING COUNT
+===================================================== */
+
+.upcoming-count {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.upcoming-count:hover {
+  background: #bfdbfe;
+
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   UPCOMING STUDIES
+===================================================== */
+
+.upcoming-studies-list {
+  height: 330px;
+
+  max-height: 330px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  padding: 8px 10px 14px 22px;
+
+  box-sizing: border-box;
+
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #eef2f7;
+}
+
+
+/* =====================================================
+   UPCOMING SCROLLBAR
+===================================================== */
+
+.upcoming-studies-list::-webkit-scrollbar {
+  width: 9px;
+}
+
+.upcoming-studies-list::-webkit-scrollbar-track {
+  background: #eef2f7;
+
+  border-radius: 10px;
+
+  margin: 6px 0;
+}
+
+.upcoming-studies-list::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+
+  border-radius: 10px;
+
+  border: 2px solid #eef2f7;
+}
+
+.upcoming-studies-list::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* =====================================================
+   UPCOMING STUDY ITEM
+===================================================== */
+
+.upcoming-study-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 14px 8px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  transition:
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.upcoming-study-item:last-child {
+  border-bottom: none;
+}
+
+.upcoming-study-item:hover {
+  background: #f8fafc;
+
+  padding-left: 12px;
+}
+
+
+/* =====================================================
+   NEXT STUDY ICON
+===================================================== */
+
+.next-study-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+
+  font-size: 21px;
+}
+
+
+/* =====================================================
+   NEXT STUDY INFORMATION
+===================================================== */
+
+.next-study-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.next-study-info h3 {
+  margin: 1px 0 4px;
+
+  color: #1f2937;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.next-topic {
+  margin: 0 0 9px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.next-study-details {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px 14px;
+}
+
+.next-study-details span {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   EMPTY UPCOMING STUDIES
+===================================================== */
+
+.empty-next-study {
+  min-height: 275px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 25px;
+}
+
+.empty-next-icon {
+  font-size: 42px;
+
+  margin-bottom: 8px;
+}
+
+.empty-next-study h3 {
+  margin: 0 0 6px;
+
+  color: #374151;
+
+  font-size: 16px;
+}
+
+.empty-next-study p {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   WEEKLY STUDY PROGRESS CARD
+===================================================== */
+
+.weekly-progress-card {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   WEEK TOTAL
+===================================================== */
+
+.week-total {
+  flex-shrink: 0;
+
+  padding: 8px 12px;
+
+  border-radius: 9px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   WEEKLY CHART
+===================================================== */
+
+.weekly-chart {
+  height: 330px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 20px 20px 18px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(248, 250, 252, 0.7),
+      rgba(255, 255, 255, 1)
+    );
+}
+
+
+/* =====================================================
+   CHART DAY
+===================================================== */
+
+.chart-day {
+  height: 100%;
+
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 7px;
+}
+
+
+/* =====================================================
+   CHART VALUE
+===================================================== */
+
+.chart-value {
+  min-height: 16px;
+
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   CHART BAR AREA
+===================================================== */
+
+.chart-bar-area {
+  width: 100%;
+  max-width: 38px;
+
+  height: 210px;
+
+  display: flex;
+  align-items: flex-end;
+
+  border-radius: 8px 8px 4px 4px;
+
+  background:
+    repeating-linear-gradient(
+      to top,
+      #f1f5f9 0,
+      #f1f5f9 1px,
+      transparent 1px,
+      transparent 42px
+    );
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CHART BAR
+===================================================== */
+
+.chart-bar {
+  width: 100%;
+
+  min-height: 0;
+
+  border-radius: 7px 7px 3px 3px;
+
+  background: linear-gradient(
+    to top,
+    #2563eb,
+    #60a5fa
+  );
+
+  transition:
+    height 0.4s ease,
+    opacity 0.2s ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.82;
+}
+
+
+/* =====================================================
+   CHART LABEL
+===================================================== */
+
+.chart-label {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   WEEKLY DETAILS CARD
+   CENTERED + COMPACT
+===================================================== */
+
+.weekly-details-card {
+  width: 70%;
+
+  margin: 0 auto 22px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  height: fit-content;
+
+  max-height: 405px;
+
+  align-self: start;
+}
+
+
+/* =====================================================
+   WEEKLY DETAILS HEADING
+===================================================== */
+
+.weekly-details-card .card-heading {
+  padding: 15px 22px 12px;
+}
+
+.weekly-details-card .card-heading h2 {
+  font-size: 17px;
+}
+
+.weekly-details-card .card-heading p {
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   WEEKLY LIST
+===================================================== */
+
+.weekly-list {
+  width: 100%;
+
+  padding: 4px 22px 8px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   WEEKLY LIST ROW
+===================================================== */
+
+.weekly-list-row {
+  display: grid;
+
+  grid-template-columns:
+    190px
+    minmax(100px, 1fr)
+    110px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 45px;
+
+  padding: 6px 0;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.weekly-list-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   WEEKLY DAY
+===================================================== */
+
+.weekly-day {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.weekly-day strong {
+  color: #374151;
+
+  font-size: 12px;
+}
+
+.weekly-day span {
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   WEEKLY PROGRESS
+===================================================== */
+
+.weekly-progress {
+  width: 100%;
+}
+
+
+/* =====================================================
+   PROGRESS TRACK
+===================================================== */
+
+.progress-track {
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #e5e7eb;
+}
+
+
+/* =====================================================
+   PROGRESS FILL
+===================================================== */
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa
+  );
+
+  transition:
+    width 0.4s ease;
+}
+
+
+/* =====================================================
+   WEEKLY HOURS
+===================================================== */
+
+.weekly-hours {
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+.weekly-hours strong {
+  color: #374151;
+
+  font-size: 12px;
+}
+
+.weekly-hours span {
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.dashboard-actions {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =====================================================
+   QUICK ACTION BUTTON
+===================================================== */
+
+.dashboard-action-btn {
+  min-height: 52px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dashboard-action-btn:hover {
+  transform: translateY(-2px);
+
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =====================================================
+   CREATE TASK ACTION
+===================================================== */
+
+.create-action {
+  border-color: #2563eb;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.22);
+}
+
+.create-action:hover {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #4338ca
+  );
+
+  border-color: #1d4ed8;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   LOADING PAGE
+===================================================== */
+
+.dashboard-loading {
+  min-height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  color: #64748b;
+}
+
+.dashboard-loading p {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   LOADING SPINNER
+===================================================== */
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+
+  border: 4px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    dashboard-spin 0.8s linear infinite;
+}
+
+@keyframes dashboard-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .dashboard-main-grid {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  .weekly-progress-card {
+    min-height: auto;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .dashboard-page {
+    padding: 24px;
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-header-left {
+    align-items: flex-start;
+  }
+
+  .dashboard-date {
+    font-size: 12px;
+  }
+
+  .weekly-list-row {
+    grid-template-columns:
+      150px
+      minmax(80px, 1fr)
+      95px;
+
+    gap: 15px;
+  }
+
+  .weekly-details-card {
+    width: 85%;
+
+    height: fit-content;
+
+    max-height: 405px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    align-self: start;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .dashboard-page {
+    padding: 18px 15px 30px;
+  }
+
+
+  /* HEADER */
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .dashboard-header-left {
+    width: 100%;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .dashboard-home-btn {
+    min-width: 88px;
+
+    height: 40px;
+
+    padding: 0 13px;
+
+    font-size: 13px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 25px;
+  }
+
+  .dashboard-header p {
+    font-size: 12px;
+  }
+
+  .dashboard-date {
+    width: fit-content;
+  }
+
+
+  /* STAT CARDS */
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 105px;
+
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+  .stat-icon {
+    width: 43px;
+    height: 43px;
+
+    font-size: 20px;
+  }
+
+  .stat-content strong {
+    font-size: 24px;
+  }
+
+  .stat-content span {
+    font-size: 11px;
+  }
+
+  .stat-content small {
+    font-size: 9px;
+  }
+
+
+  /* MAIN GRID */
+
+  .dashboard-main-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 15px;
+  }
+
+
+  /* CARD HEADING */
+
+  .card-heading {
+    padding: 17px;
+
+    gap: 10px;
+  }
+
+  .card-heading h2 {
+    font-size: 16px;
+  }
+
+  .card-heading p {
+    font-size: 11px;
+  }
+
+
+  /* UPCOMING */
+
+  .upcoming-studies-list {
+    height: 280px;
+
+    max-height: 280px;
+
+    overflow-y: scroll;
+
+    padding-left: 15px;
+    padding-right: 8px;
+  }
+
+  .upcoming-study-item {
+    padding: 12px 5px;
+  }
+
+
+  /* WEEKLY CHART */
+
+  .weekly-chart {
+    height: 275px;
+
+    padding:
+      15px 10px 15px;
+  }
+
+  .chart-bar-area {
+    height: 170px;
+
+    max-width: 30px;
+  }
+
+  .chart-label {
+    font-size: 10px;
+  }
+
+
+  /* WEEKLY DETAILS */
+
+  .weekly-details-card {
+    width: 100%;
+
+    height: fit-content;
+
+    max-height: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    align-self: start;
+  }
+
+  .weekly-details-card .card-heading {
+    padding: 14px 15px 11px;
+  }
+
+  .weekly-list {
+    padding: 5px 15px 8px;
+  }
+
+  .weekly-list-row {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 8px;
+
+    min-height: 48px;
+
+    padding: 9px 0;
+  }
+
+  .weekly-progress {
+    grid-column: 1 / -1;
+
+    grid-row: 2;
+  }
+
+  .weekly-hours {
+    text-align: right;
+
+    grid-column: 2;
+
+    grid-row: 1;
+  }
+
+  .weekly-day {
+    grid-column: 1;
+
+    grid-row: 1;
+  }
+
+
+  /* ACTIONS */
+
+  .dashboard-actions {
+    grid-template-columns:
+      1fr;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .dashboard-page {
+    padding: 15px 11px 25px;
+  }
+
+  .dashboard-header-left {
+    gap: 9px;
+  }
+
+  .dashboard-home-btn {
+    min-width: 80px;
+
+    height: 38px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .dashboard-header p {
+    font-size: 11px;
+  }
+
+  .dashboard-stats {
+    gap: 9px;
+  }
+
+  .stat-card {
+    min-height: 95px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+  }
+
+  .stat-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+  }
+
+  .stat-content strong {
+    font-size: 21px;
+  }
+
+  .stat-content span {
+    font-size: 10px;
+  }
+
+  .stat-content small {
+    font-size: 8px;
+  }
+
+
+  /* UPCOMING STUDIES SCROLL */
+
+  .upcoming-studies-list {
+    height: 260px;
+
+    max-height: 260px;
+
+    overflow-y: scroll;
+  }
+
+  .next-study-icon {
+    width: 37px;
+    height: 37px;
+
+    font-size: 18px;
+  }
+
+  .next-study-info h3 {
+    font-size: 13px;
+  }
+
+  .next-topic {
+    font-size: 11px;
+  }
+
+  .next-study-details {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+
+  /* WEEKLY CHART */
+
+  .weekly-chart {
+    height: 250px;
+  }
+
+  .chart-bar-area {
+    height: 150px;
+
+    max-width: 25px;
+  }
+
+  .chart-value {
+    font-size: 9px;
+  }
+
+  .chart-label {
+    font-size: 9px;
+  }
+
+
+  /* WEEKLY DETAILS */
+
+  .weekly-details-card {
+    width: 100%;
+
+    height: fit-content;
+
+    max-height: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    align-self: start;
+  }
+
+  .weekly-details-card .card-heading {
+    padding: 13px 12px 10px;
+  }
+
+  .weekly-list {
+    padding:
+      4px 12px 7px;
+  }
+
+  .weekly-list-row {
+    min-height: 46px;
+
+    gap: 7px;
+
+    padding: 8px 0;
+  }
+
+  .weekly-day strong {
+    font-size: 11px;
+  }
+
+  .weekly-day span {
+    font-size: 9px;
+  }
+
+  .weekly-hours strong {
+    font-size: 11px;
+  }
+
+  .weekly-hours span {
+    font-size: 9px;
+  }
+
+  .progress-track {
+    height: 6px;
+  }
+
+
+  /* WEEK TOTAL */
+
+  .week-total {
+    padding: 6px 8px;
+
+    font-size: 11px;
+  }
+
+}
+
+/* =====================================================
+   DASHBOARD PAGE
+===================================================== */
+
+.dashboard-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 28px 35px 40px;
+
+  background: #f4f7fb;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+
+/* =====================================================
+   DASHBOARD HEADER
+===================================================== */
+
+.dashboard-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 28px;
+}
+
+.dashboard-header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+.dashboard-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 105px;
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.dashboard-home-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #4338ca
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.30);
+}
+
+.dashboard-home-btn:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =====================================================
+   DASHBOARD TITLE
+===================================================== */
+
+.dashboard-header h1 {
+  margin: 0 0 5px;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  color: #172033;
+}
+
+.dashboard-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   DASHBOARD DATE
+===================================================== */
+
+.dashboard-date {
+  flex-shrink: 0;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  color: #4b5563;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.dashboard-error {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 25px;
+  padding: 28px;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #fecaca;
+
+  text-align: center;
+
+  box-shadow:
+    0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+.error-icon {
+  font-size: 40px;
+
+  margin-bottom: 8px;
+}
+
+.dashboard-error h2 {
+  margin: 5px 0 8px;
+
+  color: #991b1b;
+
+  font-size: 22px;
+}
+
+.dashboard-error p {
+  margin: 0 0 18px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.retry-button {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 9px;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.retry-button:hover {
+  background: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DASHBOARD STAT CARDS
+===================================================== */
+
+.dashboard-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.stat-card {
+  min-height: 125px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button.stat-card {
+  width: 100%;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+button.stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =====================================================
+   STAT ICON
+===================================================== */
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   STAT CONTENT
+===================================================== */
+
+.stat-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-content span {
+  margin-bottom: 4px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-content strong {
+  margin-bottom: 3px;
+
+  color: #111827;
+
+  font-size: 29px;
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.stat-content small {
+  color: #9ca3af;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   INDIVIDUAL STAT COLORS
+===================================================== */
+
+.today-card {
+  border-top: 4px solid #2563eb;
+}
+
+.today-card .stat-icon {
+  background: #dbeafe;
+}
+
+.total-card {
+  border-top: 4px solid #7c3aed;
+}
+
+.total-card .stat-icon {
+  background: #ede9fe;
+}
+
+.pending-card {
+  border-top: 4px solid #f59e0b;
+}
+
+.pending-card .stat-icon {
+  background: #fef3c7;
+}
+
+.completed-card {
+  border-top: 4px solid #16a34a;
+}
+
+.completed-card .stat-icon {
+  background: #dcfce7;
+}
+
+.streak-card {
+  border-top: 4px solid #ef4444;
+}
+
+.streak-card .stat-icon {
+  background: #fee2e2;
+}
+
+
+/* =====================================================
+   MAIN DASHBOARD GRID
+===================================================== */
+
+.dashboard-main-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 0.85fr);
+
+  gap: 22px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   COMMON DASHBOARD CARD
+===================================================== */
+
+.dashboard-card {
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 20px 22px 16px;
+
+  border-bottom: 1px solid #eef0f4;
+}
+
+.card-heading h2 {
+  margin: 0 0 4px;
+
+  color: #172033;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.card-heading p {
+  margin: 0;
+
+  color: #8a94a6;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   UPCOMING STUDIES CARD
+===================================================== */
+
+.upcoming-card {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   UPCOMING COUNT
+===================================================== */
+
+.upcoming-count {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.upcoming-count:hover {
+  background: #bfdbfe;
+
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   UPCOMING STUDIES
+===================================================== */
+
+.upcoming-studies-list {
+  height: 330px;
+
+  max-height: 330px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  padding: 8px 10px 14px 22px;
+
+  box-sizing: border-box;
+
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #eef2f7;
+}
+
+
+/* =====================================================
+   UPCOMING SCROLLBAR
+===================================================== */
+
+.upcoming-studies-list::-webkit-scrollbar {
+  width: 9px;
+}
+
+.upcoming-studies-list::-webkit-scrollbar-track {
+  background: #eef2f7;
+
+  border-radius: 10px;
+
+  margin: 6px 0;
+}
+
+.upcoming-studies-list::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+
+  border-radius: 10px;
+
+  border: 2px solid #eef2f7;
+}
+
+.upcoming-studies-list::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* =====================================================
+   UPCOMING STUDY ITEM
+===================================================== */
+
+.upcoming-study-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 14px 8px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  transition:
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.upcoming-study-item:last-child {
+  border-bottom: none;
+}
+
+.upcoming-study-item:hover {
+  background: #f8fafc;
+
+  padding-left: 12px;
+}
+
+
+/* =====================================================
+   NEXT STUDY ICON
+===================================================== */
+
+.next-study-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+
+  font-size: 21px;
+}
+
+
+/* =====================================================
+   NEXT STUDY INFORMATION
+===================================================== */
+
+.next-study-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.next-study-info h3 {
+  margin: 1px 0 4px;
+
+  color: #1f2937;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.next-topic {
+  margin: 0 0 9px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.next-study-details {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px 14px;
+}
+
+.next-study-details span {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   EMPTY UPCOMING STUDIES
+===================================================== */
+
+.empty-next-study {
+  min-height: 275px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 25px;
+}
+
+.empty-next-icon {
+  font-size: 42px;
+
+  margin-bottom: 8px;
+}
+
+.empty-next-study h3 {
+  margin: 0 0 6px;
+
+  color: #374151;
+
+  font-size: 16px;
+}
+
+.empty-next-study p {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   WEEKLY STUDY PROGRESS CARD
+===================================================== */
+
+.weekly-progress-card {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   WEEK TOTAL
+===================================================== */
+
+.week-total {
+  flex-shrink: 0;
+
+  padding: 8px 12px;
+
+  border-radius: 9px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   WEEKLY CHART
+===================================================== */
+
+.weekly-chart {
+  height: 330px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 20px 20px 18px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(248, 250, 252, 0.7),
+      rgba(255, 255, 255, 1)
+    );
+}
+
+
+/* =====================================================
+   CHART DAY
+===================================================== */
+
+.chart-day {
+  height: 100%;
+
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 7px;
+}
+
+
+/* =====================================================
+   CHART VALUE
+===================================================== */
+
+.chart-value {
+  min-height: 16px;
+
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   CHART BAR AREA
+===================================================== */
+
+.chart-bar-area {
+  width: 100%;
+  max-width: 38px;
+
+  height: 210px;
+
+  display: flex;
+  align-items: flex-end;
+
+  border-radius: 8px 8px 4px 4px;
+
+  background:
+    repeating-linear-gradient(
+      to top,
+      #f1f5f9 0,
+      #f1f5f9 1px,
+      transparent 1px,
+      transparent 42px
+    );
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CHART BAR
+===================================================== */
+
+.chart-bar {
+  width: 100%;
+
+  min-height: 0;
+
+  border-radius: 7px 7px 3px 3px;
+
+  background: linear-gradient(
+    to top,
+    #2563eb,
+    #60a5fa
+  );
+
+  transition:
+    height 0.4s ease,
+    opacity 0.2s ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.82;
+}
+
+
+/* =====================================================
+   CHART LABEL
+===================================================== */
+
+.chart-label {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   WEEKLY DETAILS CARD
+===================================================== */
+
+.weekly-details-card {
+  width: 70%;
+
+  margin: 0 auto 22px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  height: fit-content;
+
+  max-height: 405px;
+
+  align-self: start;
+}
+
+
+/* =====================================================
+   WEEKLY DETAILS HEADING
+===================================================== */
+
+.weekly-details-card .card-heading {
+  padding: 15px 22px 12px;
+}
+
+.weekly-details-card .card-heading h2 {
+  font-size: 17px;
+}
+
+.weekly-details-card .card-heading p {
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   WEEKLY LIST
+===================================================== */
+
+.weekly-list {
+  width: 100%;
+
+  padding: 4px 22px 8px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   WEEKLY LIST ROW
+===================================================== */
+
+.weekly-list-row {
+  display: grid;
+
+  grid-template-columns:
+    190px
+    minmax(100px, 1fr)
+    110px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 45px;
+
+  padding: 6px 0;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.weekly-list-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   WEEKLY DAY
+===================================================== */
+
+.weekly-day {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.weekly-day strong {
+  color: #374151;
+
+  font-size: 12px;
+}
+
+.weekly-day span {
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   WEEKLY PROGRESS
+===================================================== */
+
+.weekly-progress {
+  width: 100%;
+}
+
+
+/* =====================================================
+   PROGRESS TRACK
+===================================================== */
+
+.progress-track {
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #e5e7eb;
+}
+
+
+/* =====================================================
+   PROGRESS FILL
+===================================================== */
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa
+  );
+
+  transition:
+    width 0.4s ease;
+}
+
+
+/* =====================================================
+   WEEKLY HOURS
+===================================================== */
+
+.weekly-hours {
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+.weekly-hours strong {
+  color: #374151;
+
+  font-size: 12px;
+}
+
+.weekly-hours span {
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.dashboard-actions {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =====================================================
+   QUICK ACTION BUTTON
+===================================================== */
+
+.dashboard-action-btn {
+  min-height: 52px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dashboard-action-btn:hover {
+  transform: translateY(-2px);
+
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =====================================================
+   CREATE TASK ACTION
+===================================================== */
+
+.create-action {
+  border-color: #2563eb;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.22);
+}
+
+.create-action:hover {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #4338ca
+  );
+
+  border-color: #1d4ed8;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   LOADING PAGE
+===================================================== */
+
+.dashboard-loading {
+  min-height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  color: #64748b;
+}
+
+.dashboard-loading p {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   LOADING SPINNER
+===================================================== */
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+
+  border: 4px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    dashboard-spin 0.8s linear infinite;
+}
+
+@keyframes dashboard-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .dashboard-main-grid {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  .weekly-progress-card {
+    min-height: auto;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .dashboard-page {
+    padding: 24px;
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-header-left {
+    align-items: flex-start;
+  }
+
+  .dashboard-date {
+    font-size: 12px;
+  }
+
+  .weekly-list-row {
+    grid-template-columns:
+      150px
+      minmax(80px, 1fr)
+      95px;
+
+    gap: 15px;
+  }
+
+  .weekly-details-card {
+    width: 85%;
+
+    height: fit-content;
+
+    max-height: 405px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    align-self: start;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .dashboard-page {
+    padding: 18px 15px 30px;
+  }
+
+
+  /* HEADER */
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .dashboard-header-left {
+    width: 100%;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .dashboard-home-btn {
+    min-width: 88px;
+
+    height: 40px;
+
+    padding: 0 13px;
+
+    font-size: 13px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 25px;
+  }
+
+  .dashboard-header p {
+    font-size: 12px;
+  }
+
+  .dashboard-date {
+    width: fit-content;
+  }
+
+
+  /* STAT CARDS */
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 105px;
+
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+  .stat-icon {
+    width: 43px;
+    height: 43px;
+
+    font-size: 20px;
+  }
+
+  .stat-content strong {
+    font-size: 24px;
+  }
+
+  .stat-content span {
+    font-size: 11px;
+  }
+
+  .stat-content small {
+    font-size: 9px;
+  }
+
+
+  /* MAIN GRID */
+
+  .dashboard-main-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 15px;
+  }
+
+
+  /* CARD HEADING */
+
+  .card-heading {
+    padding: 17px;
+
+    gap: 10px;
+  }
+
+  .card-heading h2 {
+    font-size: 16px;
+  }
+
+  .card-heading p {
+    font-size: 11px;
+  }
+
+
+  /* UPCOMING */
+
+  .upcoming-studies-list {
+    height: 280px;
+
+    max-height: 280px;
+
+    overflow-y: scroll;
+
+    padding-left: 15px;
+    padding-right: 8px;
+  }
+
+  .upcoming-study-item {
+    padding: 12px 5px;
+  }
+
+
+  /* WEEKLY CHART */
+
+  .weekly-chart {
+    height: 275px;
+
+    padding:
+      15px 10px 15px;
+  }
+
+  .chart-bar-area {
+    height: 170px;
+
+    max-width: 30px;
+  }
+
+  .chart-label {
+    font-size: 10px;
+  }
+
+
+  /* WEEKLY DETAILS */
+
+  .weekly-details-card {
+    width: 100%;
+
+    height: fit-content;
+
+    max-height: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    align-self: start;
+  }
+
+  .weekly-details-card .card-heading {
+    padding: 14px 15px 11px;
+  }
+
+  .weekly-list {
+    padding: 5px 15px 8px;
+  }
+
+  .weekly-list-row {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 8px;
+
+    min-height: 48px;
+
+    padding: 9px 0;
+  }
+
+  .weekly-progress {
+    grid-column: 1 / -1;
+
+    grid-row: 2;
+  }
+
+  .weekly-hours {
+    text-align: right;
+
+    grid-column: 2;
+
+    grid-row: 1;
+  }
+
+  .weekly-day {
+    grid-column: 1;
+
+    grid-row: 1;
+  }
+
+
+  /* ACTIONS */
+
+  .dashboard-actions {
+    grid-template-columns:
+      1fr;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .dashboard-page {
+    padding: 15px 11px 25px;
+  }
+
+  .dashboard-header-left {
+    gap: 9px;
+  }
+
+  .dashboard-home-btn {
+    min-width: 80px;
+
+    height: 38px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .dashboard-header p {
+    font-size: 11px;
+  }
+
+  .dashboard-stats {
+    gap: 9px;
+  }
+
+  .stat-card {
+    min-height: 95px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+  }
+
+  .stat-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+  }
+
+  .stat-content strong {
+    font-size: 21px;
+  }
+
+  .stat-content span {
+    font-size: 10px;
+  }
+
+  .stat-content small {
+    font-size: 8px;
+  }
+
+
+  /* UPCOMING STUDIES SCROLL */
+
+  .upcoming-studies-list {
+    height: 260px;
+
+    max-height: 260px;
+
+    overflow-y: scroll;
+  }
+
+  .next-study-icon {
+    width: 37px;
+    height: 37px;
+
+    font-size: 18px;
+  }
+
+  .next-study-info h3 {
+    font-size: 13px;
+  }
+
+  .next-topic {
+    font-size: 11px;
+  }
+
+  .next-study-details {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+
+  /* WEEKLY CHART */
+
+  .weekly-chart {
+    height: 250px;
+  }
+
+  .chart-bar-area {
+    height: 150px;
+
+    max-width: 25px;
+  }
+
+  .chart-value {
+    font-size: 9px;
+  }
+
+  .chart-label {
+    font-size: 9px;
+  }
+
+
+  /* WEEKLY DETAILS */
+
+  .weekly-details-card {
+    width: 100%;
+
+    height: fit-content;
+
+    max-height: none;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    align-self: start;
+  }
+
+  .weekly-details-card .card-heading {
+    padding: 13px 12px 10px;
+  }
+
+  .weekly-list {
+    padding:
+      4px 12px 7px;
+  }
+
+  .weekly-list-row {
+    min-height: 46px;
+
+    gap: 7px;
+
+    padding: 8px 0;
+  }
+
+  .weekly-day strong {
+    font-size: 11px;
+  }
+
+  .weekly-day span {
+    font-size: 9px;
+  }
+
+  .weekly-hours strong {
+    font-size: 11px;
+  }
+
+  .weekly-hours span {
+    font-size: 9px;
+  }
+
+  .progress-track {
+    height: 6px;
+  }
+
+
+  /* WEEK TOTAL */
+
+  .week-total {
+    padding: 6px 8px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark-mode .dashboard-page {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   HEADER DARK MODE
+===================================================== */
+
+body.dark-mode .dashboard-header h1 {
+  color: #f8fafc;
+}
+
+body.dark-mode .dashboard-header p {
+  color: #94a3b8;
+}
+
+body.dark-mode .dashboard-date {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+body.dark-mode .dashboard-home-btn {
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.30);
+}
+
+body.dark-mode .dashboard-home-btn:hover {
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.40);
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+body.dark-mode .dashboard-error {
+  background: #1e293b;
+  border-color: #7f1d1d;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .dashboard-error h2 {
+  color: #fca5a5;
+}
+
+body.dark-mode .dashboard-error p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+body.dark-mode .stat-card {
+  background: #1e293b;
+  border-color: #334155;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode button.stat-card:hover {
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .stat-content span {
+  color: #94a3b8;
+}
+
+body.dark-mode .stat-content strong {
+  color: #f8fafc;
+}
+
+body.dark-mode .stat-content small {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   STAT ICONS
+===================================================== */
+
+body.dark-mode .today-card .stat-icon {
+  background: #172554;
+}
+
+body.dark-mode .total-card .stat-icon {
+  background: #2e1065;
+}
+
+body.dark-mode .pending-card .stat-icon {
+  background: #451a03;
+}
+
+body.dark-mode .completed-card .stat-icon {
+  background: #052e16;
+}
+
+body.dark-mode .streak-card .stat-icon {
+  background: #450a0a;
+}
+
+
+/* =====================================================
+   COMMON DASHBOARD CARDS
+===================================================== */
+
+body.dark-mode .dashboard-card {
+  background: #1e293b;
+  border-color: #334155;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   CARD HEADINGS
+===================================================== */
+
+body.dark-mode .card-heading {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .card-heading h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .card-heading p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   UPCOMING COUNT
+===================================================== */
+
+body.dark-mode .upcoming-count {
+  background: #172554;
+  color: #93c5fd;
+}
+
+body.dark-mode .upcoming-count:hover {
+  background: #1e3a8a;
+}
+
+
+/* =====================================================
+   UPCOMING STUDIES SCROLLBAR
+===================================================== */
+
+body.dark-mode .upcoming-studies-list {
+  scrollbar-color: #475569 #172033;
+}
+
+body.dark-mode .upcoming-studies-list::-webkit-scrollbar-track {
+  background: #172033;
+}
+
+body.dark-mode .upcoming-studies-list::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-color: #172033;
+}
+
+body.dark-mode .upcoming-studies-list::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* =====================================================
+   UPCOMING STUDY ITEM
+===================================================== */
+
+body.dark-mode .upcoming-study-item {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .upcoming-study-item:hover {
+  background: #263449;
+}
+
+
+/* =====================================================
+   NEXT STUDY
+===================================================== */
+
+body.dark-mode .next-study-icon {
+  background: #172554;
+}
+
+body.dark-mode .next-study-info h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .next-topic {
+  color: #94a3b8;
+}
+
+body.dark-mode .next-study-details span {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   EMPTY UPCOMING STUDIES
+===================================================== */
+
+body.dark-mode .empty-next-study h3 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .empty-next-study p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   WEEK TOTAL
+===================================================== */
+
+body.dark-mode .week-total {
+  background: #312e81;
+  color: #c7d2fe;
+}
+
+
+/* =====================================================
+   WEEKLY CHART
+===================================================== */
+
+body.dark-mode .weekly-chart {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(30, 41, 59, 0.8),
+      rgba(15, 23, 42, 1)
+    );
+}
+
+body.dark-mode .chart-value {
+  color: #94a3b8;
+}
+
+body.dark-mode .chart-bar-area {
+  background:
+    repeating-linear-gradient(
+      to top,
+      #334155 0,
+      #334155 1px,
+      transparent 1px,
+      transparent 42px
+    );
+}
+
+body.dark-mode .chart-label {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   WEEKLY DETAILS
+===================================================== */
+
+body.dark-mode .weekly-list-row {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .weekly-day strong {
+  color: #e2e8f0;
+}
+
+body.dark-mode .weekly-day span {
+  color: #94a3b8;
+}
+
+body.dark-mode .weekly-hours strong {
+  color: #e2e8f0;
+}
+
+body.dark-mode .weekly-hours span {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+body.dark-mode .progress-track {
+  background: #334155;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+body.dark-mode .dashboard-action-btn {
+  background: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.20);
+}
+
+body.dark-mode .dashboard-action-btn:hover {
+  background: #334155;
+  border-color: #64748b;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =====================================================
+   CREATE ACTION
+===================================================== */
+
+body.dark-mode .create-action {
+  border-color: #2563eb;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: #ffffff;
+}
+
+body.dark-mode .create-action:hover {
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #4338ca
+  );
+
+  border-color: #1d4ed8;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+body.dark-mode .dashboard-loading {
+  color: #94a3b8;
+}
+
+body.dark-mode .loading-spinner {
+  border-color: #334155;
+  border-top-color: #60a5fa;
+}

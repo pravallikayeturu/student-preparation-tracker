@@ -1,0 +1,995 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.progress-page {
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 28px 32px;
+
+  background: #f7f9fc;
+
+  color: #172033;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.progress-header {
+  margin-bottom: 22px;
+}
+
+.progress-header h1 {
+  font-size: 28px;
+  font-weight: 750;
+
+  color: #172033;
+
+  margin-bottom: 5px;
+}
+
+.progress-header p {
+  font-size: 14px;
+
+  color: #718096;
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.progress-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.summary-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7ebf2;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(24, 39, 75, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(24, 39, 75, 0.07);
+}
+
+
+/* =====================================================
+   SUMMARY ICON
+===================================================== */
+
+.summary-icon {
+  width: 44px;
+
+  height: 44px;
+
+  min-width: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eef4ff;
+
+  font-size: 21px;
+}
+
+
+/* =====================================================
+   SUMMARY CONTENT
+===================================================== */
+
+.summary-card > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.summary-card span {
+  color: #667085;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.summary-card strong {
+  color: #172033;
+
+  font-size: 22px;
+
+  line-height: 1.1;
+}
+
+.summary-card small {
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   INSIGHTS
+===================================================== */
+
+.progress-insights {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.insight-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e7ebf2;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(24, 39, 75, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(24, 39, 75, 0.07);
+}
+
+
+/* =====================================================
+   INSIGHT ICON
+===================================================== */
+
+.insight-icon {
+  width: 40px;
+
+  height: 40px;
+
+  min-width: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f5f7ff;
+
+  font-size: 19px;
+}
+
+
+/* =====================================================
+   INSIGHT CONTENT
+===================================================== */
+
+.insight-card > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.insight-card span {
+  color: #667085;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.insight-card strong {
+  color: #344054;
+
+  font-size: 15px;
+}
+
+.insight-card small {
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   MAIN PROGRESS CARD
+===================================================== */
+
+.progress-card {
+  width: 100%;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e7ebf2;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(24, 39, 75, 0.04);
+}
+
+
+/* =====================================================
+   PROGRESS HEADER
+===================================================== */
+
+.progress-card-header {
+  margin-bottom: 17px;
+}
+
+.progress-card-header h2 {
+  color: #172033;
+
+  font-size: 18px;
+
+  margin-bottom: 4px;
+}
+
+.progress-card-header p {
+  color: #8a94a6;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   SUBJECT LIST
+===================================================== */
+
+.subject-list {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =====================================================
+   SUBJECT ITEM
+===================================================== */
+
+.subject-item {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  background: #fafbfe;
+
+  border: 1px solid #edf0f5;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.subject-item:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 12px
+    rgba(24, 39, 75, 0.05);
+}
+
+
+/* =====================================================
+   SUBJECT TOP
+===================================================== */
+
+.subject-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+}
+
+.subject-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.subject-dot {
+  width: 28px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eef4ff;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+}
+
+.subject-name strong {
+  color: #344054;
+
+  font-size: 14px;
+}
+
+.subject-percentage {
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+
+/* =====================================================
+   SUBJECT PROGRESS BAR
+===================================================== */
+
+.subject-bar {
+  width: 70%;
+
+  height: 6px;
+
+  background: #edf0f5;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  margin-bottom: 7px;
+}
+
+.subject-fill {
+  height: 100%;
+
+  border-radius: 10px;
+
+  transition:
+    width 0.5s ease;
+}
+
+
+/* =====================================================
+   PROGRESS COLORS
+===================================================== */
+
+.progress-good {
+  color: #16845b;
+}
+
+.subject-fill.progress-good {
+  background: #22a06b;
+}
+
+
+.progress-medium {
+  color: #c47a00;
+}
+
+.subject-fill.progress-medium {
+  background: #e5a11b;
+}
+
+
+.progress-low {
+  color: #d34b4b;
+}
+
+.subject-fill.progress-low {
+  background: #e45c5c;
+}
+
+
+/* =====================================================
+   SUBJECT DETAILS
+===================================================== */
+
+.subject-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+.subject-bottom span:not(:last-child)::after {
+  content: "•";
+
+  margin-left: 6px;
+
+  color: #c3c8d1;
+}
+
+
+/* =====================================================
+   NO PROGRESS
+===================================================== */
+
+.no-progress {
+  text-align: center;
+
+  padding: 40px 20px;
+}
+
+.no-progress > div {
+  font-size: 38px;
+
+  margin-bottom: 10px;
+}
+
+.no-progress h3 {
+  color: #344054;
+
+  font-size: 16px;
+
+  margin-bottom: 5px;
+}
+
+.no-progress p {
+  color: #98a2b3;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.progress-loading {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  color: #667085;
+
+  font-size: 14px;
+}
+
+.progress-spinner {
+  width: 38px;
+
+  height: 38px;
+
+  border: 4px solid #e5e7eb;
+
+  border-top-color: #5b7cfa;
+
+  border-radius: 50%;
+
+  animation:
+    progress-spin
+    0.8s linear infinite;
+}
+
+@keyframes progress-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.progress-error {
+  max-width: 450px;
+
+  margin: 100px auto;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #f0d5d5;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(24, 39, 75, 0.05);
+}
+
+.progress-error > div {
+  font-size: 40px;
+
+  margin-bottom: 10px;
+}
+
+.progress-error h2 {
+  color: #344054;
+
+  font-size: 19px;
+
+  margin-bottom: 7px;
+}
+
+.progress-error p {
+  color: #667085;
+
+  font-size: 13px;
+
+  margin-bottom: 17px;
+}
+
+.progress-error button {
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  background: #5b7cfa;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.progress-error button:hover {
+  background: #4565dc;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .progress-summary {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .progress-insights {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-card {
+    max-width: 100%;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .progress-page {
+    padding: 20px 15px;
+  }
+
+  .progress-header h1 {
+    font-size: 24px;
+  }
+
+  .progress-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-card {
+    padding: 16px;
+  }
+
+  .subject-bar {
+    width: 100%;
+  }
+
+  .subject-bottom {
+    gap: 4px;
+  }
+
+  .subject-bottom span:not(:last-child)::after {
+    margin-left: 4px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .subject-top {
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .subject-name strong {
+    font-size: 13px;
+  }
+
+  .subject-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .subject-bottom
+  span:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark-mode .progress-page {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   DARK MODE - HEADER
+===================================================== */
+
+body.dark-mode .progress-header h1 {
+  color: #f8fafc;
+}
+
+body.dark-mode .progress-header p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   DARK MODE - SUMMARY CARDS
+===================================================== */
+
+body.dark-mode .summary-card {
+  background: #1e293b;
+  border-color: #334155;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .summary-card:hover {
+  box-shadow:
+    0 7px 18px
+    rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .summary-icon {
+  background: #172554;
+}
+
+body.dark-mode .summary-card span {
+  color: #94a3b8;
+}
+
+body.dark-mode .summary-card strong {
+  color: #f8fafc;
+}
+
+body.dark-mode .summary-card small {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   DARK MODE - INSIGHTS
+===================================================== */
+
+body.dark-mode .insight-card {
+  background: #1e293b;
+  border-color: #334155;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .insight-card:hover {
+  box-shadow:
+    0 7px 18px
+    rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .insight-icon {
+  background: #172554;
+}
+
+body.dark-mode .insight-card span {
+  color: #94a3b8;
+}
+
+body.dark-mode .insight-card strong {
+  color: #e2e8f0;
+}
+
+body.dark-mode .insight-card small {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   DARK MODE - MAIN PROGRESS CARD
+===================================================== */
+
+body.dark-mode .progress-card {
+  background: #1e293b;
+  border-color: #334155;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   DARK MODE - PROGRESS CARD HEADER
+===================================================== */
+
+body.dark-mode .progress-card-header h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .progress-card-header p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   DARK MODE - SUBJECT ITEM
+===================================================== */
+
+body.dark-mode .subject-item {
+  background: #172033;
+  border-color: #334155;
+}
+
+body.dark-mode .subject-item:hover {
+  box-shadow:
+    0 4px 12px
+    rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .subject-dot {
+  background: #172554;
+}
+
+body.dark-mode .subject-name strong {
+  color: #e2e8f0;
+}
+
+
+/* =====================================================
+   DARK MODE - PROGRESS BAR
+===================================================== */
+
+body.dark-mode .subject-bar {
+  background: #334155;
+}
+
+
+/* =====================================================
+   DARK MODE - PROGRESS COLORS
+===================================================== */
+
+body.dark-mode .progress-good {
+  color: #4ade80;
+}
+
+body.dark-mode .subject-fill.progress-good {
+  background: #22c55e;
+}
+
+
+body.dark-mode .progress-medium {
+  color: #fbbf24;
+}
+
+body.dark-mode .subject-fill.progress-medium {
+  background: #eab308;
+}
+
+
+body.dark-mode .progress-low {
+  color: #f87171;
+}
+
+body.dark-mode .subject-fill.progress-low {
+  background: #ef4444;
+}
+
+
+/* =====================================================
+   DARK MODE - SUBJECT DETAILS
+===================================================== */
+
+body.dark-mode .subject-bottom {
+  color: #94a3b8;
+}
+
+body.dark-mode .subject-bottom span:not(:last-child)::after {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   DARK MODE - NO PROGRESS
+===================================================== */
+
+body.dark-mode .no-progress h3 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .no-progress p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   DARK MODE - LOADING
+===================================================== */
+
+body.dark-mode .progress-loading {
+  color: #94a3b8;
+}
+
+body.dark-mode .progress-spinner {
+  border-color: #334155;
+  border-top-color: #60a5fa;
+}
+
+
+/* =====================================================
+   DARK MODE - ERROR
+===================================================== */
+
+body.dark-mode .progress-error {
+  background: #1e293b;
+  border-color: #7f1d1d;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .progress-error h2 {
+  color: #fca5a5;
+}
+
+body.dark-mode .progress-error p {
+  color: #94a3b8;
+}
+
+body.dark-mode .progress-error button {
+  background: #4f6fe8;
+}
+
+body.dark-mode .progress-error button:hover {
+  background: #3f5dcc;
+}
