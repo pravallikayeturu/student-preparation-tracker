@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-
+import API_URL from "../../api/api";
 function Dashboard() {
 
   const [tasks, setTasks] = useState([]);
@@ -256,7 +256,7 @@ function Dashboard() {
       }
 
       const response = await fetch(
-        "http://localhost:8080/api/tasks",
+          `${API_URL}/api/tasks`,
         {
           method: "GET",
           headers: {

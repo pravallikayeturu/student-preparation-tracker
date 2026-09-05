@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Files.css";
+import API_URL from "../../api/api";
 
 function Files() {
 
@@ -34,7 +35,7 @@ function Files() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/files",
+                `${API_URL}/api/files`,
                 {
                     method: "GET",
                     headers: {
@@ -151,7 +152,7 @@ function Files() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/files/upload",
+                  `${API_URL}/api/files/upload`,
                 {
                     method: "POST",
 
@@ -268,7 +269,7 @@ function Files() {
             // =================================================
 
             const response = await fetch(
-                `http://localhost:8080/api/files/download/${id}`,
+                  `${API_URL}/api/files/download/${id}`,
                 {
                     method: "GET",
 
@@ -400,7 +401,7 @@ function Files() {
 
 
             const response = await fetch(
-                `http://localhost:8080/api/files/download/${id}`,
+                `${API_URL}/api/files/download/${id}`,
                 {
                     method: "GET",
 
@@ -525,7 +526,7 @@ function Files() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/api/files/${id}`,
+                  `${API_URL}/api/files/${id}`,
                 {
                     method: "DELETE",
 

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-function Login() {
+import API_URL from "../../api/api";
 
+console.log("API_URL =", API_URL);
+
+function Login() {
   const navigate = useNavigate();
 
   // =========================
@@ -103,7 +106,7 @@ function Login() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/send-otp",
+        `${API_URL}/api/auth/send-login-otp`,
         {
           method: "POST",
 
@@ -194,7 +197,7 @@ function Login() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/login",
+        `${API_URL}/api/auth/login`,
         {
           method: "POST",
 
@@ -298,7 +301,7 @@ function Login() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/send-login-otp",
+        `${API_URL}/api/auth/send-login-otp`,
         {
           method: "POST",
 

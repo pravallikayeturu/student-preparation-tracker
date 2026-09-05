@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import "./Progress.css";
+import API_URL from "../../api/api";
 
 function Progress() {
   const [tasks, setTasks] = useState([]);
@@ -93,7 +94,7 @@ function Progress() {
       }
 
       const response = await fetch(
-        "http://localhost:8080/api/tasks",
+            `${API_URL}/api/tasks`,
         {
           method: "GET",
 

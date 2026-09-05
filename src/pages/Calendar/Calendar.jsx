@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Calendar.css";
-
+import API_URL from "../../api/api";
 function Calendar() {
   const navigate = useNavigate();
 
@@ -217,7 +217,7 @@ function Calendar() {
       // =================================================
 
       const response = await fetch(
-        "http://localhost:8080/api/tasks",
+        `${API_URL}/api/tasks`,
         {
           method: "GET",
           headers: getHeaders(),
@@ -269,7 +269,7 @@ function Calendar() {
                 try {
                   const occurrenceResponse =
                     await fetch(
-                      `http://localhost:8080/api/tasks/${task.id}/occurrences/future`,
+                      `${API_URL}/api/tasks/${task.id}/occurrences/future`,
                       {
                         method: "GET",
                         headers: getHeaders(),

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyTasks.css";
-
+import API_URL from "../../api/api";
 function MyTasks() {
   const navigate = useNavigate();
 
@@ -146,7 +146,7 @@ function MyTasks() {
           recurringTasks.map(async (task) => {
             try {
               const response = await fetch(
-                `http://localhost:8080/api/tasks/${task.id}/occurrences/future`,
+                `${API_URL}/api/tasks/${task.id}/occurrences/future`,
                 {
                   method: "GET",
                   headers: getHeaders()
@@ -257,7 +257,7 @@ function MyTasks() {
       }
 
       const response = await fetch(
-        "http://localhost:8080/api/tasks",
+        `${API_URL}/api/tasks`,
         {
           method: "GET",
           headers: {
@@ -600,7 +600,7 @@ function MyTasks() {
       setSuccess("");
 
       const response = await fetch(
-        `http://localhost:8080/api/tasks/${taskId}/complete`,
+        `${API_URL}/api/tasks/${taskId}/complete`,
         {
           method: "PUT",
           headers: getHeaders()
@@ -653,7 +653,7 @@ function MyTasks() {
       setSuccess("");
 
       const response = await fetch(
-        `http://localhost:8080/api/tasks/${taskId}`,
+        `${API_URL}/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: getHeaders()
@@ -716,7 +716,7 @@ function MyTasks() {
     if (isRecurring(task)) {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/tasks/${task.id}/occurrences/future`,
+          `${API_URL}/api/tasks/${task.id}/occurrences/future`,
           {
             method: "GET",
             headers: getHeaders()
@@ -887,7 +887,7 @@ function MyTasks() {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/tasks/occurrences/${selectedOccurrence.id}`,
+        `${API_URL}api/tasks/occurrences/${selectedOccurrence.id}`,
         {
           method: "PUT",
           headers: getHeaders(),
@@ -992,7 +992,7 @@ function MyTasks() {
       };
 
       const response = await fetch(
-        `http://localhost:8080/api/tasks/${selectedTask.id}`,
+        `${API_URL}/api/tasks/${selectedTask.id}`,
         {
           method: "PUT",
           headers: getHeaders(),
@@ -1015,7 +1015,7 @@ function MyTasks() {
       if (isRecurring(selectedTask)) {
         const occurrenceResponse =
           await fetch(
-            `http://localhost:8080/api/tasks/${selectedTask.id}/occurrences/future`,
+            `${API_URL}/api/tasks/${selectedTask.id}/occurrences/future`,
             {
               method: "GET",
               headers: getHeaders()

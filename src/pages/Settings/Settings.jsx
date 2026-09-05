@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Settings.css";
-
+import API_URL from "../../api/api";
 const Settings = () => {
     const [darkMode, setDarkMode] = useState(false);
     const [emailNotifications, setEmailNotifications] = useState(true);
@@ -70,7 +70,7 @@ const Settings = () => {
                 }
 
                 const response = await fetch(
-                    "http://localhost:8080/api/auth/profile",
+                    `${API_URL}/api/auth/profile`,
                     {
                         method: "GET",
                         headers: {
@@ -213,7 +213,7 @@ const Settings = () => {
             }
 
             const response = await fetch(
-                "http://localhost:8080/api/auth/update-name",
+                `${API_URL}/api/auth/update-name`,
                 {
                     method: "PUT",
 
@@ -292,7 +292,7 @@ const Settings = () => {
             }
 
             const response = await fetch(
-                "http://localhost:8080/api/auth/update-settings",
+                `${API_URL}/api/auth/update-settings`,
                 {
                     method: "PUT",
 
@@ -505,7 +505,7 @@ const Settings = () => {
 
 
             const response = await fetch(
-                "http://localhost:8080/api/auth/change-password",
+                `${API_URL}/api/auth/change-password`,
                 {
                     method: "POST",
 

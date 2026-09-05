@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Chatbot.css";
-
+import API_URL from "../../api/api";
 function Chatbot() {
 
     // =====================================================
@@ -122,7 +122,7 @@ function Chatbot() {
             // =================================================
 
             const response = await fetch(
-                "http://localhost:8080/api/chatbot/ask",
+                `${API_URL}/api/chatbot/ask`,
                 {
                     method: "POST",
 
@@ -272,7 +272,7 @@ function Chatbot() {
             // =================================================
 
             const response = await fetch(
-                `http://localhost:8080/api/chatbot/tasks/${type}`,
+                `${API_URL}/api/chatbot/tasks/${type}`,
                 {
                     method: "GET",
 

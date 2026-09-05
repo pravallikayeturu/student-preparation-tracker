@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
+import API_URL from "../../api/api";
 
 function Signup() {
 
@@ -129,7 +130,7 @@ function Signup() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/send-otp",
+        `${API_URL}/api/auth/send-otp`,
         {
           method: "POST",
 
@@ -212,7 +213,7 @@ function Signup() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/signup",
+        `${API_URL}/api/auth/signup`,
         {
           method: "POST",
 
@@ -278,7 +279,7 @@ function Signup() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:8080/api/auth/send-otp",
+        `${API_URL}/api/auth/send-otp`,
         {
           method: "POST",
 
