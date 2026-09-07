@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Notifications.css";
-
+import API_URL from "../../api/api";
 function Notifications() {
   const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ function Notifications() {
   // =====================================================
 
   const API_URL =
-    "http://localhost:8080/api/notifications";
+    `${API_URL}/api/notifications`;
 
   // =====================================================
   // FETCH NOTIFICATIONS

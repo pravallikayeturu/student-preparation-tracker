@@ -37,13 +37,11 @@ function Login() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-
   // =====================================================
   // OTP TIMER
   // =====================================================
 
   useEffect(() => {
-
     if (!showOtp || timeLeft <= 0) {
       return;
     }
@@ -53,16 +51,13 @@ function Login() {
     }, 1000);
 
     return () => clearInterval(timer);
-
   }, [showOtp, timeLeft]);
-
 
   // =====================================================
   // FORMAT TIMER
   // =====================================================
 
   const formatTime = () => {
-
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
 
@@ -71,13 +66,11 @@ function Login() {
       .padStart(2, "0")}`;
   };
 
-
   // =====================================================
-  // SEND OTP
+  // SEND LOGIN OTP
   // =====================================================
 
   const handleLogin = async (event) => {
-
     event.preventDefault();
 
     setError("");
@@ -98,11 +91,10 @@ function Login() {
     }
 
     // =====================================================
-    // SEND OTP
+    // CHECK EMAIL + PASSWORD AND SEND OTP
     // =====================================================
 
     try {
-
       setLoading(true);
 
       const response = await fetch(
@@ -116,52 +108,56 @@ function Login() {
 
           body: JSON.stringify({
             email: email.trim(),
+            password: password,
           }),
         }
       );
 
-      const data = await response.text();
+      // Backend returns JSON
+      const data = await response.json();
+
+      // =====================================================
+      // BACKEND ERROR
+      // =====================================================
 
       if (!response.ok) {
-        throw new Error(
-          data || "Unable to send OTP."
+        setError(
+          data.message ||
+          "Unable to send OTP."
         );
+
+        return;
       }
 
-      // =========================
-      // SHOW OTP SCREEN
-      // =========================
+      // =====================================================
+      // OTP SENT SUCCESSFULLY
+      // =====================================================
 
       setShowOtp(true);
 
       setTimeLeft(300);
 
       setMessage(
+        data.message ||
         "OTP has been sent to your email."
       );
 
     } catch (error) {
-
       setError(
         error.message ||
         "Something went wrong. Please try again."
       );
 
     } finally {
-
       setLoading(false);
-
     }
-
   };
-
 
   // =====================================================
   // VERIFY OTP + LOGIN
   // =====================================================
 
   const handleVerifyOtp = async (event) => {
-
     event.preventDefault();
 
     setError("");
@@ -193,7 +189,6 @@ function Login() {
     // =====================================================
 
     try {
-
       setLoading(true);
 
       const response = await fetch(
@@ -272,32 +267,25 @@ function Login() {
       }, 1000);
 
     } catch (error) {
-
       setError(
         error.message ||
         "Invalid email, password, or OTP."
       );
 
     } finally {
-
       setLoading(false);
-
     }
-
   };
-
 
   // =====================================================
   // RESEND OTP
   // =====================================================
 
   const handleResendOtp = async () => {
-
     setError("");
     setMessage("");
 
     try {
-
       setLoading(true);
 
       const response = await fetch(
@@ -311,50 +299,54 @@ function Login() {
 
           body: JSON.stringify({
             email: email.trim(),
+            password: password,
           }),
         }
       );
 
-      const data = await response.text();
+      const data = await response.json();
+
+      // =====================================================
+      // RESEND ERROR
+      // =====================================================
 
       if (!response.ok) {
         throw new Error(
-          data || "Unable to resend OTP."
+          data.message ||
+          "Unable to resend OTP."
         );
       }
+
+      // =====================================================
+      // RESEND SUCCESS
+      // =====================================================
 
       setOtp("");
 
       setTimeLeft(300);
 
       setMessage(
+        data.message ||
         "A new OTP has been sent."
       );
 
     } catch (error) {
-
       setError(
         error.message ||
         "Unable to resend OTP."
       );
 
     } finally {
-
       setLoading(false);
-
     }
-
   };
-
 
   // =====================================================
   // OTP SCREEN
   // =====================================================
 
   if (showOtp) {
-
     return (
-
       <div className="login-page">
 
         {/* ================= LEFT ================= */}
@@ -370,6 +362,7 @@ function Login() {
             <h1>
               Verify Your
               <br />
+
               <span>
                 Email Address.
               </span>
@@ -384,7 +377,6 @@ function Login() {
           </div>
 
         </div>
-
 
         {/* ================= RIGHT ================= */}
 
@@ -408,7 +400,6 @@ function Login() {
 
             </p>
 
-
             {/* ERROR */}
 
             {error && (
@@ -417,7 +408,6 @@ function Login() {
               </div>
             )}
 
-
             {/* SUCCESS */}
 
             {message && (
@@ -425,7 +415,6 @@ function Login() {
                 {message}
               </div>
             )}
-
 
             {/* OTP FORM */}
 
@@ -459,13 +448,11 @@ function Login() {
 
               </div>
 
-
               {/* TIMER */}
 
               <div className="otp-timer">
 
                 {timeLeft > 0 ? (
-
                   <>
                     OTP expires in{" "}
 
@@ -473,17 +460,13 @@ function Login() {
                       {formatTime()}
                     </strong>
                   </>
-
                 ) : (
-
                   <span>
                     OTP expired
                   </span>
-
                 )}
 
               </div>
-
 
               {/* VERIFY */}
 
@@ -504,7 +487,6 @@ function Login() {
 
             </form>
 
-
             {/* RESEND */}
 
             <div className="resend-container">
@@ -523,7 +505,6 @@ function Login() {
               </button>
 
             </div>
-
 
             {/* BACK */}
 
@@ -547,18 +528,14 @@ function Login() {
         </div>
 
       </div>
-
     );
-
   }
-
 
   // =====================================================
   // NORMAL LOGIN SCREEN
   // =====================================================
 
   return (
-
     <div className="login-page">
 
       {/* ================= LEFT SECTION ================= */}
@@ -584,13 +561,10 @@ function Login() {
           </h1>
 
           <p>
-
             Continue your preparation journey,
             manage your studies, and track your
             progress in one place.
-
           </p>
-
 
           <div className="login-features">
 
@@ -606,7 +580,6 @@ function Login() {
 
             </div>
 
-
             <div>
 
               <span>
@@ -618,7 +591,6 @@ function Login() {
               </p>
 
             </div>
-
 
             <div>
 
@@ -638,7 +610,6 @@ function Login() {
 
       </div>
 
-
       {/* ================= RIGHT SECTION ================= */}
 
       <div className="login-right">
@@ -650,11 +621,8 @@ function Login() {
           </h2>
 
           <p className="login-subtitle">
-
             Login to your Student Preparation Tracker
-
           </p>
-
 
           {/* ERROR */}
 
@@ -663,7 +631,6 @@ function Login() {
               {error}
             </div>
           )}
-
 
           {/* ================= LOGIN FORM ================= */}
 
@@ -688,7 +655,6 @@ function Login() {
 
             </div>
 
-
             {/* PASSWORD */}
 
             <div className="input-group">
@@ -711,7 +677,6 @@ function Login() {
                   }
                   placeholder="Enter your password"
                 />
-
 
                 {/* FONT AWESOME EYE */}
 
@@ -742,7 +707,6 @@ function Login() {
 
             </div>
 
-
             {/* LOGIN BUTTON */}
 
             <button
@@ -752,13 +716,12 @@ function Login() {
             >
 
               {loading
-                ? "Sending OTP..."
+                ? "Checking..."
                 : "Login"}
 
             </button>
 
           </form>
-
 
           {/* =========================
               FORGOT PASSWORD + BACK HOME
@@ -782,7 +745,6 @@ function Login() {
 
           </div>
 
-
           {/* SIGNUP */}
 
           <p className="signup-text">
@@ -800,9 +762,7 @@ function Login() {
       </div>
 
     </div>
-
   );
-
 }
 
 export default Login;
