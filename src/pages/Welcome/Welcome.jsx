@@ -12,7 +12,7 @@ function Welcome() {
         <div className="nav-left"></div>
 
         <div className="logo">
-          Preparation Tracker
+         Preparation Tracker
         </div>
 
         <div className="nav-right">
