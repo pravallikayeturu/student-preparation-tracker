@@ -340,7 +340,7 @@ function Signup() {
         <div className="signup-left">
 
           <div className="signup-brand">
-            Student Preparation Tracker
+             Preparation Tracker
           </div>
 
           <div className="signup-intro">
@@ -527,7 +527,7 @@ function Signup() {
       <div className="signup-left">
 
         <div className="signup-brand">
-          Student Preparation Tracker
+         Preparation Tracker
         </div>
 
         <div className="signup-intro">
@@ -580,7 +580,7 @@ function Signup() {
           </h2>
 
           <p className="signup-subtitle">
-            Join Student Preparation Tracker
+            Join  Preparation Tracker
           </p>
 
           {/* ERROR */}
