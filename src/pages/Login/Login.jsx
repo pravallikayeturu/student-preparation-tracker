@@ -354,7 +354,7 @@ function Login() {
         <div className="login-left">
 
           <div className="login-brand">
-             Preparation Tracker
+            Studnet Preparation Tracker
           </div>
 
           <div className="login-intro">
@@ -621,7 +621,7 @@ function Login() {
           </h2>
 
           <p className="login-subtitle">
-            Login to your  Preparation Tracker
+            Login to your Student Preparation Tracker
           </p>
 
           {/* ERROR */}
