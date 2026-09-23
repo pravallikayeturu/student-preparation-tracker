@@ -232,20 +232,28 @@ function Login() {
         data.token
       );
 
-      // =========================
+      // =====================================================
       // SAVE EMAIL
-      // =========================
+      // =====================================================
 
       if (data.email) {
+
+        // Existing application email
         localStorage.setItem(
           "email",
           data.email
         );
+
+        // Email used by browser push notifications
+        localStorage.setItem(
+          "userEmail",
+          data.email
+        );
       }
 
-      // =========================
+      // =====================================================
       // SAVE NAME
-      // =========================
+      // =====================================================
 
       if (data.name) {
         localStorage.setItem(
@@ -543,7 +551,7 @@ function Login() {
       <div className="login-left">
 
         <div className="login-brand">
-           Preparation Tracker
+          Preparation Tracker
         </div>
 
         <div className="login-intro">

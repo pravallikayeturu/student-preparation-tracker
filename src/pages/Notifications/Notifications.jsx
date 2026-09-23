@@ -39,7 +39,7 @@ function Notifications() {
   // API BASE URL
   // =====================================================
 
-  const API_URL =
+  const API_URL=
     `${API_URL}/api/notifications`;
 
   // =====================================================
