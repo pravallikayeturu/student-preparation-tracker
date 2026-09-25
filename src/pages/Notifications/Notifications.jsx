@@ -33,13 +33,13 @@ function Notifications() {
     }
 
     return null;
-  };
+  };F
 
   // =====================================================
   // API BASE URL
   // =====================================================
 
-  const API_URL=
+  const NOTIFICATIONS_API_URL =
     `${API_URL}/api/notifications`;
 
   // =====================================================
@@ -56,7 +56,7 @@ function Notifications() {
     }
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(NOTIFICATIONS_API_URL, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -137,7 +137,7 @@ function Notifications() {
 
     try {
       const response = await fetch(
-        `${API_URL}/${id}/read`,
+        `${NOTIFICATIONS_API_URL}/${id}/read`,
         {
           method: "PUT",
           headers: {
@@ -185,7 +185,7 @@ function Notifications() {
 
     try {
       const response = await fetch(
-        `${API_URL}/${id}/unread`,
+        `${NOTIFICATIONS_API_URL}/${id}/unread`,
         {
           method: "PUT",
           headers: {
@@ -233,7 +233,7 @@ function Notifications() {
 
     try {
       const response = await fetch(
-        `${API_URL}/read-all`,
+        `${NOTIFICATIONS_API_URL}/read-all`,
         {
           method: "PUT",
           headers: {
@@ -277,7 +277,7 @@ function Notifications() {
 
     try {
       const response = await fetch(
-        `${API_URL}/${id}`,
+        `${NOTIFICATIONS_API_URL}/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -329,7 +329,7 @@ function Notifications() {
 
     try {
       const response = await fetch(
-        `${API_URL}/clear-all`,
+        `${NOTIFICATIONS_API_URL}/clear-all`,
         {
           method: "DELETE",
           headers: {
