@@ -653,7 +653,7 @@ function MyTasks() {
       setSuccess("");
 
       const response = await fetch(
-        `${API_URL}/tasks/${taskId}`,
+        `${API_URL}/api/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: getHeaders()
