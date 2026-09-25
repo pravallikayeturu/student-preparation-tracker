@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Chatbot.css";
 import API_URL from "../../api/api";
+
 function Chatbot() {
 
     // =====================================================
@@ -68,6 +69,147 @@ function Chatbot() {
 
         throw new Error(errorMessage);
     };
+
+
+    // =====================================================
+    // LOAD SAVED CHAT HISTORY
+    // =====================================================
+
+    const loadChatHistory = async () => {
+
+        try {
+
+            const token = getToken();
+
+            // ---------------------------------------------
+            // CHECK LOGIN
+            // ---------------------------------------------
+
+            if (!token) {
+
+                console.log(
+                    "No login token found. Chat history not loaded."
+                );
+
+                return;
+            }
+
+
+            // ---------------------------------------------
+            // GET CHAT HISTORY
+            // ---------------------------------------------
+
+            const response = await fetch(
+                `${API_URL}/api/chatbot/history`,
+                {
+                    method: "GET",
+
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                }
+            );
+
+
+            // ---------------------------------------------
+            // CHECK RESPONSE
+            // ---------------------------------------------
+
+            if (!response.ok) {
+
+                await handleApiError(response);
+            }
+
+
+            // ---------------------------------------------
+            // READ HISTORY
+            // ---------------------------------------------
+
+            const history = await response.json();
+
+
+            // ---------------------------------------------
+            // CHECK HISTORY
+            // ---------------------------------------------
+
+            if (!Array.isArray(history)) {
+
+                console.error(
+                    "Invalid chat history received:",
+                    history
+                );
+
+                return;
+            }
+
+
+            // ---------------------------------------------
+            // CONVERT DATABASE HISTORY TO UI MESSAGES
+            // ---------------------------------------------
+
+            const loadedMessages = [];
+
+
+            history.forEach((chat) => {
+
+                // User question
+                if (
+                    chat.question &&
+                    chat.question.trim()
+                ) {
+
+                    loadedMessages.push({
+                        sender: "user",
+                        text: chat.question
+                    });
+
+                }
+
+
+                // AI answer
+                if (
+                    chat.answer &&
+                    chat.answer.trim()
+                ) {
+
+                    loadedMessages.push({
+                        sender: "ai",
+                        text: chat.answer
+                    });
+
+                }
+
+            });
+
+
+            // ---------------------------------------------
+            // DISPLAY SAVED HISTORY
+            // ---------------------------------------------
+
+            setMessages(loadedMessages);
+
+
+        } catch (error) {
+
+            console.error(
+                "Chat History Error:",
+                error
+            );
+
+        }
+    };
+
+
+    // =====================================================
+    // LOAD HISTORY WHEN CHATBOT OPENS
+    // =====================================================
+
+    useEffect(() => {
+
+        loadChatHistory();
+
+    }, []);
 
 
     // =====================================================
