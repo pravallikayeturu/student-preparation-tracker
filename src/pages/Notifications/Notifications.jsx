@@ -33,7 +33,7 @@ function Notifications() {
     }
 
     return null;
-  };F
+  };
 
   // =====================================================
   // API BASE URL

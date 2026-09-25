@@ -551,7 +551,7 @@ function Login() {
       <div className="login-left">
 
         <div className="login-brand">
-          Preparation Tracker
+          Student Preparation Tracker
         </div>
 
         <div className="login-intro">
