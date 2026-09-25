@@ -44,7 +44,9 @@ body {
 }
 
 
-/* LOGO */
+/* =====================================================
+   LOGO
+===================================================== */
 
 .homepage-logo {
   font-size: 21px;
@@ -61,7 +63,9 @@ body {
 }
 
 
-/* NAVIGATION */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .sidebar-nav {
   display: flex;
@@ -71,7 +75,9 @@ body {
 }
 
 
-/* SIDEBAR LINKS */
+/* =====================================================
+   SIDEBAR LINKS
+===================================================== */
 
 .sidebar-link,
 .home-sidebar-link {
@@ -99,7 +105,9 @@ body {
 }
 
 
-/* ICON */
+/* =====================================================
+   ICON
+===================================================== */
 
 .nav-icon,
 .home-nav-icon {
@@ -113,7 +121,9 @@ body {
 }
 
 
-/* HOVER */
+/* =====================================================
+   HOVER
+===================================================== */
 
 .sidebar-link:hover,
 .home-sidebar-link:hover {
@@ -124,7 +134,9 @@ body {
 }
 
 
-/* ACTIVE */
+/* =====================================================
+   ACTIVE
+===================================================== */
 
 .sidebar-link.active {
   background: rgba(255, 255, 255, 0.18);
@@ -134,7 +146,9 @@ body {
 }
 
 
-/* LOGOUT */
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 .logout-link {
   margin-top: 15px;
@@ -183,7 +197,9 @@ body {
 }
 
 
-/* WELCOME */
+/* =====================================================
+   WELCOME
+===================================================== */
 
 .header-welcome p {
   margin: 0;
@@ -212,7 +228,9 @@ body {
 }
 
 
-/* PROFILE WRAPPER */
+/* =====================================================
+   PROFILE WRAPPER
+===================================================== */
 
 .profile-picture-wrapper {
   position: relative;
@@ -224,7 +242,9 @@ body {
 }
 
 
-/* PROFILE IMAGE */
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
 
 .profile-picture,
 .profile-placeholder {
@@ -239,7 +259,9 @@ body {
 }
 
 
-/* PLACEHOLDER */
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
 
 .profile-placeholder {
   display: flex;
@@ -255,7 +277,9 @@ body {
 }
 
 
-/* EDIT ICON */
+/* =====================================================
+   EDIT ICON
+===================================================== */
 
 .profile-edit {
   position: absolute;
@@ -282,13 +306,17 @@ body {
 }
 
 
-/* PROFILE INFO */
+/* =====================================================
+   PROFILE INFO
+===================================================== */
 
 .profile-info {
   display: flex;
   flex-direction: column;
 
   gap: 3px;
+
+  min-width: 0;
 }
 
 .profile-info strong {
@@ -297,12 +325,20 @@ body {
   color: #172554;
 
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
 .profile-info span {
   font-size: 12px;
 
   color: #64748b;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 }
 
 
@@ -455,7 +491,9 @@ body {
 }
 
 
-/* GRID */
+/* =====================================================
+   GRID
+===================================================== */
 
 .student-inspire-grid {
   display: grid;
@@ -543,7 +581,9 @@ body {
 }
 
 
-/* IMAGE WRAPPER */
+/* =====================================================
+   IMAGE WRAPPER
+===================================================== */
 
 .student-image-wrapper {
   position: relative;
@@ -562,7 +602,9 @@ body {
 }
 
 
-/* STUDENT IMAGE */
+/* =====================================================
+   STUDENT IMAGE
+===================================================== */
 
 .student-inspire-image {
   width: 100%;
@@ -581,7 +623,9 @@ body {
 }
 
 
-/* ICON */
+/* =====================================================
+   ICON
+===================================================== */
 
 .student-icon {
   position: absolute;
@@ -607,7 +651,9 @@ body {
 }
 
 
-/* CARD TITLE */
+/* =====================================================
+   CARD TITLE
+===================================================== */
 
 .student-inspire-card h3 {
   margin: 0;
@@ -635,7 +681,6 @@ body {
 
 /* =====================================================
    DISCIPLINE BANNER
-   ALL CARD SIZES KEPT EXACTLY SAME
 ===================================================== */
 
 .discipline-banner {
@@ -666,7 +711,7 @@ body {
 
 
 /* =====================================================
-   ONLY IMAGE FITTING IS CHANGED
+   DISCIPLINE IMAGE
 ===================================================== */
 
 .discipline-banner img {
@@ -1066,7 +1111,8 @@ body.dark-mode .adjusting-hint {
 
 
 /* =====================================================
-   TABLET
+   TABLET / HALF LAPTOP
+   1100px
 ===================================================== */
 
 @media (max-width: 1100px) {
@@ -1075,15 +1121,18 @@ body.dark-mode .adjusting-hint {
     width: 220px;
   }
 
+
   .homepage-main {
     margin-left: 220px;
 
     width: calc(100% - 220px);
   }
 
+
   .homepage-content {
     padding: 28px;
   }
+
 
   .student-inspire-grid {
     max-width: 100%;
@@ -1102,7 +1151,8 @@ body.dark-mode .adjusting-hint {
 
 
 /* =====================================================
-   SMALL TABLET
+   SMALL TABLET / HALF LAPTOP
+   900px
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -1113,15 +1163,18 @@ body.dark-mode .adjusting-hint {
     padding: 20px 12px;
   }
 
+
   .homepage-main {
     margin-left: 190px;
 
     width: calc(100% - 190px);
   }
 
+
   .homepage-logo {
     font-size: 17px;
   }
+
 
   .sidebar-link,
   .home-sidebar-link {
@@ -1130,17 +1183,21 @@ body.dark-mode .adjusting-hint {
     padding: 11px 10px;
   }
 
+
   .homepage-header {
     padding: 16px 22px;
   }
+
 
   .homepage-content {
     padding: 22px;
   }
 
+
   .student-inspire-grid {
     gap: 15px;
   }
+
 
   .student-image-wrapper {
     height: 180px;
@@ -1160,16 +1217,23 @@ body.dark-mode .adjusting-hint {
 
 /* =====================================================
    MOBILE
+   HORIZONTAL SCROLL NAVBAR
 ===================================================== */
 
 @media (max-width: 800px) {
 
   .homepage {
     display: block;
+
+    width: 100%;
+
+    overflow-x: hidden;
   }
 
 
-  /* SIDEBAR */
+  /* =================================================
+     SIDEBAR → TOP NAVBAR
+  ================================================= */
 
   .homepage-sidebar {
     position: relative;
@@ -1178,38 +1242,121 @@ body.dark-mode .adjusting-hint {
     left: auto;
 
     width: 100%;
+
     height: auto;
 
     max-height: none;
 
-    padding: 18px 15px;
+    padding: 16px 15px;
+
+    overflow: hidden;
+
+    z-index: 1000;
   }
 
+
+  /* =================================================
+     LOGO
+  ================================================= */
 
   .homepage-logo {
-    margin-bottom: 18px;
+    margin: 0 0 15px;
 
     font-size: 19px;
+
+    text-align: center;
+
+    white-space: nowrap;
   }
 
+
+  /* =================================================
+     HORIZONTAL NAVIGATION
+  ================================================= */
 
   .sidebar-nav {
-    display: grid;
+    display: flex;
 
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    flex-direction: row;
 
-    gap: 7px;
+    flex-wrap: nowrap;
+
+    gap: 8px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 4px 2px 10px;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
   }
 
+
+  /* =================================================
+     NAVBAR SCROLLBAR
+  ================================================= */
+
+  .sidebar-nav::-webkit-scrollbar {
+    height: 5px;
+  }
+
+
+  .sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: 10px;
+  }
+
+
+  .sidebar-nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+
+  /* =================================================
+     NAV LINKS
+  ================================================= */
 
   .sidebar-link,
   .home-sidebar-link {
+    flex: 0 0 auto;
+
+    width: auto;
+
+    min-width: max-content;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
     font-size: 13px;
 
-    padding: 10px;
+    justify-content: center;
 
-    justify-content: flex-start;
+    white-space: nowrap;
+
+    transform: none !important;
+  }
+
+
+  .nav-icon,
+  .home-nav-icon {
+    width: auto;
+
+    min-width: 20px;
+
+    font-size: 16px;
+  }
+
+
+  .sidebar-link:hover,
+  .home-sidebar-link:hover {
+    transform: none !important;
   }
 
 
@@ -1218,7 +1365,9 @@ body.dark-mode .adjusting-hint {
   }
 
 
-  /* MAIN */
+  /* =================================================
+     MAIN
+  ================================================= */
 
   .homepage-main {
     margin-left: 0;
@@ -1226,37 +1375,109 @@ body.dark-mode .adjusting-hint {
     width: 100%;
 
     min-height: auto;
+
+    overflow-x: hidden;
   }
 
 
-  /* HEADER */
+  /* =================================================
+     HEADER
+  ================================================= */
 
   .homepage-header {
     position: relative;
+
+    width: 100%;
 
     padding: 18px;
 
     flex-direction: column;
 
     align-items: flex-start;
+
+    gap: 15px;
   }
 
+
+  /* =================================================
+     PROFILE
+     PHOTO + NAME + EMAIL
+  ================================================= */
 
   .profile-section {
     width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
   }
 
 
-  /* CONTENT */
+  .profile-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    min-width: 0;
+  }
+
+
+  .profile-info strong {
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+  }
+
+
+  .profile-info span {
+    display: block;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    max-width: 220px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+
+  /* =================================================
+     CONTENT
+  ================================================= */
 
   .homepage-content {
+    width: 100%;
+
     padding: 18px;
+
+    overflow-x: hidden;
   }
 
 
-  /* WELCOME */
+  /* =================================================
+     WELCOME
+  ================================================= */
 
   .welcome-card {
+    width: 100%;
+
     padding: 25px;
 
     border-radius: 15px;
@@ -1273,9 +1494,13 @@ body.dark-mode .adjusting-hint {
   }
 
 
-  /* TODAY'S MOTIVATION */
+  /* =================================================
+     TODAY'S MOTIVATION
+  ================================================= */
 
   .today-motivation {
+    width: 100%;
+
     padding: 35px 18px;
 
     margin-bottom: 30px;
@@ -1287,7 +1512,9 @@ body.dark-mode .adjusting-hint {
   }
 
 
-  /* STUDENTS */
+  /* =================================================
+     STUDENTS
+  ================================================= */
 
   .student-inspire-grid {
     grid-template-columns: 1fr;
@@ -1305,14 +1532,15 @@ body.dark-mode .adjusting-hint {
 
   /* =================================================
      DISCIPLINE
-     SIZE UNCHANGED
   ================================================= */
 
   .discipline-banner {
     width: 100%;
+
     max-width: none;
 
     height: 280px;
+
     min-height: 280px;
 
     margin: 0 0 25px 0;
@@ -1325,9 +1553,11 @@ body.dark-mode .adjusting-hint {
 
   .discipline-banner img {
     width: 100%;
+
     height: 100%;
 
     max-width: none;
+
     max-height: none;
 
     display: block;
@@ -1340,9 +1570,13 @@ body.dark-mode .adjusting-hint {
   }
 
 
-  /* FINAL */
+  /* =================================================
+     FINAL MOTIVATION
+  ================================================= */
 
   .final-motivation {
+    width: 100%;
+
     padding: 35px 10px 45px;
   }
 
@@ -1357,7 +1591,9 @@ body.dark-mode .adjusting-hint {
   }
 
 
-  /* PROFILE VIEWER */
+  /* =================================================
+     PROFILE VIEWER
+  ================================================= */
 
   .profile-view-container {
     padding: 0;
@@ -1368,9 +1604,11 @@ body.dark-mode .adjusting-hint {
 
   .profile-view-image-wrapper {
     width: 330px;
+
     height: 330px;
 
     max-width: 82vw;
+
     max-height: 82vw;
 
     border-radius: 50%;
@@ -1385,26 +1623,77 @@ body.dark-mode .adjusting-hint {
 
 @media (max-width: 480px) {
 
-  .homepage-logo {
-    font-size: 17px;
+  /* =================================================
+     SIDEBAR
+  ================================================= */
+
+  .homepage-sidebar {
+    padding: 14px 12px;
   }
 
 
+  /* =================================================
+     LOGO
+  ================================================= */
+
+  .homepage-logo {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+  }
+
+
+  /* =================================================
+     HORIZONTAL NAVBAR
+  ================================================= */
+
   .sidebar-nav {
-    grid-template-columns: 1fr;
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    gap: 7px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding-bottom: 9px;
   }
 
 
   .sidebar-link,
   .home-sidebar-link {
-    padding: 11px 13px;
+    flex: 0 0 auto;
 
-    font-size: 14px;
+    width: auto;
+
+    min-width: max-content;
+
+    padding: 10px 13px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
   }
 
 
+  .nav-icon,
+  .home-nav-icon {
+    font-size: 15px;
+  }
+
+
+  /* =================================================
+     HEADER
+  ================================================= */
+
   .homepage-header {
     padding: 15px;
+
+    gap: 12px;
   }
 
 
@@ -1413,20 +1702,67 @@ body.dark-mode .adjusting-hint {
   }
 
 
+  /* =================================================
+     PROFILE
+  ================================================= */
+
+  .profile-section {
+    width: 100%;
+
+    gap: 10px;
+  }
+
+
+  .profile-picture-wrapper {
+    width: 45px;
+
+    height: 45px;
+  }
+
+
+  .profile-picture,
+  .profile-placeholder {
+    width: 45px;
+
+    height: 45px;
+  }
+
+
+  .profile-info {
+    gap: 2px;
+
+    min-width: 0;
+  }
+
+
   .profile-info strong {
     font-size: 13px;
+
+    line-height: 1.3;
   }
 
 
   .profile-info span {
     font-size: 11px;
+
+    line-height: 1.3;
+
+    max-width: 230px;
   }
 
+
+  /* =================================================
+     CONTENT
+  ================================================= */
 
   .homepage-content {
     padding: 14px;
   }
 
+
+  /* =================================================
+     WELCOME
+  ================================================= */
 
   .welcome-card {
     padding: 22px;
@@ -1440,6 +1776,10 @@ body.dark-mode .adjusting-hint {
   }
 
 
+  /* =================================================
+     TODAY'S MOTIVATION
+  ================================================= */
+
   .today-motivation {
     padding: 30px 15px;
   }
@@ -1449,6 +1789,10 @@ body.dark-mode .adjusting-hint {
     font-size: 20px;
   }
 
+
+  /* =================================================
+     STUDENTS
+  ================================================= */
 
   .students-inspire > h2 {
     font-size: 21px;
@@ -1462,14 +1806,15 @@ body.dark-mode .adjusting-hint {
 
   /* =================================================
      DISCIPLINE
-     SIZE UNCHANGED
   ================================================= */
 
   .discipline-banner {
     width: 100%;
+
     max-width: none;
 
     height: 220px;
+
     min-height: 220px;
 
     border-radius: 13px;
@@ -1480,9 +1825,11 @@ body.dark-mode .adjusting-hint {
 
   .discipline-banner img {
     width: 100%;
+
     height: 100%;
 
     max-width: none;
+
     max-height: none;
 
     object-fit: fill;
@@ -1493,21 +1840,302 @@ body.dark-mode .adjusting-hint {
   }
 
 
+  /* =================================================
+     FINAL MOTIVATION
+  ================================================= */
+
   .final-motivation h2 {
     font-size: 20px;
   }
 
 
-  /* CIRCLE PROFILE PHOTO - SMALL MOBILE */
+  /* =================================================
+     PROFILE PHOTO
+  ================================================= */
 
   .profile-view-image-wrapper {
     width: 280px;
+
     height: 280px;
 
     max-width: 85vw;
+
     max-height: 85vw;
 
     border-radius: 50%;
+  }
+
+}
+
+/* =====================================================
+   LOGOUT CONFIRMATION
+===================================================== */
+
+.logout-confirm-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(2, 6, 23, 0.72);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+
+  padding: 20px;
+
+  backdrop-filter: blur(5px);
+}
+
+
+.logout-confirm-box {
+  width: 100%;
+  max-width: 400px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 30px 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+
+  animation: logoutPopup 0.2s ease-out;
+}
+
+
+@keyframes logoutPopup {
+
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+.logout-confirm-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+}
+
+
+.logout-confirm-box h2 {
+  margin: 0 0 10px;
+
+  color: #172554;
+
+  font-size: 22px;
+}
+
+
+.logout-confirm-box p {
+  margin: 0 0 25px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+.logout-confirm-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+.logout-confirm-buttons button {
+  border: none;
+
+  min-width: 110px;
+
+  padding: 11px 20px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.logout-cancel-btn {
+  background: #e2e8f0;
+
+  color: #334155;
+}
+
+
+.logout-cancel-btn:hover {
+  background: #cbd5e1;
+
+  transform: translateY(-1px);
+}
+
+
+.logout-ok-btn {
+  background: #2563eb;
+
+  color: white;
+}
+
+
+.logout-ok-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .logout-confirm-box {
+  background: #1e293b;
+}
+
+
+body.dark-mode .logout-confirm-box h2 {
+  color: #f1f5f9;
+}
+
+
+body.dark-mode .logout-confirm-box p {
+  color: #94a3b8;
+}
+
+
+body.dark-mode .logout-confirm-icon {
+  background: #172554;
+}
+
+
+body.dark-mode .logout-cancel-btn {
+  background: #334155;
+
+  color: #e2e8f0;
+}
+
+
+body.dark-mode .logout-cancel-btn:hover {
+  background: #475569;
+}
+
+
+body.dark-mode .logout-ok-btn {
+  background: #2563eb;
+
+  color: white;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .logout-confirm-overlay {
+    padding: 18px;
+  }
+
+
+  .logout-confirm-box {
+    max-width: 340px;
+
+    padding: 25px 20px;
+
+    border-radius: 16px;
+  }
+
+
+  .logout-confirm-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 27px;
+
+    margin-bottom: 13px;
+  }
+
+
+  .logout-confirm-box h2 {
+    font-size: 19px;
+  }
+
+
+  .logout-confirm-box p {
+    font-size: 13px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .logout-confirm-buttons {
+    gap: 10px;
+  }
+
+
+  .logout-confirm-buttons button {
+    min-width: 100px;
+
+    padding: 10px 16px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .logout-confirm-box {
+    padding: 22px 16px;
+  }
+
+
+  .logout-confirm-box h2 {
+    font-size: 18px;
+  }
+
+
+  .logout-confirm-buttons button {
+    min-width: 90px;
   }
 
 }

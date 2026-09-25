@@ -4,11 +4,8 @@
 
 .files-page {
     min-height: 100vh;
-
     background: #eef4ff;
-
     padding: 40px 25px;
-
     box-sizing: border-box;
 }
 
@@ -19,7 +16,6 @@
 
 .files-container {
     max-width: 1050px;
-
     margin: 0 auto;
 }
 
@@ -30,20 +26,14 @@
 
 .files-container h1 {
     margin: 0;
-
     color: #1e293b;
-
     font-size: 32px;
-
     font-weight: 700;
 }
 
-
 .files-subtitle {
     margin: 8px 0 30px;
-
     color: #64748b;
-
     font-size: 15px;
 }
 
@@ -54,15 +44,10 @@
 
 .upload-card {
     background: #ffffff;
-
     border-radius: 16px;
-
     padding: 25px;
-
     margin-bottom: 22px;
-
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -72,30 +57,19 @@
 
 .upload-card input[type="file"] {
     width: 100%;
-
     padding: 15px;
-
     border: 2px dashed #cbd5e1;
-
     border-radius: 12px;
-
     background: #f8fafc;
-
     font-size: 14px;
-
     color: #475569;
-
     cursor: pointer;
-
     box-sizing: border-box;
-
     transition: 0.2s ease;
 }
 
-
 .upload-card input[type="file"]:hover {
     border-color: #6366f1;
-
     background: #f5f7ff;
 }
 
@@ -106,17 +80,11 @@
 
 .selected-file {
     margin: 15px 0 0;
-
     padding: 11px 14px;
-
     background: #f1f5ff;
-
     border-radius: 8px;
-
     color: #334155;
-
     font-size: 14px;
-
     word-break: break-word;
 }
 
@@ -127,11 +95,8 @@
 
 .upload-card button {
     margin-top: 16px;
-
     padding: 12px 24px;
-
     border: none;
-
     border-radius: 9px;
 
     background: linear-gradient(
@@ -141,16 +106,11 @@
     );
 
     color: white;
-
     font-size: 15px;
-
     font-weight: 600;
-
     cursor: pointer;
-
     transition: 0.2s ease;
 }
-
 
 .upload-card button:hover {
     transform: translateY(-1px);
@@ -159,14 +119,10 @@
         0 5px 12px rgba(79, 70, 229, 0.25);
 }
 
-
 .upload-card button:disabled {
     opacity: 0.6;
-
     cursor: not-allowed;
-
     transform: none;
-
     box-shadow: none;
 }
 
@@ -177,17 +133,14 @@
 
 .file-message {
     padding: 13px 16px;
-
     margin-bottom: 20px;
 
     background: #ffffff;
 
     border-left: 4px solid #6366f1;
-
     border-radius: 8px;
 
     color: #334155;
-
     font-size: 14px;
 
     box-shadow:
@@ -201,15 +154,12 @@
 
 .file-list {
     background: #ffffff;
-
     border-radius: 16px;
-
     padding: 25px;
 
     box-shadow:
         0 5px 20px rgba(0, 0, 0, 0.08);
 }
-
 
 .file-list h2 {
     margin: 0 0 20px;
@@ -217,7 +167,6 @@
     color: #1e293b;
 
     font-size: 21px;
-
     font-weight: 700;
 }
 
@@ -230,17 +179,14 @@
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
 
     padding: 16px;
-
     margin-bottom: 12px;
 
     border: 1px solid #e2e8f0;
-
     border-radius: 12px;
 
     background: #ffffff;
@@ -248,11 +194,9 @@
     transition: 0.2s ease;
 }
 
-
 .file-item:last-child {
     margin-bottom: 0;
 }
-
 
 .file-item:hover {
     background: #f8fafc;
@@ -287,13 +231,11 @@
 
 .file-icon {
     width: 46px;
-
     height: 46px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     background: #eef2ff;
@@ -383,13 +325,10 @@
     transition: 0.2s ease;
 }
 
-
 .file-actions button:hover {
     transform: translateY(-1px);
-
     opacity: 0.9;
 }
-
 
 .file-actions button:active {
     transform: translateY(0);
@@ -403,7 +342,6 @@
 .file-actions .view-button {
     background: #0ea5e9;
 }
-
 
 .file-actions .view-button:hover {
     background: #0284c7;
@@ -421,7 +359,6 @@
     background: #4f46e5;
 }
 
-
 .file-actions .download-button:hover {
     background: #4338ca;
 
@@ -437,7 +374,6 @@
 .file-actions .delete-button {
     background: #ef4444;
 }
-
 
 .file-actions .delete-button:hover {
     background: #dc2626;
@@ -459,17 +395,13 @@
     color: #64748b;
 }
 
-
 .empty-icon {
     font-size: 52px;
-
     margin-bottom: 12px;
 }
 
-
 .empty-files p {
     margin: 0;
-
     font-size: 15px;
 }
 
@@ -484,23 +416,18 @@
         padding: 30px 20px;
     }
 
-
     .file-item {
         align-items: flex-start;
     }
-
 
     .file-name {
         max-width: 350px;
     }
 
-
     .file-actions {
         flex-wrap: wrap;
-
         justify-content: flex-end;
     }
-
 }
 
 
@@ -512,28 +439,24 @@
 
     .files-page {
         padding: 25px 15px;
+        min-height: 100vh;
     }
-
 
     .files-container h1 {
         font-size: 27px;
     }
 
-
     .files-subtitle {
         margin-bottom: 22px;
     }
-
 
     .upload-card {
         padding: 20px;
     }
 
-
     .file-list {
         padding: 20px;
     }
-
 
     .file-item {
         flex-direction: column;
@@ -543,21 +466,17 @@
         gap: 15px;
     }
 
-
     .file-info {
         width: 100%;
     }
-
 
     .file-name {
         max-width: 100%;
     }
 
-
     .file-details {
         max-width: 100%;
     }
-
 
     .file-actions {
         width: 100%;
@@ -570,13 +489,10 @@
         gap: 8px;
     }
 
-
     .file-actions button {
         width: 100%;
-
         padding: 10px 8px;
     }
-
 }
 
 
@@ -590,61 +506,48 @@
         padding: 20px 12px;
     }
 
-
     .upload-card,
     .file-list {
         padding: 18px;
     }
 
-
     .files-container h1 {
         font-size: 24px;
     }
-
 
     .files-subtitle {
         font-size: 14px;
     }
 
-
     .file-list h2 {
         font-size: 19px;
     }
-
 
     .file-item {
         padding: 13px;
     }
 
-
     .file-icon {
         width: 42px;
-
         height: 42px;
-
         font-size: 21px;
     }
-
 
     .file-name {
         font-size: 14px;
     }
 
-
     .file-details {
         font-size: 12px;
     }
-
 
     .file-actions {
         grid-template-columns: 1fr;
     }
 
-
     .file-actions button {
         width: 100%;
     }
-
 }
 
 
@@ -658,22 +561,18 @@
         padding: 15px 10px;
     }
 
-
     .upload-card,
     .file-list {
         padding: 15px;
     }
 
-
     .upload-card button {
         width: 100%;
     }
 
-
     .file-info {
         gap: 10px;
     }
-
 }
 
 
@@ -683,28 +582,16 @@
 
 body.dark-mode .files-page {
     background: #0f172a;
-
     color: #f8fafc;
 }
-
-
-/* =====================================================
-   DARK MODE - HEADER
-===================================================== */
 
 body.dark-mode .files-container h1 {
     color: #f8fafc;
 }
 
-
 body.dark-mode .files-subtitle {
     color: #94a3b8;
 }
-
-
-/* =====================================================
-   DARK MODE - UPLOAD CARD
-===================================================== */
 
 body.dark-mode .upload-card {
     background: #1e293b;
@@ -713,41 +600,21 @@ body.dark-mode .upload-card {
         0 5px 20px rgba(0, 0, 0, 0.30);
 }
 
-
-/* =====================================================
-   DARK MODE - FILE INPUT
-===================================================== */
-
 body.dark-mode .upload-card input[type="file"] {
     background: #0f172a;
-
     border-color: #475569;
-
     color: #cbd5e1;
 }
-
 
 body.dark-mode .upload-card input[type="file"]:hover {
     border-color: #818cf8;
-
     background: #172033;
 }
 
-
-/* =====================================================
-   DARK MODE - SELECTED FILE
-===================================================== */
-
 body.dark-mode .selected-file {
     background: #172554;
-
     color: #cbd5e1;
 }
-
-
-/* =====================================================
-   DARK MODE - MESSAGE
-===================================================== */
 
 body.dark-mode .file-message {
     background: #1e293b;
@@ -760,11 +627,6 @@ body.dark-mode .file-message {
         0 3px 12px rgba(0, 0, 0, 0.25);
 }
 
-
-/* =====================================================
-   DARK MODE - FILE LIST
-===================================================== */
-
 body.dark-mode .file-list {
     background: #1e293b;
 
@@ -772,22 +634,14 @@ body.dark-mode .file-list {
         0 5px 20px rgba(0, 0, 0, 0.30);
 }
 
-
 body.dark-mode .file-list h2 {
     color: #f8fafc;
 }
 
-
-/* =====================================================
-   DARK MODE - FILE ITEM
-===================================================== */
-
 body.dark-mode .file-item {
     background: #1e293b;
-
     border-color: #334155;
 }
-
 
 body.dark-mode .file-item:hover {
     background: #263449;
@@ -796,55 +650,25 @@ body.dark-mode .file-item:hover {
         0 3px 12px rgba(0, 0, 0, 0.25);
 }
 
-
-/* =====================================================
-   DARK MODE - FILE ICON
-===================================================== */
-
 body.dark-mode .file-icon {
     background: #312e81;
 }
-
-
-/* =====================================================
-   DARK MODE - FILE NAME
-===================================================== */
 
 body.dark-mode .file-name {
     color: #f1f5f9;
 }
 
-
-/* =====================================================
-   DARK MODE - FILE DETAILS
-===================================================== */
-
 body.dark-mode .file-details {
     color: #94a3b8;
 }
-
-
-/* =====================================================
-   DARK MODE - EMPTY FILES
-===================================================== */
 
 body.dark-mode .empty-files {
     color: #94a3b8;
 }
 
-
-/* =====================================================
-   DARK MODE - EMPTY ICON
-===================================================== */
-
 body.dark-mode .empty-icon {
     color: #c7d2fe;
 }
-
-
-/* =====================================================
-   DARK MODE - UPLOAD BUTTON
-===================================================== */
 
 body.dark-mode .upload-card button {
     background: linear-gradient(
@@ -854,21 +678,293 @@ body.dark-mode .upload-card button {
     );
 }
 
-
-/* =====================================================
-   DARK MODE - ACTION BUTTONS
-===================================================== */
-
 body.dark-mode .file-actions .view-button {
     background: #0284c7;
 }
-
 
 body.dark-mode .file-actions .download-button {
     background: #4f46e5;
 }
 
-
 body.dark-mode .file-actions .delete-button {
     background: #dc2626;
+}
+
+
+/* =====================================================
+   MOBILE COLOR OVERRIDES
+   IMPORTANT: KEEP THIS SECTION AT THE VERY END
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* LIGHT MOBILE PAGE */
+    .files-page {
+        background: #eef4ff !important;
+        color: #1e293b !important;
+    }
+
+    .files-container h1 {
+        color: #1e293b !important;
+    }
+
+    .files-subtitle {
+        color: #64748b !important;
+    }
+
+    /* UPLOAD CARD */
+    .upload-card {
+        background: #ffffff !important;
+
+        box-shadow:
+            0 5px 20px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    .upload-card input[type="file"] {
+        background: #f8fafc !important;
+        border-color: #cbd5e1 !important;
+        color: #475569 !important;
+    }
+
+    .selected-file {
+        background: #f1f5ff !important;
+        color: #334155 !important;
+    }
+
+    /* MESSAGE */
+    .file-message {
+        background: #ffffff !important;
+        border-left-color: #6366f1 !important;
+        color: #334155 !important;
+    }
+
+    /* FILE LIST */
+    .file-list {
+        background: #ffffff !important;
+
+        box-shadow:
+            0 5px 20px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    .file-list h2 {
+        color: #1e293b !important;
+    }
+
+    /* FILE ITEM */
+    .file-item {
+        background: #ffffff !important;
+        border-color: #e2e8f0 !important;
+    }
+
+    .file-item:hover {
+        background: #f8fafc !important;
+    }
+
+    /* FILE ICON */
+    .file-icon {
+        background: #eef2ff !important;
+    }
+
+    /* FILE TEXT */
+    .file-name {
+        color: #1e293b !important;
+    }
+
+    .file-details {
+        color: #64748b !important;
+    }
+
+    /* EMPTY */
+    .empty-files {
+        color: #64748b !important;
+    }
+
+    .empty-icon {
+        color: #6366f1 !important;
+    }
+
+    /* BUTTONS */
+    .file-actions .view-button {
+        background: #0ea5e9 !important;
+        color: #ffffff !important;
+    }
+
+    .file-actions .download-button {
+        background: #4f46e5 !important;
+        color: #ffffff !important;
+    }
+
+    .file-actions .delete-button {
+        background: #ef4444 !important;
+        color: #ffffff !important;
+    }
+
+    .upload-card button {
+        background: linear-gradient(
+            135deg,
+            #6366f1,
+            #4f46e5
+        ) !important;
+
+        color: #ffffff !important;
+    }
+}
+
+
+/* =====================================================
+   MOBILE DARK MODE COLOR OVERRIDES
+   IMPORTANT: KEEP THIS SECTION AFTER MOBILE COLORS
+===================================================== */
+
+@media (max-width: 700px) {
+
+    body.dark-mode .files-page {
+        background: #0f172a !important;
+        color: #f8fafc !important;
+    }
+
+    body.dark-mode .files-container h1 {
+        color: #f8fafc !important;
+    }
+
+    body.dark-mode .files-subtitle {
+        color: #94a3b8 !important;
+    }
+
+    /* UPLOAD CARD */
+    body.dark-mode .upload-card {
+        background: #1e293b !important;
+
+        box-shadow:
+            0 5px 20px rgba(0, 0, 0, 0.30) !important;
+    }
+
+    /* FILE INPUT */
+    body.dark-mode .upload-card input[type="file"] {
+        background: #0f172a !important;
+        border-color: #475569 !important;
+        color: #cbd5e1 !important;
+    }
+
+    body.dark-mode .upload-card input[type="file"]:hover {
+        background: #172033 !important;
+        border-color: #818cf8 !important;
+    }
+
+    /* SELECTED FILE */
+    body.dark-mode .selected-file {
+        background: #172554 !important;
+        color: #cbd5e1 !important;
+    }
+
+    /* MESSAGE */
+    body.dark-mode .file-message {
+        background: #1e293b !important;
+        border-left-color: #818cf8 !important;
+        color: #cbd5e1 !important;
+    }
+
+    /* FILE LIST */
+    body.dark-mode .file-list {
+        background: #1e293b !important;
+
+        box-shadow:
+            0 5px 20px rgba(0, 0, 0, 0.30) !important;
+    }
+
+    body.dark-mode .file-list h2 {
+        color: #f8fafc !important;
+    }
+
+    /* FILE ITEM */
+    body.dark-mode .file-item {
+        background: #1e293b !important;
+        border-color: #334155 !important;
+    }
+
+    body.dark-mode .file-item:hover {
+        background: #263449 !important;
+    }
+
+    /* FILE ICON */
+    body.dark-mode .file-icon {
+        background: #312e81 !important;
+    }
+
+    /* FILE NAME */
+    body.dark-mode .file-name {
+        color: #f1f5f9 !important;
+    }
+
+    /* FILE DETAILS */
+    body.dark-mode .file-details {
+        color: #94a3b8 !important;
+    }
+
+    /* EMPTY */
+    body.dark-mode .empty-files {
+        color: #94a3b8 !important;
+    }
+
+    body.dark-mode .empty-icon {
+        color: #c7d2fe !important;
+    }
+
+    /* UPLOAD BUTTON */
+    body.dark-mode .upload-card button {
+        background: linear-gradient(
+            135deg,
+            #6366f1,
+            #4f46e5
+        ) !important;
+
+        color: #ffffff !important;
+    }
+
+    /* ACTION BUTTONS */
+    body.dark-mode .file-actions .view-button {
+        background: #0284c7 !important;
+        color: #ffffff !important;
+    }
+
+    body.dark-mode .file-actions .download-button {
+        background: #4f46e5 !important;
+        color: #ffffff !important;
+    }
+
+    body.dark-mode .file-actions .delete-button {
+        background: #dc2626 !important;
+        color: #ffffff !important;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE COLOR FIX
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .files-page {
+        background: #eef4ff !important;
+    }
+
+    .upload-card,
+    .file-list {
+        background: #ffffff !important;
+    }
+
+    .file-item {
+        background: #ffffff !important;
+    }
+
+    body.dark-mode .files-page {
+        background: #0f172a !important;
+    }
+
+    body.dark-mode .upload-card,
+    body.dark-mode .file-list,
+    body.dark-mode .file-item {
+        background: #1e293b !important;
+    }
 }

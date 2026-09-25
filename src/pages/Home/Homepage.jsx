@@ -15,10 +15,22 @@ function Homepage() {
   const [email, setEmail] = useState("");
   const [profilePicture, setProfilePicture] = useState("");
 
-  // Profile viewer
+  // =====================================================
+  // PROFILE VIEWER
+  // =====================================================
+
   const [showProfilePhoto, setShowProfilePhoto] = useState(false);
 
-  // Image adjustment
+  // =====================================================
+  // LOGOUT CONFIRMATION
+  // =====================================================
+
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+
+  // =====================================================
+  // IMAGE ADJUSTMENT
+  // =====================================================
+
   const [imageZoom, setImageZoom] = useState(1);
   const [imageX, setImageX] = useState(50);
   const [imageY, setImageY] = useState(50);
@@ -37,44 +49,48 @@ function Homepage() {
     y: 50
   });
 
-  const motivations = [
-  {
-    quote: "Small progress every day leads to big results.",
-    text: "Stay focused. Stay consistent. 💪"
-  },
-  {
-    quote: "Success is the sum of small efforts repeated every day.",
-    text: "Keep going. Your efforts will pay off. 🌟"
-  },
-  {
-    quote: "The secret of getting ahead is getting started.",
-    text: "Start today. Your future self will thank you. 🚀"
-  },
-  {
-    quote: "Don't watch the clock; do what it does. Keep going.",
-    text: "Every minute of effort counts. ⏳"
-  },
-  {
-    quote: "Discipline is choosing between what you want now and what you want most.",
-    text: "Stay disciplined. Stay committed. 🔥"
-  },
-  {
-    quote: "Believe you can, and you're halfway there.",
-    text: "Believe in yourself and keep moving forward. 💙"
-  }
-];
-
-const today = new Date();
-
-const dayOfYear = Math.floor(
-  (today - new Date(today.getFullYear(), 0, 0)) /
-  (1000 * 60 * 60 * 24)
-);
-
-const todayMotivation =
-  motivations[dayOfYear % motivations.length];
-
   const isDragging = useRef(false);
+
+  // =====================================================
+  // MOTIVATIONS
+  // =====================================================
+
+  const motivations = [
+    {
+      quote: "Small progress every day leads to big results.",
+      text: "Stay focused. Stay consistent. 💪"
+    },
+    {
+      quote: "Success is the sum of small efforts repeated every day.",
+      text: "Keep going. Your efforts will pay off. 🌟"
+    },
+    {
+      quote: "The secret of getting ahead is getting started.",
+      text: "Start today. Your future self will thank you. 🚀"
+    },
+    {
+      quote: "Don't watch the clock; do what it does. Keep going.",
+      text: "Every minute of effort counts. ⏳"
+    },
+    {
+      quote: "Discipline is choosing between what you want now and what you want most.",
+      text: "Stay disciplined. Stay committed. 🔥"
+    },
+    {
+      quote: "Believe you can, and you're halfway there.",
+      text: "Believe in yourself and keep moving forward. 💙"
+    }
+  ];
+
+  const today = new Date();
+
+  const dayOfYear = Math.floor(
+    (today - new Date(today.getFullYear(), 0, 0)) /
+      (1000 * 60 * 60 * 24)
+  );
+
+  const todayMotivation =
+    motivations[dayOfYear % motivations.length];
 
 
   // =====================================================
@@ -94,6 +110,7 @@ const todayMotivation =
       savedName.trim().startsWith("{") &&
       savedName.trim().endsWith("}")
     ) {
+
       try {
 
         const parsedName = JSON.parse(savedName);
@@ -106,8 +123,11 @@ const todayMotivation =
         }
 
       } catch (error) {
+
         console.log("Invalid name format");
+
       }
+
     }
 
     const finalName = cleanName || "User";
@@ -158,15 +178,21 @@ const todayMotivation =
     }
 
     if (!file.type.startsWith("image/")) {
+
       alert("Please select an image file.");
+
       return;
+
     }
 
     if (!email) {
+
       alert(
         "User email not found. Please login again."
       );
+
       return;
+
     }
 
     const reader = new FileReader();
@@ -177,10 +203,7 @@ const todayMotivation =
 
       setProfilePicture(imageData);
 
-      // =====================================================
-      // SAVE PHOTO FOR THIS USER ONLY
-      // =====================================================
-
+      // Save photo for this user only
       localStorage.setItem(
         `profilePicture_${email}`,
         imageData
@@ -195,7 +218,7 @@ const todayMotivation =
 
     reader.readAsDataURL(file);
 
-    // Allow selecting the same image again
+    // Allow selecting same image again
     event.target.value = "";
 
   };
@@ -226,7 +249,6 @@ const todayMotivation =
     setShowProfilePhoto(false);
     setIsAdjusting(false);
 
-    // Reset dragging
     isDragging.current = false;
 
   };
@@ -293,7 +315,6 @@ const todayMotivation =
       event.clientY -
       dragStart.current.y;
 
-    // Convert mouse movement into percentage
     const newX =
       imageStart.current.x -
       deltaX / 3;
@@ -462,7 +483,7 @@ const todayMotivation =
 
 
   // =====================================================
-  // ESCAPE
+  // ESCAPE KEY
   // =====================================================
 
   useEffect(() => {
@@ -470,7 +491,17 @@ const todayMotivation =
     const handleEscape = (event) => {
 
       if (event.key === "Escape") {
-        closeProfilePhoto();
+
+        if (showLogoutConfirm) {
+
+          setShowLogoutConfirm(false);
+
+        } else if (showProfilePhoto) {
+
+          closeProfilePhoto();
+
+        }
+
       }
 
     };
@@ -489,16 +520,27 @@ const todayMotivation =
 
     };
 
-  }, []);
+  }, [showLogoutConfirm, showProfilePhoto]);
 
 
   // =====================================================
-  // LOGOUT
+  // LOGOUT - OPEN CONFIRMATION
   // =====================================================
 
   const handleLogout = (event) => {
 
     event.preventDefault();
+
+    setShowLogoutConfirm(true);
+
+  };
+
+
+  // =====================================================
+  // CONFIRM LOGOUT
+  // =====================================================
+
+  const confirmLogout = () => {
 
     // Remove only login session
     localStorage.removeItem("token");
@@ -507,6 +549,17 @@ const todayMotivation =
     // It is stored using the user's email.
 
     window.location.href = "/login";
+
+  };
+
+
+  // =====================================================
+  // CANCEL LOGOUT
+  // =====================================================
+
+  const cancelLogout = () => {
+
+    setShowLogoutConfirm(false);
 
   };
 
@@ -532,8 +585,14 @@ const todayMotivation =
             href="#home"
             className="sidebar-link active"
           >
-            <span className="nav-icon">🏠</span>
-            <span>Home</span>
+            <span className="nav-icon">
+              🏠
+            </span>
+
+            <span>
+              Home
+            </span>
+
           </a>
 
 
@@ -541,6 +600,7 @@ const todayMotivation =
             to="/create-task"
             className="home-sidebar-link"
           >
+
             <span className="home-nav-icon">
               ➕
             </span>
@@ -548,6 +608,7 @@ const todayMotivation =
             <span>
               Create Task
             </span>
+
           </Link>
 
 
@@ -555,6 +616,7 @@ const todayMotivation =
             to="/my-tasks"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               📚
             </span>
@@ -562,6 +624,7 @@ const todayMotivation =
             <span>
               My Tasks
             </span>
+
           </Link>
 
 
@@ -569,6 +632,7 @@ const todayMotivation =
             to="/calendar"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               📅
             </span>
@@ -576,6 +640,7 @@ const todayMotivation =
             <span>
               Calendar
             </span>
+
           </Link>
 
 
@@ -583,6 +648,7 @@ const todayMotivation =
             to="/dashboard"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               📊
             </span>
@@ -590,6 +656,7 @@ const todayMotivation =
             <span>
               Dashboard
             </span>
+
           </Link>
 
 
@@ -597,6 +664,7 @@ const todayMotivation =
             to="/Progress"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               📈
             </span>
@@ -604,6 +672,7 @@ const todayMotivation =
             <span>
               Progress
             </span>
+
           </Link>
 
 
@@ -611,6 +680,7 @@ const todayMotivation =
             to="/Notifications"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               🔔
             </span>
@@ -618,6 +688,7 @@ const todayMotivation =
             <span>
               Notifications
             </span>
+
           </Link>
 
 
@@ -625,13 +696,15 @@ const todayMotivation =
             to="/Chatbot"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               🤖
             </span>
 
             <span>
-              AI
+              AI Study Assistant
             </span>
+
           </Link>
 
 
@@ -639,6 +712,7 @@ const todayMotivation =
             to="/Files"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               📁
             </span>
@@ -646,6 +720,7 @@ const todayMotivation =
             <span>
               Files
             </span>
+
           </Link>
 
 
@@ -653,6 +728,7 @@ const todayMotivation =
             to="/Settings"
             className="sidebar-link"
           >
+
             <span className="nav-icon">
               ⚙️
             </span>
@@ -660,14 +736,20 @@ const todayMotivation =
             <span>
               Settings
             </span>
+
           </Link>
 
+
+          {/* =====================================================
+              LOGOUT
+          ===================================================== */}
 
           <a
             href="#logout"
             className="sidebar-link logout-link"
             onClick={handleLogout}
           >
+
             <span className="nav-icon">
               🚪
             </span>
@@ -675,6 +757,7 @@ const todayMotivation =
             <span>
               Logout
             </span>
+
           </a>
 
         </nav>
@@ -730,9 +813,7 @@ const todayMotivation =
                 <div className="profile-placeholder">
 
                   {name
-                    ? name
-                        .charAt(0)
-                        .toUpperCase()
+                    ? name.charAt(0).toUpperCase()
                     : "U"}
 
                 </div>
@@ -785,7 +866,7 @@ const todayMotivation =
 
 
           {/* =====================================================
-              EXISTING WELCOME CARD
+              WELCOME CARD
           ===================================================== */}
 
           <div className="welcome-card">
@@ -812,26 +893,25 @@ const todayMotivation =
           </div>
 
 
-          
-{/* =====================================================
-    TODAY'S MOTIVATION
-===================================================== */}
+          {/* =====================================================
+              TODAY'S MOTIVATION
+          ===================================================== */}
 
-<section className="today-motivation">
+          <section className="today-motivation">
 
-  <span className="motivation-label">
-    TODAY'S MOTIVATION
-  </span>
+            <span className="motivation-label">
+              TODAY'S MOTIVATION
+            </span>
 
-  <h2>
-    "{todayMotivation.quote}"
-  </h2>
+            <h2>
+              "{todayMotivation.quote}"
+            </h2>
 
-  <p>
-    {todayMotivation.text}
-  </p>
+            <p>
+              {todayMotivation.text}
+            </p>
 
-</section>
+          </section>
 
 
           {/* =====================================================
@@ -937,15 +1017,10 @@ const todayMotivation =
 
           <section className="discipline-banner">
 
-            
-      
-
-              <img
-                src={studyIllustration}
-                alt="Students studying"
-              />
-
-          
+            <img
+              src={studyIllustration}
+              alt="Students studying"
+            />
 
           </section>
 
@@ -1107,6 +1182,68 @@ const todayMotivation =
               </p>
 
             )}
+
+          </div>
+
+        </div>
+
+      )}
+
+
+      {/* =====================================================
+          LOGOUT CONFIRMATION
+      ===================================================== */}
+
+      {showLogoutConfirm && (
+
+        <div
+          className="logout-confirm-overlay"
+          onClick={cancelLogout}
+        >
+
+          <div
+            className="logout-confirm-box"
+            onClick={(event) =>
+              event.stopPropagation()
+            }
+          >
+
+            <div className="logout-confirm-icon">
+              🚪
+            </div>
+
+
+            <h2>
+              Do you want to logout?
+            </h2>
+
+
+            <p>
+              Are you sure you want to logout
+              from your account?
+            </p>
+
+
+            <div className="logout-confirm-buttons">
+
+              <button
+                type="button"
+                className="logout-cancel-btn"
+                onClick={cancelLogout}
+              >
+                Cancel
+              </button>
+
+
+              <button
+                type="button"
+                className="logout-ok-btn"
+                onClick={confirmLogout}
+              >
+                OK
+              </button>
+
+            </div>
 
           </div>
 

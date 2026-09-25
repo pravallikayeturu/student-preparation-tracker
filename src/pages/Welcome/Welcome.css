@@ -45,7 +45,7 @@
 }
 
 
-/* Center Logo */
+/* ================= LOGO ================= */
 
 .logo {
   text-align: center;
@@ -60,33 +60,50 @@
 }
 
 
-/* Right Side */
+/* ================= RIGHT SIDE ================= */
 
 .nav-right {
   display: flex;
 
   justify-content: flex-end;
+
+  align-items: center;
+
+  min-width: 0;
 }
 
 
-/* Sign Up */
+/* ================= SIGN UP ================= */
 
 .signup-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   text-decoration: none;
 
   padding: 11px 23px;
+
+  min-height: 42px;
 
   border-radius: 8px;
 
   background: #2563eb;
 
-  color: white;
+  color: #ffffff;
 
   font-size: 15px;
 
   font-weight: 600;
 
-  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .signup-btn:hover {
@@ -124,14 +141,14 @@
 }
 
 
-/* Hero Content */
+/* ================= HERO CONTENT ================= */
 
 .hero-content {
   max-width: 580px;
 }
 
 
-/* Small Heading */
+/* ================= SMALL HEADING ================= */
 
 .small-title {
   color: #2563eb;
@@ -146,7 +163,7 @@
 }
 
 
-/* Main Heading */
+/* ================= MAIN HEADING ================= */
 
 .hero h1 {
   font-size: 56px;
@@ -165,7 +182,7 @@
 }
 
 
-/* Description */
+/* ================= DESCRIPTION ================= */
 
 .hero-description {
   max-width: 540px;
@@ -183,7 +200,11 @@
 /* ================= GET STARTED ================= */
 
 .hero-btn {
-  display: inline-block;
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   text-decoration: none;
 
@@ -246,7 +267,7 @@
 }
 
 
-/* Book Icon */
+/* ================= BOOK ICON ================= */
 
 .book-icon {
   width: 80px;
@@ -269,7 +290,7 @@
 }
 
 
-/* Card Heading */
+/* ================= CARD HEADING ================= */
 
 .student-card h2 {
   font-size: 25px;
@@ -280,9 +301,9 @@
 }
 
 
-/* Card Text */
+/* ================= CARD TEXT ================= */
 
-.student-card p {
+.student-card > p {
   color: #64748b;
 
   line-height: 1.6;
@@ -291,62 +312,89 @@
 }
 
 
-/* ================= PROGRESS ================= */
+/* ================= CONSISTENCY BOX ================= */
 
-.progress-box {
-  margin-top: 30px;
+.consistency-box {
+  margin-top: 24px;
 
-  padding: 18px;
+  padding: 16px;
 
   border-radius: 14px;
 
-  background: #f8fafc;
+  background: rgba(37, 99, 235, 0.08);
 
-  text-align: left;
-}
+  border: 1px solid rgba(37, 99, 235, 0.15);
 
-.progress-info {
   display: flex;
 
-  justify-content: space-between;
+  align-items: center;
 
-  margin-bottom: 10px;
+  gap: 14px;
 
-  color: #475569;
+  text-align: left;
 
-  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-.progress-info strong {
-  color: #2563eb;
-}
+.consistency-box:hover {
+  transform: translateY(-2px);
 
+  border-color: rgba(37, 99, 235, 0.3);
 
-/* Progress Background */
-
-.progress-bar {
-  width: 100%;
-
-  height: 8px;
-
-  background: #dbeafe;
-
-  border-radius: 10px;
-
-  overflow: hidden;
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.08);
 }
 
 
-/* Progress */
+/* ================= CONSISTENCY ICON ================= */
 
-.progress {
-  width: 75%;
+.consistency-icon {
+  width: 44px;
 
-  height: 100%;
+  height: 44px;
 
-  background: #2563eb;
+  min-width: 44px;
 
-  border-radius: 10px;
+  border-radius: 12px;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+
+/* ================= CONSISTENCY CONTENT ================= */
+
+.consistency-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.consistency-content h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #172554;
+}
+
+.consistency-content p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #64748b;
 }
 
 
@@ -361,7 +409,7 @@
 }
 
 
-/* Features Heading */
+/* ================= FEATURES HEADING ================= */
 
 .features h2 {
   font-size: 34px;
@@ -372,7 +420,7 @@
 }
 
 
-/* Features Subtitle */
+/* ================= FEATURES SUBTITLE ================= */
 
 .features-subtitle {
   color: #64748b;
@@ -381,7 +429,7 @@
 }
 
 
-/* Feature Container */
+/* ================= FEATURE CONTAINER ================= */
 
 .feature-container {
   display: grid;
@@ -392,7 +440,7 @@
 }
 
 
-/* Feature Card */
+/* ================= FEATURE CARD ================= */
 
 .feature-card {
   padding: 30px 22px;
@@ -416,7 +464,7 @@
 }
 
 
-/* Feature Icon */
+/* ================= FEATURE ICON ================= */
 
 .feature-icon {
   width: 60px;
@@ -439,7 +487,7 @@
 }
 
 
-/* Feature Heading */
+/* ================= FEATURE HEADING ================= */
 
 .feature-card h3 {
   font-size: 18px;
@@ -450,7 +498,7 @@
 }
 
 
-/* Feature Description */
+/* ================= FEATURE DESCRIPTION ================= */
 
 .feature-card p {
   color: #64748b;
@@ -474,7 +522,7 @@
 }
 
 
-/* Bottom Heading */
+/* ================= BOTTOM HEADING ================= */
 
 .bottom-section h2 {
   font-size: 34px;
@@ -483,7 +531,7 @@
 }
 
 
-/* Bottom Description */
+/* ================= BOTTOM DESCRIPTION ================= */
 
 .bottom-section p {
   color: #cbd5e1;
@@ -494,7 +542,7 @@
 }
 
 
-/* Create Account - Plain Text */
+/* ================= CREATE ACCOUNT ================= */
 
 .bottom-text {
   font-size: 16px;
@@ -508,6 +556,10 @@
 /* ================= TABLET ================= */
 
 @media (max-width: 900px) {
+
+  .navbar {
+    padding: 0 30px;
+  }
 
   .hero {
     flex-direction: column;
@@ -537,30 +589,134 @@
 
 @media (max-width: 600px) {
 
+  /* =========================
+     NAVBAR
+  ========================= */
+
   .navbar {
-    padding: 0 20px;
+    width: 100%;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    gap: 10px;
   }
+
+
+  /* Logo */
 
   .logo {
-    font-size: 16px;
+    flex: 1;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
   }
+
+
+  /* Right side */
+
+  .nav-right {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+  }
+
+
+  /* =========================
+     SIGN UP BUTTON
+  ========================= */
 
   .signup-btn {
-    padding: 9px 14px;
+    padding: 9px 15px;
+
+    min-height: 38px;
+
+    border-radius: 8px;
 
     font-size: 13px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
   }
 
+
+  /* =========================
+     HERO
+  ========================= */
+
   .hero {
+    width: 100%;
+
     padding: 50px 20px;
+
+    gap: 40px;
+
+    overflow: hidden;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    max-width: 100%;
   }
 
   .hero h1 {
     font-size: 40px;
+
+    line-height: 1.15;
   }
 
   .hero-description {
+    width: 100%;
+
     font-size: 16px;
+
+    line-height: 1.6;
+  }
+
+
+  /* =========================
+     HERO BUTTON
+  ========================= */
+
+  .hero-btn {
+    padding: 13px 23px;
+
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     STUDENT CARD
+  ========================= */
+
+  .hero-image {
+    width: 100%;
+
+    max-width: 100%;
   }
 
   .student-card {
@@ -569,17 +725,157 @@
     max-width: 350px;
 
     padding: 30px;
+
+    transform: none;
+  }
+
+  .student-card:hover {
+    transform: translateY(-4px);
+  }
+
+
+  /* =========================
+     CONSISTENCY BOX
+  ========================= */
+
+  .consistency-box {
+    margin-top: 20px;
+
+    padding: 14px;
+
+    gap: 12px;
+
+    border-radius: 13px;
+
+    text-align: left;
+  }
+
+  .consistency-icon {
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+  }
+
+  .consistency-content h3 {
+    font-size: 15px;
+
+    margin-bottom: 4px;
+  }
+
+  .consistency-content p {
+    font-size: 12px;
+
+    line-height: 1.45;
+  }
+
+
+  /* =========================
+     FEATURES
+  ========================= */
+
+  .features {
+    padding: 60px 20px;
   }
 
   .feature-container {
     grid-template-columns: 1fr;
+
+    gap: 16px;
   }
 
   .features h2 {
     font-size: 27px;
   }
 
+
+  /* =========================
+     BOTTOM
+  ========================= */
+
+  .bottom-section {
+    padding: 60px 20px;
+  }
+
   .bottom-section h2 {
     font-size: 27px;
+  }
+
+  .bottom-section p {
+    font-size: 14px;
+  }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 380px) {
+
+  .navbar {
+    height: 60px;
+
+    padding: 0 10px;
+
+    gap: 7px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .signup-btn {
+    padding: 8px 12px;
+
+    min-height: 36px;
+
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .student-card {
+    padding: 25px 20px;
+  }
+
+
+  /* =========================
+     SMALL MOBILE CONSISTENCY
+  ========================= */
+
+  .consistency-box {
+    padding: 12px;
+
+    gap: 10px;
+  }
+
+  .consistency-icon {
+    width: 36px;
+
+    height: 36px;
+
+    min-width: 36px;
+
+    font-size: 18px;
+  }
+
+  .consistency-content h3 {
+    font-size: 14px;
+  }
+
+  .consistency-content p {
+    font-size: 11px;
+
+    line-height: 1.4;
   }
 }

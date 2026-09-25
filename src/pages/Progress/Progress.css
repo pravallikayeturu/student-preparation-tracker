@@ -350,11 +350,14 @@
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .subject-item:hover {
   transform: translateY(-1px);
+
+  background: #f5f8ff;
 
   box-shadow:
     0 4px 12px
@@ -677,31 +680,241 @@
 @media (max-width: 600px) {
 
   .progress-page {
+    min-height: 100vh;
+
+    width: 100%;
+
     padding: 20px 15px;
+
+    background: #eef4ff !important;
+
+    overflow-x: hidden;
+  }
+
+  .progress-header {
+    margin-bottom: 18px;
   }
 
   .progress-header h1 {
     font-size: 24px;
+
+    color: #172033 !important;
   }
+
+  .progress-header p {
+    color: #64748b !important;
+  }
+
+
+  /* ===============================
+     SUMMARY
+  =============================== */
 
   .progress-summary {
     grid-template-columns: 1fr;
+
+    gap: 12px;
   }
 
-  .progress-card {
-    padding: 16px;
+  .summary-card {
+    background: #ffffff !important;
+
+    border: 1px solid #bfdbfe !important;
+
+    box-shadow:
+      0 4px 14px
+      rgba(37, 99, 235, 0.08) !important;
   }
+
+  .summary-icon {
+    background: #dbeafe !important;
+  }
+
+
+  /* ===============================
+     INSIGHTS
+  =============================== */
+
+  .progress-insights {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .insight-card {
+    background: #ffffff !important;
+
+    border: 1px solid #c7d2fe !important;
+
+    box-shadow:
+      0 4px 14px
+      rgba(79, 70, 229, 0.08) !important;
+  }
+
+  .insight-icon {
+    background: #e0e7ff !important;
+  }
+
+
+  /* ===============================
+     MAIN PROGRESS CARD
+  =============================== */
+
+  .progress-card {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 16px;
+
+    background: #ffffff !important;
+
+    border: 1px solid #93c5fd !important;
+
+    box-shadow:
+      0 6px 20px
+      rgba(37, 99, 235, 0.10) !important;
+  }
+
+  .progress-card-header h2 {
+    color: #172033 !important;
+  }
+
+  .progress-card-header p {
+    color: #64748b !important;
+  }
+
+
+  /* ===============================
+     SUBJECT LIST
+  =============================== */
+
+  .subject-list {
+    width: 100%;
+
+    background: transparent !important;
+  }
+
+
+  /* ===============================
+     SUBJECT ITEM
+  =============================== */
+
+  .subject-item {
+    width: 100%;
+
+    padding: 12px;
+
+    background: #f8fbff !important;
+
+    border: 1px solid #bfdbfe !important;
+
+    border-radius: 10px;
+
+    box-shadow:
+      0 3px 10px
+      rgba(37, 99, 235, 0.06) !important;
+  }
+
+  .subject-item:hover {
+    background: #eff6ff !important;
+
+    box-shadow:
+      0 5px 14px
+      rgba(37, 99, 235, 0.10) !important;
+  }
+
+
+  /* ===============================
+     SUBJECT ICON
+  =============================== */
+
+  .subject-dot {
+    background: #dbeafe !important;
+  }
+
+  .subject-name strong {
+    color: #1e293b !important;
+  }
+
+
+  /* ===============================
+     PROGRESS BAR
+  =============================== */
 
   .subject-bar {
     width: 100%;
+
+    height: 7px;
+
+    background: #dbeafe !important;
   }
 
+
+  /* ===============================
+     PROGRESS COLORS
+  =============================== */
+
+  .progress-good {
+    color: #15803d !important;
+  }
+
+  .subject-fill.progress-good {
+    background: #22a06b !important;
+  }
+
+
+  .progress-medium {
+    color: #b45309 !important;
+  }
+
+  .subject-fill.progress-medium {
+    background: #e5a11b !important;
+  }
+
+
+  .progress-low {
+    color: #dc2626 !important;
+  }
+
+  .subject-fill.progress-low {
+    background: #e45c5c !important;
+  }
+
+
+  /* ===============================
+     SUBJECT DETAILS
+  =============================== */
+
   .subject-bottom {
+    color: #64748b !important;
+
     gap: 4px;
   }
 
   .subject-bottom span:not(:last-child)::after {
     margin-left: 4px;
+
+    color: #94a3b8 !important;
+  }
+
+
+  /* ===============================
+     NO PROGRESS
+  =============================== */
+
+  .no-progress {
+    background: #f8fbff !important;
+
+    border-radius: 10px;
+  }
+
+  .no-progress h3 {
+    color: #334155 !important;
+  }
+
+  .no-progress p {
+    color: #64748b !important;
   }
 }
 
@@ -711,6 +924,18 @@
 ===================================================== */
 
 @media (max-width: 400px) {
+
+  .progress-page {
+    padding: 18px 12px;
+  }
+
+  .progress-header h1 {
+    font-size: 22px;
+  }
+
+  .progress-card {
+    padding: 14px;
+  }
 
   .subject-top {
     align-items: flex-start;
@@ -728,11 +953,11 @@
     align-items: flex-start;
   }
 
-  .subject-bottom
-  span:not(:last-child)::after {
+  .subject-bottom span:not(:last-child)::after {
     display: none;
   }
 }
+
 
 /* =====================================================
    DARK MODE
@@ -740,11 +965,13 @@
 
 body.dark-mode {
   background: #0f172a;
+
   color: #f8fafc;
 }
 
 body.dark-mode .progress-page {
   background: #0f172a;
+
   color: #f8fafc;
 }
 
@@ -763,11 +990,12 @@ body.dark-mode .progress-header p {
 
 
 /* =====================================================
-   DARK MODE - SUMMARY CARDS
+   DARK MODE - SUMMARY
 ===================================================== */
 
 body.dark-mode .summary-card {
   background: #1e293b;
+
   border-color: #334155;
 
   box-shadow:
@@ -804,6 +1032,7 @@ body.dark-mode .summary-card small {
 
 body.dark-mode .insight-card {
   background: #1e293b;
+
   border-color: #334155;
 
   box-shadow:
@@ -840,6 +1069,7 @@ body.dark-mode .insight-card small {
 
 body.dark-mode .progress-card {
   background: #1e293b;
+
   border-color: #334155;
 
   box-shadow:
@@ -849,7 +1079,7 @@ body.dark-mode .progress-card {
 
 
 /* =====================================================
-   DARK MODE - PROGRESS CARD HEADER
+   DARK MODE - PROGRESS HEADER
 ===================================================== */
 
 body.dark-mode .progress-card-header h2 {
@@ -867,10 +1097,13 @@ body.dark-mode .progress-card-header p {
 
 body.dark-mode .subject-item {
   background: #172033;
+
   border-color: #334155;
 }
 
 body.dark-mode .subject-item:hover {
+  background: #1e293b;
+
   box-shadow:
     0 4px 12px
     rgba(0, 0, 0, 0.30);
@@ -942,6 +1175,10 @@ body.dark-mode .subject-bottom span:not(:last-child)::after {
    DARK MODE - NO PROGRESS
 ===================================================== */
 
+body.dark-mode .no-progress {
+  background: #172033;
+}
+
 body.dark-mode .no-progress h3 {
   color: #e2e8f0;
 }
@@ -961,6 +1198,7 @@ body.dark-mode .progress-loading {
 
 body.dark-mode .progress-spinner {
   border-color: #334155;
+
   border-top-color: #60a5fa;
 }
 
@@ -971,6 +1209,7 @@ body.dark-mode .progress-spinner {
 
 body.dark-mode .progress-error {
   background: #1e293b;
+
   border-color: #7f1d1d;
 
   box-shadow:
@@ -992,4 +1231,202 @@ body.dark-mode .progress-error button {
 
 body.dark-mode .progress-error button:hover {
   background: #3f5dcc;
+}
+
+
+/* =====================================================
+   MOBILE DARK MODE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  /* ===============================
+     PAGE
+  =============================== */
+
+  body.dark-mode .progress-page {
+    background: #020617 !important;
+
+    color: #f8fafc !important;
+  }
+
+
+  /* ===============================
+     HEADER
+  =============================== */
+
+  body.dark-mode .progress-header h1 {
+    color: #f8fafc !important;
+  }
+
+  body.dark-mode .progress-header p {
+    color: #94a3b8 !important;
+  }
+
+
+  /* ===============================
+     SUMMARY
+  =============================== */
+
+  body.dark-mode .summary-card {
+    background: #111827 !important;
+
+    border-color: #334155 !important;
+
+    box-shadow:
+      0 5px 16px
+      rgba(0, 0, 0, 0.30) !important;
+  }
+
+  body.dark-mode .summary-icon {
+    background: #172554 !important;
+  }
+
+
+  /* ===============================
+     INSIGHTS
+  =============================== */
+
+  body.dark-mode .insight-card {
+    background: #111827 !important;
+
+    border-color: #334155 !important;
+
+    box-shadow:
+      0 5px 16px
+      rgba(0, 0, 0, 0.30) !important;
+  }
+
+  body.dark-mode .insight-icon {
+    background: #172554 !important;
+  }
+
+
+  /* ===============================
+     MAIN PROGRESS CARD
+  =============================== */
+
+  body.dark-mode .progress-card {
+    background: #111827 !important;
+
+    border-color: #334155 !important;
+
+    box-shadow:
+      0 6px 20px
+      rgba(0, 0, 0, 0.35) !important;
+  }
+
+  body.dark-mode .progress-card-header h2 {
+    color: #f8fafc !important;
+  }
+
+  body.dark-mode .progress-card-header p {
+    color: #94a3b8 !important;
+  }
+
+
+  /* ===============================
+     SUBJECT ITEM
+  =============================== */
+
+  body.dark-mode .subject-item {
+    background: #172033 !important;
+
+    border-color: #334155 !important;
+
+    box-shadow:
+      0 3px 10px
+      rgba(0, 0, 0, 0.25) !important;
+  }
+
+  body.dark-mode .subject-item:hover {
+    background: #1e293b !important;
+
+    box-shadow:
+      0 5px 14px
+      rgba(0, 0, 0, 0.35) !important;
+  }
+
+
+  /* ===============================
+     SUBJECT ICON
+  =============================== */
+
+  body.dark-mode .subject-dot {
+    background: #172554 !important;
+  }
+
+  body.dark-mode .subject-name strong {
+    color: #e2e8f0 !important;
+  }
+
+
+  /* ===============================
+     PROGRESS BAR
+  =============================== */
+
+  body.dark-mode .subject-bar {
+    background: #334155 !important;
+  }
+
+
+  /* ===============================
+     PROGRESS COLORS
+  =============================== */
+
+  body.dark-mode .progress-good {
+    color: #4ade80 !important;
+  }
+
+  body.dark-mode .subject-fill.progress-good {
+    background: #22c55e !important;
+  }
+
+
+  body.dark-mode .progress-medium {
+    color: #fbbf24 !important;
+  }
+
+  body.dark-mode .subject-fill.progress-medium {
+    background: #eab308 !important;
+  }
+
+
+  body.dark-mode .progress-low {
+    color: #f87171 !important;
+  }
+
+  body.dark-mode .subject-fill.progress-low {
+    background: #ef4444 !important;
+  }
+
+
+  /* ===============================
+     SUBJECT DETAILS
+  =============================== */
+
+  body.dark-mode .subject-bottom {
+    color: #94a3b8 !important;
+  }
+
+  body.dark-mode .subject-bottom span:not(:last-child)::after {
+    color: #64748b !important;
+  }
+
+
+  /* ===============================
+     NO PROGRESS
+  =============================== */
+
+  body.dark-mode .no-progress {
+    background: #172033 !important;
+  }
+
+  body.dark-mode .no-progress h3 {
+    color: #e2e8f0 !important;
+  }
+
+  body.dark-mode .no-progress p {
+    color: #94a3b8 !important;
+  }
 }

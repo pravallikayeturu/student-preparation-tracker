@@ -12,7 +12,7 @@ function Welcome() {
         <div className="nav-left"></div>
 
         <div className="logo">
-        Student Preparation Tracker
+          Student Preparation Tracker
         </div>
 
         <div className="nav-right">
@@ -78,24 +78,25 @@ function Welcome() {
             </p>
 
 
-            {/* PROGRESS */}
+            {/* ================= CONSISTENCY SECTION ================= */}
 
-            <div className="progress-box">
+            <div className="consistency-box">
 
-              <div className="progress-info">
-
-                <span>
-                  Today's Progress
-                </span>
-
-                <strong>
-                  75%
-                </strong>
-
+              <div className="consistency-icon">
+                🎯
               </div>
 
-              <div className="progress-bar">
-                <div className="progress"></div>
+              <div className="consistency-content">
+
+                <h3>
+                  Stay Consistent
+                </h3>
+
+                <p>
+                  Work consistently, practice well,
+                  and keep improving every day.
+                </p>
+
               </div>
 
             </div>

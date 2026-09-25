@@ -4,21 +4,15 @@
 
 .settings-page {
     min-height: 100vh;
-
     padding: 40px 20px;
-
     background: #f1f5f9;
-
     transition: all 0.3s ease;
-
     box-sizing: border-box;
 }
 
 .settings-container {
     width: 100%;
-
     max-width: 900px;
-
     margin: 0 auto;
 }
 
@@ -29,11 +23,8 @@
 
 .settings-container > h1 {
     margin: 0 0 30px 0;
-
     color: #1e3a8a;
-
     font-size: 32px;
-
     font-weight: 700;
 }
 
@@ -44,21 +35,13 @@
 
 .settings-success-message {
     margin-bottom: 20px;
-
     padding: 13px 16px;
-
     border: 1px solid #86efac;
-
     border-radius: 10px;
-
     background: #f0fdf4;
-
     color: #166534;
-
     font-size: 14px;
-
     font-weight: 600;
-
     box-sizing: border-box;
 }
 
@@ -69,21 +52,13 @@
 
 .settings-error-message {
     margin-bottom: 20px;
-
     padding: 13px 16px;
-
     border: 1px solid #fca5a5;
-
     border-radius: 10px;
-
     background: #fef2f2;
-
     color: #b91c1c;
-
     font-size: 14px;
-
     font-weight: 600;
-
     box-sizing: border-box;
 }
 
@@ -94,15 +69,11 @@
 
 .settings-card {
     width: 100%;
-
     box-sizing: border-box;
-
     margin-bottom: 22px;
-
     padding: 28px;
 
     border: 1px solid #dbeafe;
-
     border-radius: 16px;
 
     background: #ffffff;
@@ -135,7 +106,6 @@
     color: #2563eb;
 
     font-size: 22px;
-
     font-weight: 700;
 }
 
@@ -144,31 +114,13 @@
    PROFILE ROW
 ================================================== */
 
-/*
-   Desktop:
-
-   Name:
-   ┌───────────────────────────────────┐ ┌──────────┐
-   │ Name                              │ │Save Name │
-   └───────────────────────────────────┘ └──────────┘
-
-   Email:
-   ┌───────────────────────────────────┐
-   │ Email                             │
-   └───────────────────────────────────┘
-
-   Both inputs have the SAME LENGTH.
-*/
-
 .profile-row {
     display: flex;
-
     align-items: flex-end;
 
     width: 100%;
 
     gap: 18px;
-
     margin-bottom: 22px;
 
     box-sizing: border-box;
@@ -185,7 +137,6 @@
 
 .profile-info {
     width: calc(100% - 143px);
-
     max-width: calc(100% - 143px);
 
     min-width: 0;
@@ -203,7 +154,6 @@
     color: #7c3aed;
 
     font-size: 15px;
-
     font-weight: 700;
 }
 
@@ -216,7 +166,6 @@
     display: block;
 
     width: 100% !important;
-
     max-width: none !important;
 
     height: 48px;
@@ -226,11 +175,9 @@
     box-sizing: border-box;
 
     border: 1px solid #cbd5e1;
-
     border-radius: 9px;
 
     background: #f8fafc;
-
     color: #1e293b;
 
     font-size: 15px;
@@ -256,7 +203,6 @@
 
 .profile-info input[readonly] {
     cursor: not-allowed;
-
     background: #f1f5f9;
 }
 
@@ -269,7 +215,6 @@
     flex-shrink: 0;
 
     width: 125px;
-
     min-width: 125px;
 
     height: 48px;
@@ -279,7 +224,6 @@
     box-sizing: border-box;
 
     border: none;
-
     border-radius: 9px;
 
     background: #7c3aed;
@@ -287,7 +231,6 @@
     color: #ffffff;
 
     font-size: 14px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -315,11 +258,8 @@
 
 .save-name-button:disabled {
     opacity: 0.6;
-
     cursor: not-allowed;
-
     transform: none;
-
     box-shadow: none;
 }
 
@@ -332,7 +272,6 @@
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     width: 100%;
@@ -350,7 +289,6 @@
 
 .setting-text {
     flex: 1;
-
     min-width: 0;
 }
 
@@ -360,7 +298,6 @@
     color: #0f766e;
 
     font-size: 17px;
-
     font-weight: 700;
 }
 
@@ -370,7 +307,6 @@
     color: #64748b;
 
     font-size: 14px;
-
     line-height: 1.5;
 }
 
@@ -383,7 +319,6 @@
     position: relative;
 
     width: 52px;
-
     height: 28px;
 
     flex-shrink: 0;
@@ -391,7 +326,6 @@
 
 .switch input {
     width: 0;
-
     height: 0;
 
     opacity: 0;
@@ -417,11 +351,9 @@
     position: absolute;
 
     width: 22px;
-
     height: 22px;
 
     left: 3px;
-
     top: 3px;
 
     border-radius: 50%;
@@ -455,7 +387,6 @@
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
@@ -471,7 +402,6 @@
     color: #64748b;
 
     font-size: 14px;
-
     line-height: 1.5;
 }
 
@@ -486,7 +416,6 @@
     padding: 12px 20px;
 
     border: none;
-
     border-radius: 9px;
 
     background: #0891b2;
@@ -494,7 +423,6 @@
     color: #ffffff;
 
     font-size: 14px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -539,13 +467,11 @@
 
     from {
         opacity: 0;
-
         transform: translateY(-8px);
     }
 
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
 }
@@ -567,7 +493,6 @@
     color: #db2777;
 
     font-size: 15px;
-
     font-weight: 700;
 }
 
@@ -594,11 +519,9 @@
     box-sizing: border-box;
 
     border: 1px solid #cbd5e1;
-
     border-radius: 9px;
 
     background: #f8fafc;
-
     color: #1e293b;
 
     font-size: 15px;
@@ -631,7 +554,6 @@
     position: absolute;
 
     right: 14px;
-
     top: 50%;
 
     transform: translateY(-50%);
@@ -670,7 +592,6 @@
     padding: 13px 20px;
 
     border: none;
-
     border-radius: 10px;
 
     background: #e11d48;
@@ -678,7 +599,6 @@
     color: #ffffff;
 
     font-size: 15px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -704,11 +624,8 @@
 
 .change-password-button:disabled {
     opacity: 0.6;
-
     cursor: not-allowed;
-
     transform: none;
-
     box-shadow: none;
 }
 
@@ -721,13 +638,11 @@
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     width: 100%;
 
     margin-top: 25px;
-
     margin-bottom: 40px;
 }
 
@@ -737,7 +652,6 @@
     padding: 13px 24px;
 
     border: none;
-
     border-radius: 10px;
 
     background: #16a34a;
@@ -745,7 +659,6 @@
     color: #ffffff;
 
     font-size: 15px;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -771,11 +684,8 @@
 
 .save-settings-button:disabled {
     opacity: 0.6;
-
     cursor: not-allowed;
-
     transform: none;
-
     box-shadow: none;
 }
 
@@ -786,7 +696,6 @@
 
 body.dark-mode {
     background: #0f172a;
-
     color: #f8fafc;
 }
 
@@ -800,7 +709,6 @@ body.dark-mode .settings-container > h1 {
 
 body.dark-mode .settings-card {
     background: #1e293b;
-
     border-color: #334155;
 
     box-shadow:
@@ -827,9 +735,7 @@ body.dark-mode .profile-info label {
 
 body.dark-mode .profile-info input {
     background: #0f172a;
-
     color: #f8fafc;
-
     border-color: #475569;
 }
 
@@ -839,7 +745,6 @@ body.dark-mode .profile-info input::placeholder {
 
 body.dark-mode .profile-info input[readonly] {
     background: #111827;
-
     color: #94a3b8;
 }
 
@@ -879,9 +784,7 @@ body.dark-mode .password-field label {
 
 body.dark-mode .password-input-wrapper input {
     background: #0f172a;
-
     color: #f8fafc;
-
     border-color: #475569;
 }
 
@@ -911,24 +814,55 @@ body.dark-mode .password-eye-icon:hover {
 
 body.dark-mode .settings-success-message {
     background: #064e3b;
-
     color: #a7f3d0;
-
     border-color: #047857;
 }
 
 body.dark-mode .settings-error-message {
     background: #7f1d1d;
-
     color: #fecaca;
-
     border-color: #b91c1c;
 }
 
 
 /* ==================================================
+   HALF LAPTOP / TABLET
+   769px - 1100px
+================================================== */
+
+@media (max-width: 1100px) {
+
+    .settings-page {
+        padding: 35px 20px;
+    }
+
+    .settings-container {
+        max-width: 850px;
+    }
+
+    .settings-card {
+        padding: 25px;
+    }
+
+    .profile-row {
+        gap: 14px;
+    }
+
+    .profile-info {
+        width: calc(100% - 130px);
+        max-width: calc(100% - 130px);
+    }
+
+    .save-name-button {
+        width: 116px;
+        min-width: 116px;
+    }
+}
+
+
+/* ==================================================
    TABLET
-   601px - 768px
+   BELOW 768px
 ================================================== */
 
 @media (max-width: 768px) {
@@ -939,13 +873,11 @@ body.dark-mode .settings-error-message {
 
     .settings-container {
         width: 100%;
-
         max-width: 100%;
     }
 
     .settings-container > h1 {
         font-size: 30px;
-
         margin-bottom: 26px;
     }
 
@@ -953,49 +885,34 @@ body.dark-mode .settings-error-message {
         padding: 24px;
     }
 
-
-    /* ----------------------------------------------
-       PROFILE - TABLET
-    ---------------------------------------------- */
+    /* PROFILE */
 
     .profile-row {
         display: flex;
-
         flex-direction: row;
-
         align-items: flex-end;
-
         gap: 14px;
     }
 
     .profile-info {
         width: calc(100% - 129px);
-
         max-width: calc(100% - 129px);
-
         flex: none;
     }
 
     .profile-info input {
         width: 100% !important;
-
         height: 48px;
-
         box-sizing: border-box;
     }
 
     .save-name-button {
         width: 115px;
-
         min-width: 115px;
-
         height: 48px;
     }
 
-
-    /* ----------------------------------------------
-       CHANGE PASSWORD
-    ---------------------------------------------- */
+    /* PASSWORD HEADER */
 
     .change-password-header {
         gap: 15px;
@@ -1009,24 +926,27 @@ body.dark-mode .settings-error-message {
 
 /* ==================================================
    MOBILE
-   Below 600px
+   BELOW 600px
 ================================================== */
 
 @media (max-width: 600px) {
 
     .settings-page {
+        width: 100%;
+        min-height: 100vh;
+
         padding: 25px 12px;
+
+        box-sizing: border-box;
     }
 
     .settings-container {
         width: 100%;
-
         max-width: 100%;
     }
 
     .settings-container > h1 {
         font-size: 28px;
-
         margin-bottom: 24px;
     }
 
@@ -1036,21 +956,14 @@ body.dark-mode .settings-error-message {
         padding: 20px;
 
         border-radius: 14px;
+
+        box-sizing: border-box;
     }
 
 
-    /* ----------------------------------------------
-       PROFILE - MOBILE
-       
-       Name:
-       Input
-       Save Name
-
-       Email:
-       Input
-
-       Both inputs FULL WIDTH
-    ---------------------------------------------- */
+    /* ==================================================
+       PROFILE MOBILE
+    ================================================== */
 
     .profile-row {
         display: flex;
@@ -1113,13 +1026,12 @@ body.dark-mode .settings-error-message {
     }
 
 
-    /* ----------------------------------------------
+    /* ==================================================
        SETTING ROW
-    ---------------------------------------------- */
+    ================================================== */
 
     .setting-row {
         width: 100%;
-
         gap: 14px;
     }
 
@@ -1136,9 +1048,9 @@ body.dark-mode .settings-error-message {
     }
 
 
-    /* ----------------------------------------------
+    /* ==================================================
        CHANGE PASSWORD
-    ---------------------------------------------- */
+    ================================================== */
 
     .change-password-header {
         flex-direction: column;
@@ -1157,9 +1069,9 @@ body.dark-mode .settings-error-message {
     }
 
 
-    /* ----------------------------------------------
+    /* ==================================================
        PASSWORD
-    ---------------------------------------------- */
+    ================================================== */
 
     .password-input-wrapper {
         width: 100%;
@@ -1176,9 +1088,9 @@ body.dark-mode .settings-error-message {
     }
 
 
-    /* ----------------------------------------------
+    /* ==================================================
        SAVE SETTINGS
-    ---------------------------------------------- */
+    ================================================== */
 
     .settings-save-section {
         width: 100%;
@@ -1192,7 +1104,6 @@ body.dark-mode .settings-error-message {
 
     .save-settings-button {
         width: 180px;
-
         min-width: 180px;
     }
 }
@@ -1200,7 +1111,7 @@ body.dark-mode .settings-error-message {
 
 /* ==================================================
    SMALL MOBILE
-   Below 400px
+   BELOW 400px
 ================================================== */
 
 @media (max-width: 400px) {
@@ -1211,7 +1122,6 @@ body.dark-mode .settings-error-message {
 
     .settings-card {
         padding: 17px;
-
         border-radius: 13px;
     }
 
@@ -1221,14 +1131,8 @@ body.dark-mode .settings-error-message {
 
     .settings-card h2 {
         font-size: 20px;
-
         margin-bottom: 18px;
     }
-
-
-    /* ----------------------------------------------
-       PROFILE
-    ---------------------------------------------- */
 
     .profile-info input {
         width: 100% !important;
@@ -1242,14 +1146,8 @@ body.dark-mode .settings-error-message {
 
     .save-name-button {
         width: 100% !important;
-
         height: 46px;
     }
-
-
-    /* ----------------------------------------------
-       SETTINGS TEXT
-    ---------------------------------------------- */
 
     .setting-text h3 {
         font-size: 15px;
@@ -1258,11 +1156,6 @@ body.dark-mode .settings-error-message {
     .setting-text p {
         font-size: 12px;
     }
-
-
-    /* ----------------------------------------------
-       PASSWORD
-    ---------------------------------------------- */
 
     .password-input-wrapper input {
         width: 100%;
@@ -1274,18 +1167,309 @@ body.dark-mode .settings-error-message {
 
     .change-password-toggle {
         width: 100%;
-
         padding: 11px 15px;
     }
 
-
-    /* ----------------------------------------------
-       SAVE SETTINGS
-    ---------------------------------------------- */
-
     .save-settings-button {
         width: 180px;
-
         min-width: 180px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE LIGHT MODE COLOR OVERRIDES
+   KEEP THIS AT THE VERY END
+================================================== */
+
+@media (max-width: 600px) {
+
+    .settings-page {
+        background: #f1f5f9 !important;
+        color: #1e293b !important;
+    }
+
+    .settings-container > h1 {
+        color: #1e3a8a !important;
+    }
+
+    .settings-card {
+        background: #ffffff !important;
+        border-color: #dbeafe !important;
+
+        box-shadow:
+            0 8px 25px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    .settings-card h2 {
+        color: #2563eb !important;
+    }
+
+    /* PROFILE */
+
+    .profile-info label {
+        color: #7c3aed !important;
+    }
+
+    .profile-info input {
+        background: #f8fafc !important;
+        color: #1e293b !important;
+        border-color: #cbd5e1 !important;
+    }
+
+    .profile-info input[readonly] {
+        background: #f1f5f9 !important;
+        color: #64748b !important;
+    }
+
+    .save-name-button {
+        background: #7c3aed !important;
+        color: #ffffff !important;
+    }
+
+    /* SETTINGS */
+
+    .setting-row {
+        border-bottom-color: #e2e8f0 !important;
+    }
+
+    .setting-text h3 {
+        color: #0f766e !important;
+    }
+
+    .setting-text p {
+        color: #64748b !important;
+    }
+
+    .slider {
+        background: #cbd5e1 !important;
+    }
+
+    .switch input:checked + .slider {
+        background: #0891b2 !important;
+    }
+
+    /* PASSWORD */
+
+    .change-password-header p {
+        color: #64748b !important;
+    }
+
+    .change-password-form {
+        border-top-color: #e2e8f0 !important;
+    }
+
+    .password-field label {
+        color: #db2777 !important;
+    }
+
+    .password-input-wrapper input {
+        background: #f8fafc !important;
+        color: #1e293b !important;
+        border-color: #cbd5e1 !important;
+    }
+
+    .password-input-wrapper input::placeholder {
+        color: #94a3b8 !important;
+    }
+
+    .password-eye-icon {
+        color: #64748b !important;
+    }
+
+    .change-password-toggle {
+        background: #0891b2 !important;
+        color: #ffffff !important;
+    }
+
+    .change-password-button {
+        background: #e11d48 !important;
+        color: #ffffff !important;
+    }
+
+    /* MESSAGES */
+
+    .settings-success-message {
+        background: #f0fdf4 !important;
+        color: #166534 !important;
+        border-color: #86efac !important;
+    }
+
+    .settings-error-message {
+        background: #fef2f2 !important;
+        color: #b91c1c !important;
+        border-color: #fca5a5 !important;
+    }
+
+    /* SAVE */
+
+    .save-settings-button {
+        background: #16a34a !important;
+        color: #ffffff !important;
+    }
+}
+
+
+/* ==================================================
+   MOBILE DARK MODE COLOR OVERRIDES
+   KEEP AFTER MOBILE LIGHT COLORS
+================================================== */
+
+@media (max-width: 600px) {
+
+    body.dark-mode .settings-page {
+        background: #0f172a !important;
+        color: #f8fafc !important;
+    }
+
+    body.dark-mode .settings-container > h1 {
+        color: #93c5fd !important;
+    }
+
+    body.dark-mode .settings-card {
+        background: #1e293b !important;
+        border-color: #334155 !important;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.30) !important;
+    }
+
+    body.dark-mode .settings-card h2 {
+        color: #60a5fa !important;
+    }
+
+    /* PROFILE */
+
+    body.dark-mode .profile-info label {
+        color: #c4b5fd !important;
+    }
+
+    body.dark-mode .profile-info input {
+        background: #0f172a !important;
+        color: #f8fafc !important;
+        border-color: #475569 !important;
+    }
+
+    body.dark-mode .profile-info input::placeholder {
+        color: #94a3b8 !important;
+    }
+
+    body.dark-mode .profile-info input[readonly] {
+        background: #111827 !important;
+        color: #94a3b8 !important;
+    }
+
+    body.dark-mode .save-name-button {
+        background: #7c3aed !important;
+        color: #ffffff !important;
+    }
+
+    /* SETTINGS */
+
+    body.dark-mode .setting-row {
+        border-bottom-color: #334155 !important;
+    }
+
+    body.dark-mode .setting-text h3 {
+        color: #5eead4 !important;
+    }
+
+    body.dark-mode .setting-text p {
+        color: #94a3b8 !important;
+    }
+
+    body.dark-mode .slider {
+        background: #475569 !important;
+    }
+
+    body.dark-mode .switch input:checked + .slider {
+        background: #0891b2 !important;
+    }
+
+    /* PASSWORD */
+
+    body.dark-mode .change-password-header p {
+        color: #94a3b8 !important;
+    }
+
+    body.dark-mode .change-password-form {
+        border-top-color: #334155 !important;
+    }
+
+    body.dark-mode .password-field label {
+        color: #f9a8d4 !important;
+    }
+
+    body.dark-mode .password-input-wrapper input {
+        background: #0f172a !important;
+        color: #f8fafc !important;
+        border-color: #475569 !important;
+    }
+
+    body.dark-mode .password-input-wrapper input::placeholder {
+        color: #64748b !important;
+    }
+
+    body.dark-mode .password-eye-icon {
+        color: #cbd5e1 !important;
+    }
+
+    body.dark-mode .password-eye-icon:hover {
+        color: #22d3ee !important;
+    }
+
+    body.dark-mode .change-password-toggle {
+        background: #0891b2 !important;
+        color: #ffffff !important;
+    }
+
+    body.dark-mode .change-password-button {
+        background: #e11d48 !important;
+        color: #ffffff !important;
+    }
+
+    /* MESSAGES */
+
+    body.dark-mode .settings-success-message {
+        background: #064e3b !important;
+        color: #a7f3d0 !important;
+        border-color: #047857 !important;
+    }
+
+    body.dark-mode .settings-error-message {
+        background: #7f1d1d !important;
+        color: #fecaca !important;
+        border-color: #b91c1c !important;
+    }
+
+    /* SAVE */
+
+    body.dark-mode .save-settings-button {
+        background: #16a34a !important;
+        color: #ffffff !important;
+    }
+}
+
+
+/* ==================================================
+   EXTRA SMALL MOBILE
+================================================== */
+
+@media (max-width: 400px) {
+
+    .settings-page {
+        background: #f1f5f9 !important;
+    }
+
+    .settings-card {
+        background: #ffffff !important;
+    }
+
+    body.dark-mode .settings-page {
+        background: #0f172a !important;
+    }
+
+    body.dark-mode .settings-card {
+        background: #1e293b !important;
     }
 }
