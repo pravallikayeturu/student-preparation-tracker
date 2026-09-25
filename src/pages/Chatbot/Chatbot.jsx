@@ -8,9 +8,13 @@ function Chatbot() {
     // STATE
     // =====================================================
 
-    const [question, setQuestion] = useState("");
-
+    // Current chat messages
     const [messages, setMessages] = useState([]);
+
+    // Saved chat history from database
+    const [chatHistory, setChatHistory] = useState([]);
+
+    const [question, setQuestion] = useState("");
 
     const [loading, setLoading] = useState(false);
 
@@ -35,14 +39,12 @@ function Chatbot() {
     const handleApiError = async (response) => {
 
         if (response.status === 401) {
-
             throw new Error(
                 "Your session has expired. Please login again."
             );
         }
 
         if (response.status === 403) {
-
             throw new Error(
                 "You are not authorized to access this information."
             );
@@ -81,10 +83,6 @@ function Chatbot() {
 
             const token = getToken();
 
-            // ---------------------------------------------
-            // CHECK LOGIN
-            // ---------------------------------------------
-
             if (!token) {
 
                 console.log(
@@ -93,11 +91,6 @@ function Chatbot() {
 
                 return;
             }
-
-
-            // ---------------------------------------------
-            // GET CHAT HISTORY
-            // ---------------------------------------------
 
             const response = await fetch(
                 `${API_URL}/api/chatbot/history`,
@@ -111,27 +104,11 @@ function Chatbot() {
                 }
             );
 
-
-            // ---------------------------------------------
-            // CHECK RESPONSE
-            // ---------------------------------------------
-
             if (!response.ok) {
-
                 await handleApiError(response);
             }
 
-
-            // ---------------------------------------------
-            // READ HISTORY
-            // ---------------------------------------------
-
             const history = await response.json();
-
-
-            // ---------------------------------------------
-            // CHECK HISTORY
-            // ---------------------------------------------
 
             if (!Array.isArray(history)) {
 
@@ -143,52 +120,12 @@ function Chatbot() {
                 return;
             }
 
+            // IMPORTANT:
+            // Keep history separate from current chat.
+            // Previous messages will NOT automatically appear
+            // in the main chatbot window.
 
-            // ---------------------------------------------
-            // CONVERT DATABASE HISTORY TO UI MESSAGES
-            // ---------------------------------------------
-
-            const loadedMessages = [];
-
-
-            history.forEach((chat) => {
-
-                // User question
-                if (
-                    chat.question &&
-                    chat.question.trim()
-                ) {
-
-                    loadedMessages.push({
-                        sender: "user",
-                        text: chat.question
-                    });
-
-                }
-
-
-                // AI answer
-                if (
-                    chat.answer &&
-                    chat.answer.trim()
-                ) {
-
-                    loadedMessages.push({
-                        sender: "ai",
-                        text: chat.answer
-                    });
-
-                }
-
-            });
-
-
-            // ---------------------------------------------
-            // DISPLAY SAVED HISTORY
-            // ---------------------------------------------
-
-            setMessages(loadedMessages);
-
+            setChatHistory(history);
 
         } catch (error) {
 
@@ -196,7 +133,6 @@ function Chatbot() {
                 "Chat History Error:",
                 error
             );
-
         }
     };
 
@@ -207,6 +143,14 @@ function Chatbot() {
 
     useEffect(() => {
 
+        // Start with a fresh chat
+        setMessages([]);
+
+        setQuestion("");
+
+        setCopiedIndex(null);
+
+        // Load old chats only into sidebar history
         loadChatHistory();
 
     }, []);
@@ -260,7 +204,7 @@ function Chatbot() {
 
 
             // =================================================
-            // SEND QUESTION TO SPRING BOOT
+            // SEND QUESTION
             // =================================================
 
             const response = await fetch(
@@ -285,7 +229,6 @@ function Chatbot() {
             // =================================================
 
             if (!response.ok) {
-
                 await handleApiError(response);
             }
 
@@ -296,6 +239,10 @@ function Chatbot() {
 
             const data = await response.json();
 
+            const answer =
+                data.answer ||
+                "I couldn't generate an answer.";
+
 
             // =================================================
             // SHOW AI ANSWER
@@ -305,11 +252,13 @@ function Chatbot() {
                 ...prev,
                 {
                     sender: "ai",
-                    text:
-                        data.answer ||
-                        "I couldn't generate an answer."
+                    text: answer
                 }
             ]);
+
+
+            // Refresh history sidebar
+            await loadChatHistory();
 
         } catch (error) {
 
@@ -317,7 +266,6 @@ function Chatbot() {
                 "Chatbot Error:",
                 error
             );
-
 
             setMessages(prev => [
                 ...prev,
@@ -348,7 +296,6 @@ function Chatbot() {
 
         setLoading(true);
 
-
         const token = getToken();
 
 
@@ -371,6 +318,7 @@ function Chatbot() {
             overdue: "Overdue",
 
             all: "All Tasks"
+
         };
 
 
@@ -410,7 +358,7 @@ function Chatbot() {
 
 
             // =================================================
-            // GET USER TASKS
+            // GET TASKS
             // =================================================
 
             const response = await fetch(
@@ -431,7 +379,6 @@ function Chatbot() {
             // =================================================
 
             if (!response.ok) {
-
                 await handleApiError(response);
             }
 
@@ -539,6 +486,7 @@ function Chatbot() {
 
 
                 taskText += "\n";
+
             });
 
 
@@ -560,7 +508,6 @@ function Chatbot() {
                 "Task Data Error:",
                 error
             );
-
 
             setMessages(prev => [
                 ...prev,
@@ -594,7 +541,6 @@ function Chatbot() {
 
             setCopiedIndex(index);
 
-
             setTimeout(() => {
 
                 setCopiedIndex(null);
@@ -621,6 +567,7 @@ function Chatbot() {
             return;
         }
 
+        // Clear current conversation
         setMessages([]);
 
         setQuestion("");
@@ -632,18 +579,33 @@ function Chatbot() {
 
 
     // =====================================================
-    // OPEN PREVIOUS QUESTION
+    // OPEN PREVIOUS CHAT
     // =====================================================
 
-    const openPreviousQuestion = (
-        selectedQuestion
-    ) => {
+    const openPreviousQuestion = (selectedChat) => {
 
         if (loading) {
             return;
         }
 
-        setQuestion(selectedQuestion);
+        setMessages([
+            {
+                sender: "user",
+                text:
+                    selectedChat.question ||
+                    "Previous question"
+            },
+            {
+                sender: "ai",
+                text:
+                    selectedChat.answer ||
+                    "No answer available."
+            }
+        ]);
+
+        setQuestion("");
+
+        setCopiedIndex(null);
 
         setMenuOpen(false);
     };
@@ -668,13 +630,14 @@ function Chatbot() {
 
 
     // =====================================================
-    // GET PREVIOUS QUESTIONS
+    // PREVIOUS QUESTIONS
     // =====================================================
 
     const previousQuestions =
-        messages.filter(
-            message =>
-                message.sender === "user"
+        chatHistory.filter(
+            chat =>
+                chat.question &&
+                chat.question.trim()
         );
 
 
@@ -697,34 +660,24 @@ function Chatbot() {
 
                     <div className="chatbot-info-content">
 
-
-                        {/* ICON */}
-
                         <div className="chatbot-info-icon">
                             🤖
                         </div>
 
-
-                        {/* TITLE */}
-
                         <h1>
-                            Your AI Study Assistant
+                            Your StudyMate AI
                         </h1>
-
 
                         <p>
                             Learn smarter, understand concepts
                             clearly, and stay organized with your
-                            personal study assistant.
+                            personal AI study companion.
                         </p>
 
 
-                        {/* INFORMATION */}
+                        {/* STUDY SUPPORT */}
 
                         <div className="info-points">
-
-
-                            {/* STUDY SUPPORT */}
 
                             <div className="info-point">
 
@@ -825,7 +778,7 @@ function Chatbot() {
                             </div>
 
 
-                            {/* AI SUPPORT */}
+                            {/* SMART ANSWERS */}
 
                             <div className="info-point">
 
@@ -895,11 +848,11 @@ function Chatbot() {
                                 <div>
 
                                     <strong>
-                                        Study Assistant
+                                        StudyMate AI
                                     </strong>
 
                                     <small>
-                                        AI-powered study support
+                                        Your AI-powered study companion
                                     </small>
 
                                 </div>
@@ -907,7 +860,7 @@ function Chatbot() {
                             </div>
 
 
-                            {/* MENU BUTTON */}
+                            {/* HISTORY MENU */}
 
                             <button
                                 className="chatbot-menu-button"
@@ -981,38 +934,40 @@ function Chatbot() {
 
                                         ) : (
 
-                                            previousQuestions
-                                                .map(
-                                                    (
-                                                        message,
-                                                        index
-                                                    ) => (
+                                            previousQuestions.map(
+                                                (
+                                                    chat,
+                                                    index
+                                                ) => (
 
-                                                        <button
-                                                            key={index}
-                                                            className="history-item"
-                                                            onClick={() =>
-                                                                openPreviousQuestion(
-                                                                    message.text
-                                                                )
-                                                            }
-                                                            title={
-                                                                message.text
-                                                            }
-                                                        >
+                                                    <button
+                                                        key={
+                                                            chat.id ||
+                                                            index
+                                                        }
+                                                        className="history-item"
+                                                        onClick={() =>
+                                                            openPreviousQuestion(
+                                                                chat
+                                                            )
+                                                        }
+                                                        title={
+                                                            chat.question
+                                                        }
+                                                    >
 
-                                                            <span>
-                                                                💭
-                                                            </span>
+                                                        <span>
+                                                            💭
+                                                        </span>
 
-                                                            <span>
-                                                                {message.text}
-                                                            </span>
+                                                        <span>
+                                                            {chat.question}
+                                                        </span>
 
-                                                        </button>
+                                                    </button>
 
-                                                    )
                                                 )
+                                            )
 
                                         )}
 
@@ -1042,6 +997,8 @@ function Chatbot() {
                         <div className="chatbot-messages">
 
 
+                            {/* EMPTY CHAT */}
+
                             {messages.length === 0 && (
 
                                 <div className="chatbot-empty-state">
@@ -1051,7 +1008,7 @@ function Chatbot() {
                                     </div>
 
                                     <h2>
-                                        Study Assistant
+                                        StudyMate AI
                                     </h2>
 
                                     <p>
@@ -1065,7 +1022,7 @@ function Chatbot() {
                             )}
 
 
-                            {/* CHAT MESSAGES */}
+                            {/* MESSAGES */}
 
                             {messages.map(
                                 (
@@ -1082,9 +1039,6 @@ function Chatbot() {
                                         }
                                     >
 
-
-                                        {/* MESSAGE */}
-
                                         <div
                                             className={
                                                 message.sender === "user"
@@ -1092,13 +1046,11 @@ function Chatbot() {
                                                     : "message ai-message"
                                             }
                                         >
-
                                             {message.text}
-
                                         </div>
 
 
-                                        {/* COPY BUTTON */}
+                                        {/* COPY */}
 
                                         {message.sender === "ai" && (
 
@@ -1133,9 +1085,7 @@ function Chatbot() {
                                 <div className="message-wrapper ai-wrapper">
 
                                     <div className="message ai-message">
-
                                         🤔 Thinking...
-
                                     </div>
 
                                 </div>
@@ -1157,7 +1107,6 @@ function Chatbot() {
 
 
                             <div className="task-buttons">
-
 
                                 <button
                                     onClick={() =>
@@ -1248,7 +1197,7 @@ function Chatbot() {
                                     )
                                 }
                                 onKeyDown={handleKeyDown}
-                                placeholder="Ask AI anything about your studies..."
+                                placeholder="Ask StudyMate AI anything about your studies..."
                                 disabled={loading}
                             />
 
@@ -1260,11 +1209,9 @@ function Chatbot() {
                                     !question.trim()
                                 }
                             >
-
                                 {loading
                                     ? "..."
                                     : "Send"}
-
                             </button>
 
                         </div>
