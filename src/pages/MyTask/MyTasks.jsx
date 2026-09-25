@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyTasks.css";
 import API_URL from "../../api/api";
+
 function MyTasks() {
   const navigate = useNavigate();
 
@@ -887,7 +888,7 @@ function MyTasks() {
 
     try {
       const response = await fetch(
-        `${API_URL}api/tasks/occurrences/${selectedOccurrence.id}`,
+        `${API_URL}/api/tasks/occurrences/${selectedOccurrence.id}`,
         {
           method: "PUT",
           headers: getHeaders(),
@@ -1540,12 +1541,10 @@ function MyTasks() {
                 </div>
 
               </div>
-
             )
           )}
 
         </div>
-
       )}
 
       {/* EDIT MODAL */}
@@ -1699,7 +1698,6 @@ function MyTasks() {
                   </div>
 
                 </div>
-
               )}
 
               {/* OCCURRENCES */}
@@ -1773,11 +1771,9 @@ function MyTasks() {
                         )}
 
                       </div>
-
                     )}
 
                   </div>
-
                 )}
 
               {/* TIME EDIT */}
@@ -1873,7 +1869,6 @@ function MyTasks() {
                   </small>
 
                 </div>
-
               )}
 
               {/* MODAL ACTIONS */}
@@ -1921,7 +1916,6 @@ function MyTasks() {
             </div>
 
           </div>
-
         )}
 
     </div>
