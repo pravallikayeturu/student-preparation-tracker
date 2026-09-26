@@ -1,181 +1,165 @@
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-
-/* =====================================================
-   PAGE
-===================================================== */
-
 .create-task-page {
   min-height: 100vh;
-  width: 100%;
 
-  background: #eef4ff;
+  background: #f7faff;
+
   color: #172554;
 
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+  padding-bottom: 40px;
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 .create-task-header {
   width: 100%;
-  min-height: 90px;
 
-  padding: 18px 35px;
+  min-height: 82px;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 180px 1fr 180px;
+
   align-items: center;
-  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 32px;
 
   background: #ffffff;
 
-  border-bottom: 1px solid #dbe5f5;
+  border-bottom: 1px solid #dbeafe;
 
   box-shadow:
-    0 3px 12px rgba(30, 64, 175, 0.06);
+    0 2px 10px rgba(37, 99, 235, 0.06);
 
   position: sticky;
-  top: 0;
-  z-index: 100;
 
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  top: 0;
+
+  z-index: 20;
 }
 
 
-/* =====================================================
+/* =========================================================
    BACK BUTTON
-===================================================== */
+========================================================= */
 
 .create-task-back-button {
-  min-width: 90px;
+  justify-self: start;
+
+  border: none;
+
+  background: #eff6ff;
+
+  color: #1d4ed8;
 
   padding: 10px 16px;
 
-  border: 1px solid #d5deed;
-  border-radius: 9px;
+  border-radius: 10px;
 
-  background: #f8fbff;
-  color: #1e3a8a;
+  font-size: 13px;
 
-  font-family: inherit;
-  font-size: 14px;
   font-weight: 600;
 
   cursor: pointer;
 
-  transition: all 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .create-task-back-button:hover {
-  background: #e8f0ff;
-
-  border-color: #93b4f5;
-
-  color: #1d4ed8;
+  background: #dbeafe;
 
   transform: translateX(-2px);
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER CONTENT
-===================================================== */
+========================================================= */
 
 .create-task-header-content {
-  flex: 1;
-
   text-align: center;
-
-  min-width: 0;
 }
 
 .create-task-header-content h1 {
-  color: #172554;
+  margin: 0;
 
-  font-size: 25px;
+  font-size: 24px;
+
   font-weight: 700;
+
+  color: #172554;
 }
 
 .create-task-header-content p {
-  margin-top: 5px;
-
-  color: #64748b;
+  margin: 5px 0 0;
 
   font-size: 13px;
+
+  color: #64748b;
 }
-
-
-/* =====================================================
-   HEADER SPACE
-===================================================== */
 
 .create-task-header-space {
-  min-width: 90px;
+  min-height: 1px;
 }
 
 
-/* =====================================================
+/* =========================================================
    MAIN
-===================================================== */
+========================================================= */
 
 .create-task-main {
   width: 100%;
 
-  padding: 40px 25px 60px;
+  max-width: 1050px;
 
-  display: flex;
+  margin: 32px auto;
 
-  justify-content: center;
+  padding: 0 24px;
 }
 
 
-/* =====================================================
-   CREATE TASK CARD
-===================================================== */
+/* =========================================================
+   CARD
+========================================================= */
 
 .create-task-card {
   width: 100%;
-  max-width: 950px;
 
-  padding: 30px;
+  background: #ffffff;
 
-  background: #f5f3ff;
-
-  border: 1px solid #ddd6fe;
+  border: 1px solid #dbeafe;
 
   border-radius: 18px;
 
-  box-shadow:
-    0 10px 30px rgba(79, 70, 229, 0.10);
+  padding: 28px;
 
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow:
+    0 12px 35px rgba(30, 64, 175, 0.08);
 }
 
 
-/* =====================================================
+/* =========================================================
    CARD HEADER
-===================================================== */
+========================================================= */
 
 .create-task-card-header {
   display: flex;
@@ -184,106 +168,95 @@
 
   gap: 14px;
 
-  padding-bottom: 22px;
-
-  border-bottom: 1px solid #ddd6fe;
+  margin-bottom: 20px;
 }
 
-
-/* =====================================================
-   CARD ICON
-===================================================== */
-
 .create-task-icon {
-  width: 48px;
-  height: 48px;
+  width: 46px;
 
-  flex-shrink: 0;
+  height: 46px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #dbeafe;
+
+  color: #2563eb;
 
   border-radius: 12px;
 
-  background: #e9e7ff;
-
-  color: #5b50c8;
-
-  font-size: 23px;
+  font-size: 20px;
 }
 
-
-/* =====================================================
-   CARD TITLE
-===================================================== */
-
 .create-task-card-header h2 {
-  color: #312e81;
+  margin: 0;
+
+  color: #172554;
 
   font-size: 20px;
 
-  font-weight: 750;
+  font-weight: 700;
 }
-
-
-/* =====================================================
-   CARD DESCRIPTION
-===================================================== */
 
 .create-task-card-header p {
-  margin-top: 4px;
+  margin: 4px 0 0;
 
-  color: #63617a;
+  color: #64748b;
 
-  font-size: 12px;
+  font-size: 13px;
 }
 
 
-/* =====================================================
-   INFORMATION BOX
-===================================================== */
+/* =========================================================
+   INFO BOX
+========================================================= */
 
 .create-task-info {
-  margin-top: 20px;
+  width: 100%;
 
   padding: 13px 15px;
 
-  border: 1px solid #bfdbfe;
+  margin-bottom: 20px;
 
-  border-radius: 9px;
+  border-radius: 10px;
 
   background: #eff6ff;
 
+  border: 1px solid #bfdbfe;
+
   color: #1e40af;
 
-  font-size: 12px;
+  font-size: 13px;
 
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 
-/* =====================================================
-   SUCCESS MESSAGE
-===================================================== */
+/* =========================================================
+   SUCCESS
+========================================================= */
 
 .create-task-success {
-  margin-top: 15px;
-
-  padding: 13px 15px;
-
   display: flex;
 
   align-items: center;
 
   gap: 9px;
 
-  border: 1px solid #a7f3d0;
+  margin-bottom: 18px;
 
-  border-radius: 9px;
+  padding: 12px 14px;
+
+  border-radius: 10px;
 
   background: #ecfdf5;
+
+  border: 1px solid #a7f3d0;
 
   color: #047857;
 
@@ -294,122 +267,73 @@
 
 .create-task-success span {
   width: 22px;
-  height: 22px;
 
-  flex-shrink: 0;
+  height: 22px;
 
   display: flex;
 
   align-items: center;
-  justify-content: center;
 
-  border-radius: 50%;
+  justify-content: center;
 
   background: #10b981;
 
   color: #ffffff;
 
-  font-weight: 800;
+  border-radius: 50%;
+
+  font-size: 13px;
 }
 
 
-/* =====================================================
-   ERROR MESSAGE
-===================================================== */
+/* =========================================================
+   ERROR
+========================================================= */
 
 .create-task-error {
-  margin-top: 15px;
-
-  padding: 13px 15px;
-
   display: flex;
 
-  align-items: center;
+  align-items: flex-start;
 
   gap: 9px;
 
-  border: 1px solid #fecaca;
+  margin-bottom: 18px;
 
-  border-radius: 9px;
+  padding: 12px 14px;
+
+  border-radius: 10px;
 
   background: #fef2f2;
+
+  border: 1px solid #fecaca;
 
   color: #b91c1c;
 
   font-size: 13px;
 
-  font-weight: 600;
-
   line-height: 1.5;
+
+  font-weight: 500;
 }
 
 .create-task-error span {
   width: 22px;
-  height: 22px;
 
-  flex-shrink: 0;
+  height: 22px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  border-radius: 50%;
+  flex-shrink: 0;
 
   background: #ef4444;
 
   color: #ffffff;
 
-  font-weight: 800;
-}
-
-
-/* =====================================================
-   FORM
-===================================================== */
-
-.create-task-form {
-  margin-top: 25px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 20px 22px;
-}
-
-
-/* =====================================================
-   FORM GROUP
-===================================================== */
-
-.create-task-form-group {
-  min-width: 0;
-
-  display: flex;
-
-  flex-direction: column;
-}
-
-
-/* =====================================================
-   FULL WIDTH
-===================================================== */
-
-.create-task-full-width {
-  grid-column: 1 / -1;
-}
-
-
-/* =====================================================
-   LABEL
-===================================================== */
-
-.create-task-form-group label {
-  margin-bottom: 7px;
-
-  color: #4338ca;
+  border-radius: 50%;
 
   font-size: 13px;
 
@@ -417,165 +341,114 @@
 }
 
 
-/* =====================================================
-   REQUIRED STAR
-===================================================== */
+/* =========================================================
+   FORM
+========================================================= */
 
-.create-task-form-group label span,
-.recurrence-title span {
-  margin-left: 3px;
+.create-task-form {
+  display: grid;
 
-  color: #dc2626;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-  font-weight: 800;
+  gap: 20px 18px;
 }
 
 
-/* =====================================================
-   ALL FORM CONTROLS
-===================================================== */
+/* =========================================================
+   FULL WIDTH
+========================================================= */
+
+.create-task-full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.create-task-form-group {
+  width: 100%;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.create-task-form-group label,
+.recurrence-section > label {
+  color: #1e293b;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.create-task-form-group label span,
+.recurrence-section label span {
+  color: #dc2626;
+
+  margin-left: 3px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
 
 .create-task-form-group input,
-.create-task-form-group select,
-.create-task-form-group textarea {
+.create-task-form-group textarea,
+.create-task-form-group select {
   width: 100%;
+
+  min-width: 0;
+
+  min-height: 44px;
+
+  padding: 10px 13px;
 
   border: 1px solid #c4b5fd;
 
   border-radius: 10px;
+
+  outline: none;
 
   background: #ffffff;
 
   color: #1e1b4b;
 
-  font-family: inherit;
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
   font-size: 13px;
 
-  outline: none;
+  font-weight: 500;
 
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
+    background 0.2s ease;
 }
 
 
-/* =====================================================
-   TEXT INPUT
-===================================================== */
-
-.create-task-form-group input {
-  min-height: 44px;
-
-  padding: 10px 12px;
-}
-
-
-/* =====================================================
-   SELECT / DROPDOWN
-===================================================== */
-
-.create-task-form-group select {
-  min-height: 46px;
-
-  padding: 10px 40px 10px 14px;
-
-  cursor: pointer;
-
-  appearance: auto;
-  -webkit-appearance: auto;
-  -moz-appearance: auto;
-}
-
-
-/* =====================================================
-   OCCURRENCE DROPDOWN
-===================================================== */
-
-#recurrenceType {
-  width: 100%;
-
-  min-height: 46px;
-
-  padding: 10px 40px 10px 14px;
-
-  border: 1px solid #c4b5fd;
-
-  border-radius: 10px;
-
-  background-color: #ffffff;
-
-  color: #3730a3;
-
-  font-family: "Segoe UI", Arial, sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  outline: none;
-
-  appearance: auto;
-  -webkit-appearance: auto;
-  -moz-appearance: auto;
-}
-
-#recurrenceType:hover {
-  border-color: #8b7ee8;
-
-  background-color: #fafaff;
-}
-
-#recurrenceType:focus {
-  border-color: #6366f1;
-
-  box-shadow:
-    0 0 0 3px rgba(99, 102, 241, 0.12);
-}
-
-
-/* =====================================================
-   DROPDOWN OPTIONS
-===================================================== */
-
-#recurrenceType option {
-  padding: 10px;
-
-  background: #ffffff;
-
-  color: #312e81;
-
-  font-size: 14px;
-
-  font-weight: 500;
-}
-
-
-/* =====================================================
-   PRIORITY DROPDOWN
-===================================================== */
-
-#priority {
-  cursor: pointer;
-
-  appearance: auto;
-  -webkit-appearance: auto;
-  -moz-appearance: auto;
-}
-
-
-/* =====================================================
+/* =========================================================
    TEXTAREA
-===================================================== */
+========================================================= */
 
 .create-task-form-group textarea {
-  min-height: 110px;
-
-  padding: 11px 12px;
+  min-height: 105px;
 
   resize: vertical;
 
@@ -583,140 +456,164 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    PLACEHOLDER
-===================================================== */
+========================================================= */
 
 .create-task-form-group input::placeholder,
 .create-task-form-group textarea::placeholder {
-  color: #a5a1c2;
+  color: #94a3b8;
+
+  opacity: 1;
 }
 
 
-/* =====================================================
+/* =========================================================
    FOCUS
-===================================================== */
+========================================================= */
 
 .create-task-form-group input:focus,
-.create-task-form-group select:focus,
-.create-task-form-group textarea:focus {
-  border-color: #6366f1;
+.create-task-form-group textarea:focus,
+.create-task-form-group select:focus {
+  border-color: #2563eb;
 
   box-shadow:
-    0 0 0 3px rgba(99, 102, 241, 0.12);
-
-  background: #ffffff;
+    0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 
-/* =====================================================
-   DATE / TIME INPUTS
-===================================================== */
+/* =========================================================
+   HOVER
+========================================================= */
 
-.create-task-form-group input[type="date"],
-.create-task-form-group input[type="time"] {
+.create-task-form-group input:hover,
+.create-task-form-group textarea:hover,
+.create-task-form-group select:hover {
+  border-color: #818cf8;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.create-task-form-group input[type="date"] {
   cursor: pointer;
 }
 
 
-/* =====================================================
-   FIELD HINT
-===================================================== */
+/* =========================================================
+   TIME SELECT
+========================================================= */
 
-.create-task-field-hint {
-  margin-top: 6px;
+.create-task-time-select {
+  width: 100%;
 
-  color: #6b6a85;
+  min-height: 46px !important;
 
-  font-size: 10px;
+  padding: 10px 14px !important;
 
-  line-height: 1.4;
-}
+  background: #ffffff;
 
+  color: #1e1b4b;
 
-/* =====================================================
-   RECURRENCE SECTION
-===================================================== */
-
-.recurrence-section {
-  margin-top: 2px;
-
-  padding: 18px;
-
-  border: 1px solid #c7c2f3;
-
-  border-radius: 12px;
-
-  background: #eeecff;
-
-  animation: recurrenceAppear 0.2s ease;
-}
-
-@keyframes recurrenceAppear {
-  from {
-    opacity: 0;
-
-    transform: translateY(-4px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-}
-
-
-/* =====================================================
-   RECURRENCE TITLE
-===================================================== */
-
-.recurrence-title {
-  display: block;
-
-  margin-bottom: 12px;
-
-  color: #5146a5;
+  cursor: pointer;
 
   font-size: 13px;
 
-  font-weight: 750;
+  font-weight: 600;
 }
 
 
-/* =====================================================
-   DAILY
-===================================================== */
+/*
+   IMPORTANT:
 
-.recurrence-section .create-task-field-hint {
-  display: block;
+   Start Time and End Time are now SELECT elements.
+
+   Therefore mobile browsers will show a normal
+   selectable list instead of the native clock picker.
+*/
+
+
+/* =========================================================
+   SELECT OPTION
+========================================================= */
+
+.create-task-form-group select option {
+  background: #ffffff;
+
+  color: #1e1b4b;
+
+  font-size: 13px;
 }
 
 
-/* =====================================================
-   WEEKLY DAYS
-===================================================== */
+/* =========================================================
+   FIELD HINT
+========================================================= */
+
+.create-task-field-hint {
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   RECURRENCE SECTION
+========================================================= */
+
+.recurrence-section {
+  width: 100%;
+
+  padding: 20px;
+
+  background: #f8faff;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.recurrence-title {
+  color: #1e3a8a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RECURRENCE DAYS
+========================================================= */
 
 .recurrence-days {
   display: grid;
 
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(7, minmax(0, 1fr));
 
-  gap: 10px;
+  gap: 8px;
 
-  margin-top: 5px;
+  width: 100%;
 }
 
 
-/* =====================================================
+/* =========================================================
    DAY OPTION
-===================================================== */
+========================================================= */
 
 .day-option {
   min-height: 42px;
-
-  padding: 9px 10px;
 
   display: flex;
 
@@ -724,851 +621,592 @@
 
   justify-content: center;
 
-  gap: 7px;
+  gap: 5px;
 
-  border: 1px solid #c4b5fd;
+  padding: 8px;
 
-  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+
+  border-radius: 9px;
 
   background: #ffffff;
 
-  color: #57536f;
+  color: #475569;
 
   font-size: 11px;
 
-  font-weight: 650;
+  font-weight: 600;
 
   cursor: pointer;
 
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+    color 0.2s ease;
+}
+
+.day-option input {
+  display: none;
 }
 
 .day-option:hover {
   border-color: #818cf8;
 
-  background: #e8e5ff;
-
-  color: #5146a5;
-
-  transform: translateY(-1px);
+  background: #eef2ff;
 }
-
-
-/* =====================================================
-   CHECKBOX
-===================================================== */
-
-.day-option input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-
-  min-height: auto;
-
-  margin: 0;
-
-  accent-color: #6366f1;
-
-  cursor: pointer;
-}
-
-
-/* =====================================================
-   SELECTED DAY
-===================================================== */
 
 .day-option.selected {
-  border-color: #6366f1;
+  background: #2563eb;
 
-  background: #dedaff;
+  border-color: #2563eb;
 
-  color: #3730a3;
-
-  box-shadow:
-    0 2px 7px rgba(79, 70, 229, 0.10);
+  color: #ffffff;
 }
 
 
-/* =====================================================
-   CUSTOM DATE INPUT
-===================================================== */
-
-.custom-date-input {
-  width: 100%;
-
-  min-height: 44px;
-
-  padding: 10px 12px;
-
-  border: 1px solid #c4b5fd;
-
-  border-radius: 9px;
-
-  background: #ffffff;
-
-  color: #312e81;
-
-  font-family: inherit;
-
-  font-size: 13px;
-
-  outline: none;
-
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-}
-
-.custom-date-input:focus {
-  border-color: #6366f1;
-
-  box-shadow:
-    0 0 0 3px rgba(99, 102, 241, 0.12);
-}
-
-
-/* =====================================================
-   CUSTOM DATE LIST
-===================================================== */
-
-.custom-dates-list {
-  margin-top: 13px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 8px;
-}
-
-
-/* =====================================================
-   CUSTOM DATE ITEM
-===================================================== */
-
-.custom-date-item {
-  min-height: 40px;
-
-  padding: 7px 9px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 8px;
-
-  border: 1px solid #c7c2f3;
-
-  border-radius: 8px;
-
-  background: #e8e5ff;
-
-  color: #3730a3;
-
-  font-size: 11px;
-
-  font-weight: 650;
-}
-
-.custom-date-item span {
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
-}
-
-
-/* =====================================================
-   REMOVE DATE BUTTON
-===================================================== */
-
-.custom-date-item button {
-  width: 24px;
-  height: 24px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background: #fee2e2;
-
-  color: #b91c1c;
-
-  font-size: 17px;
-
-  line-height: 1;
-
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-}
-
-.custom-date-item button:hover {
-  background: #fecaca;
-
-  transform: scale(1.05);
-}
-
-
-/* =====================================================
+/* =========================================================
    ACTIONS
-===================================================== */
+========================================================= */
 
 .create-task-actions {
   grid-column: 1 / -1;
 
-  margin-top: 8px;
-
-  padding-top: 22px;
-
   display: flex;
-
-  align-items: center;
 
   justify-content: flex-end;
 
-  gap: 12px;
-
-  border-top: 1px solid #ddd6fe;
-}
-
-
-/* =====================================================
-   CANCEL BUTTON
-===================================================== */
-
-.create-task-cancel-button {
-  min-width: 100px;
-
-  padding: 11px 18px;
-
-  border: 1px solid #c4b5fd;
-
-  border-radius: 9px;
-
-  background: #ffffff;
-
-  color: #57536f;
-
-  font-family: inherit;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: all 0.2s ease;
-}
-
-.create-task-cancel-button:hover {
-  background: #eeecff;
-
-  border-color: #938be5;
-
-  color: #5146a5;
-}
-
-
-/* =====================================================
-   SUBMIT BUTTON
-===================================================== */
-
-.create-task-submit-button {
-  min-width: 190px;
-
-  padding: 11px 18px;
-
-  display: flex;
-
   align-items: center;
 
-  justify-content: center;
+  gap: 12px;
 
-  gap: 7px;
+  padding-top: 8px;
 
-  border: none;
+  border-top: 1px solid #e2e8f0;
 
-  border-radius: 9px;
+  margin-top: 4px;
+}
 
-  background: linear-gradient(
-    135deg,
-    #5146a5,
-    #7167d8
-  );
 
-  color: #ffffff;
+/* =========================================================
+   BUTTON COMMON
+========================================================= */
 
-  font-family: inherit;
+.create-task-cancel-button,
+.create-task-submit-button {
+  min-height: 44px;
 
-  font-size: 12px;
+  padding: 10px 18px;
 
-  font-weight: 750;
+  border-radius: 10px;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
 
   cursor: pointer;
-
-  box-shadow:
-    0 5px 14px rgba(79, 70, 229, 0.20);
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    opacity 0.2s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.create-task-submit-button:hover:not(:disabled) {
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.create-task-cancel-button {
+  border: 1px solid #cbd5e1;
+
+  background: #ffffff;
+
+  color: #475569;
+}
+
+.create-task-cancel-button:hover {
+  background: #f8fafc;
+
   transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.create-task-submit-button {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  min-width: 170px;
+}
+
+.create-task-submit-button:hover {
+  background: #1d4ed8;
 
   box-shadow:
-    0 8px 18px rgba(79, 70, 229, 0.28);
+    0 5px 14px rgba(37, 99, 235, 0.25);
+
+  transform: translateY(-1px);
 }
 
 
-/* =====================================================
+/* =========================================================
    DISABLED
-===================================================== */
+========================================================= */
 
 .create-task-cancel-button:disabled,
 .create-task-submit-button:disabled {
-  opacity: 0.65;
+  opacity: 0.6;
 
   cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
 }
 
 
-/* =====================================================
+/* =========================================================
    SPINNER
-===================================================== */
+========================================================= */
 
 .create-task-spinner {
   width: 15px;
+
   height: 15px;
 
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: inline-block;
+
+  margin-right: 7px;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
 
   border-top-color: #ffffff;
 
   border-radius: 50%;
 
-  animation: createTaskSpin 0.7s linear infinite;
+  animation:
+    create-task-spin 0.7s linear infinite;
+
+  vertical-align: middle;
 }
 
-@keyframes createTaskSpin {
+@keyframes create-task-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 
-/* =====================================================
+/* =========================================================
    DARK MODE
-===================================================== */
-
-body.dark-mode {
-  background: #0f172a;
-}
-
-
-/* PAGE */
+========================================================= */
 
 body.dark-mode .create-task-page {
-  background: #0f172a;
-  color: #f8fafc;
-}
-
-
-/* HEADER */
-
-body.dark-mode .create-task-header {
-  background: #1e293b;
-
-  border-bottom-color: #334155;
-
-  box-shadow:
-    0 3px 12px rgba(0, 0, 0, 0.25);
-}
-
-
-/* BACK BUTTON */
-
-body.dark-mode .create-task-back-button {
-  background: #334155;
-
-  border-color: #475569;
+  background: #020617;
 
   color: #e2e8f0;
 }
 
-body.dark-mode .create-task-back-button:hover {
-  background: #475569;
+body.dark-mode .create-task-header {
+  background: #0f172a;
 
-  border-color: #64748b;
+  border-bottom-color: #1e293b;
 
-  color: #ffffff;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
-
-/* HEADER TEXT */
-
 body.dark-mode .create-task-header-content h1 {
-  color: #f8fafc;
+  color: #e2e8f0;
 }
 
 body.dark-mode .create-task-header-content p {
   color: #94a3b8;
 }
 
+body.dark-mode .create-task-back-button {
+  background: #172554;
 
-/* MAIN CARD */
+  color: #93c5fd;
+}
+
+body.dark-mode .create-task-back-button:hover {
+  background: #1e3a8a;
+}
 
 body.dark-mode .create-task-card {
-  background: #1e293b;
+  background: #0f172a;
 
-  border-color: #334155;
+  border-color: #1e293b;
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.30);
+    0 12px 35px rgba(0, 0, 0, 0.3);
 }
-
-
-/* CARD HEADER */
-
-body.dark-mode .create-task-card-header {
-  border-bottom-color: #334155;
-}
-
-
-/* CARD ICON */
 
 body.dark-mode .create-task-icon {
-  background: #312e81;
+  background: #172554;
 
-  color: #c4b5fd;
+  color: #60a5fa;
 }
-
-
-/* CARD TITLE */
 
 body.dark-mode .create-task-card-header h2 {
-  color: #f8fafc;
+  color: #e2e8f0;
 }
-
-
-/* CARD DESCRIPTION */
 
 body.dark-mode .create-task-card-header p {
   color: #94a3b8;
 }
 
-
-/* INFORMATION BOX */
-
 body.dark-mode .create-task-info {
   background: #172554;
 
-  border-color: #1e40af;
+  border-color: #1e3a8a;
 
   color: #bfdbfe;
 }
 
-
-/* SUCCESS */
-
-body.dark-mode .create-task-success {
-  background: #052e24;
-
-  border-color: #047857;
-
-  color: #6ee7b7;
+body.dark-mode .create-task-form-group label,
+body.dark-mode .recurrence-section > label {
+  color: #cbd5e1;
 }
-
-
-/* ERROR */
-
-body.dark-mode .create-task-error {
-  background: #3f1515;
-
-  border-color: #991b1b;
-
-  color: #fca5a5;
-}
-
-
-/* LABELS */
-
-body.dark-mode .create-task-form-group label {
-  color: #a5b4fc;
-}
-
-
-/* FORM INPUTS */
 
 body.dark-mode .create-task-form-group input,
-body.dark-mode .create-task-form-group select,
-body.dark-mode .create-task-form-group textarea {
-  background: #0f172a;
+body.dark-mode .create-task-form-group textarea,
+body.dark-mode .create-task-form-group select {
+  background: #0b1220;
 
-  border-color: #475569;
+  color: #e2e8f0;
 
-  color: #f8fafc;
+  border-color: #334155;
 }
-
-body.dark-mode .create-task-form-group input:focus,
-body.dark-mode .create-task-form-group select:focus,
-body.dark-mode .create-task-form-group textarea:focus {
-  background: #111827;
-
-  border-color: #818cf8;
-
-  box-shadow:
-    0 0 0 3px rgba(129, 140, 248, 0.15);
-}
-
-
-/* PLACEHOLDER */
 
 body.dark-mode .create-task-form-group input::placeholder,
 body.dark-mode .create-task-form-group textarea::placeholder {
   color: #64748b;
 }
 
-
-/* OCCURRENCE DROPDOWN */
-
-body.dark-mode #recurrenceType {
-  background-color: #0f172a;
-
-  border-color: #475569;
-
-  color: #c4b5fd;
+body.dark-mode .create-task-form-group input:hover,
+body.dark-mode .create-task-form-group textarea:hover,
+body.dark-mode .create-task-form-group select:hover {
+  border-color: #60a5fa;
 }
 
-body.dark-mode #recurrenceType:hover {
-  background-color: #111827;
-
-  border-color: #6366f1;
-}
-
-body.dark-mode #recurrenceType:focus {
-  border-color: #818cf8;
+body.dark-mode .create-task-form-group input:focus,
+body.dark-mode .create-task-form-group textarea:focus,
+body.dark-mode .create-task-form-group select:focus {
+  border-color: #60a5fa;
 
   box-shadow:
-    0 0 0 3px rgba(129, 140, 248, 0.15);
+    0 0 0 3px rgba(96, 165, 250, 0.15);
 }
 
+body.dark-mode .create-task-form-group select option {
+  background: #0b1220;
 
-/* DROPDOWN OPTIONS */
-
-body.dark-mode #recurrenceType option {
-  background: #1e293b;
-
-  color: #f8fafc;
+  color: #e2e8f0;
 }
-
-
-/* FIELD HINT */
 
 body.dark-mode .create-task-field-hint {
   color: #94a3b8;
 }
 
-
-/* RECURRENCE SECTION */
-
 body.dark-mode .recurrence-section {
-  background: #25204a;
+  background: #0b1220;
 
-  border-color: #4c4680;
+  border-color: #1e293b;
 }
-
-
-/* RECURRENCE TITLE */
 
 body.dark-mode .recurrence-title {
-  color: #c4b5fd;
+  color: #93c5fd;
 }
 
-
-/* DAY OPTION */
-
 body.dark-mode .day-option {
-  background: #0f172a;
+  background: #111827;
 
-  border-color: #475569;
+  border-color: #334155;
 
   color: #cbd5e1;
 }
 
 body.dark-mode .day-option:hover {
-  background: #312e81;
+  background: #172554;
 
-  border-color: #818cf8;
-
-  color: #f8fafc;
+  border-color: #60a5fa;
 }
-
-
-/* SELECTED DAY */
 
 body.dark-mode .day-option.selected {
-  background: #3730a3;
+  background: #2563eb;
 
-  border-color: #818cf8;
+  border-color: #2563eb;
 
   color: #ffffff;
-
-  box-shadow:
-    0 2px 7px rgba(0, 0, 0, 0.25);
 }
-
-
-/* CUSTOM DATE INPUT */
-
-body.dark-mode .custom-date-input {
-  background: #0f172a;
-
-  border-color: #475569;
-
-  color: #f8fafc;
-}
-
-body.dark-mode .custom-date-input:focus {
-  border-color: #818cf8;
-
-  box-shadow:
-    0 0 0 3px rgba(129, 140, 248, 0.15);
-}
-
-
-/* CUSTOM DATE ITEM */
-
-body.dark-mode .custom-date-item {
-  background: #312e81;
-
-  border-color: #4c4680;
-
-  color: #e0e7ff;
-}
-
-
-/* REMOVE DATE BUTTON */
-
-body.dark-mode .custom-date-item button {
-  background: #450a0a;
-
-  color: #fca5a5;
-}
-
-body.dark-mode .custom-date-item button:hover {
-  background: #7f1d1d;
-}
-
-
-/* ACTIONS */
 
 body.dark-mode .create-task-actions {
-  border-top-color: #334155;
+  border-top-color: #1e293b;
 }
 
-
-/* CANCEL BUTTON */
-
 body.dark-mode .create-task-cancel-button {
-  background: #334155;
+  background: #111827;
 
-  border-color: #475569;
+  border-color: #334155;
 
-  color: #e2e8f0;
+  color: #cbd5e1;
 }
 
 body.dark-mode .create-task-cancel-button:hover {
-  background: #475569;
+  background: #1e293b;
+}
 
-  border-color: #64748b;
+body.dark-mode .create-task-submit-button {
+  background: #2563eb;
+
+  border-color: #2563eb;
 
   color: #ffffff;
 }
 
 
-/* SUBMIT BUTTON */
-
-body.dark-mode .create-task-submit-button {
-  box-shadow:
-    0 5px 14px rgba(0, 0, 0, 0.30);
-}
-
-
-/* DATE/TIME ICON */
-
-body.dark-mode
-.create-task-form-group input[type="date"],
-body.dark-mode
-.create-task-form-group input[type="time"] {
-  color-scheme: dark;
-}
-
-
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   .create-task-header {
-    padding: 16px 20px;
+    grid-template-columns: 140px 1fr 140px;
+
+    padding: 14px 20px;
   }
 
   .create-task-main {
-    padding: 30px 18px 50px;
+    padding: 0 18px;
   }
 
   .create-task-card {
     padding: 24px;
   }
 
-  .create-task-form {
-    grid-template-columns: 1fr;
-  }
-
-  .create-task-full-width,
-  .create-task-actions {
-    grid-column: auto;
-  }
-
   .recurrence-days {
     grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-  }
-
-  .custom-dates-list {
-    grid-template-columns: 1fr;
+      repeat(4, minmax(0, 1fr));
   }
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+
+  .create-task-page {
+    padding-bottom: 25px;
+  }
+
+
+  /* HEADER */
 
   .create-task-header {
-    min-height: 76px;
+    min-height: auto;
 
-    padding: 12px 14px;
+    display: flex;
 
-    gap: 8px;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    padding: 14px 16px;
+
+    position: relative;
   }
+
 
   .create-task-back-button {
-    min-width: auto;
+    align-self: flex-start;
 
-    padding: 8px 10px;
+    padding: 9px 13px;
 
-    font-size: 11px;
+    font-size: 12px;
   }
 
-  .create-task-header-space {
-    min-width: auto;
 
-    width: 65px;
+  .create-task-header-content {
+    text-align: left;
+
+    padding-left: 2px;
   }
+
 
   .create-task-header-content h1 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
+
   .create-task-header-content p {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  .create-task-header-space {
     display: none;
   }
 
+
+  /* MAIN */
+
   .create-task-main {
-    padding: 18px 10px 35px;
+    margin: 18px auto;
+
+    padding: 0 12px;
   }
 
+
+  /* CARD */
+
   .create-task-card {
-    padding: 18px;
+    padding: 18px 14px;
 
     border-radius: 14px;
   }
 
+
+  /* CARD HEADER */
+
   .create-task-card-header {
+    align-items: flex-start;
+
     gap: 10px;
 
-    padding-bottom: 17px;
+    margin-bottom: 15px;
   }
+
 
   .create-task-icon {
     width: 40px;
+
     height: 40px;
 
-    font-size: 19px;
+    font-size: 17px;
+
+    border-radius: 10px;
   }
+
 
   .create-task-card-header h2 {
     font-size: 17px;
   }
 
-  .create-task-card-header p {
-    font-size: 10px;
-  }
 
-  .create-task-info {
+  .create-task-card-header p {
     font-size: 11px;
 
-    padding: 11px 12px;
+    line-height: 1.5;
   }
+
+
+  /* INFO */
+
+  .create-task-info {
+    padding: 11px 12px;
+
+    margin-bottom: 15px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+  }
+
+
+  /* FORM */
 
   .create-task-form {
-    margin-top: 20px;
+    grid-template-columns: 1fr;
 
-    gap: 17px;
+    gap: 16px;
   }
 
-  .create-task-form-group label {
-    font-size: 12px;
+
+  .create-task-full-width {
+    grid-column: auto;
   }
+
+
+  /* INPUTS */
 
   .create-task-form-group input,
+  .create-task-form-group textarea,
   .create-task-form-group select {
-    min-height: 42px;
-
-    font-size: 12px;
-  }
-
-  #recurrenceType {
     min-height: 44px;
 
     font-size: 13px;
 
-    padding: 9px 36px 9px 12px;
+    border-radius: 9px;
   }
 
-  #recurrenceType option {
-    font-size: 13px;
-  }
 
   .create-task-form-group textarea {
-    font-size: 12px;
+    min-height: 95px;
   }
 
-  .recurrence-section {
-    padding: 14px;
+
+  /* TIME SELECT */
+
+  .create-task-time-select {
+    min-height: 46px !important;
+
+    font-size: 14px !important;
+
+    padding: 10px 12px !important;
+
+    border-radius: 9px !important;
   }
+
+
+  /*
+     Mobile time is now a normal SELECT.
+
+     It will NOT use input[type="time"].
+
+     Therefore the user gets:
+     
+     5:00 AM
+     5:10 AM
+     5:20 AM
+     5:30 AM
+     ...
+  */
+
+
+  /* RECURRENCE */
+
+  .recurrence-section {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    gap: 12px;
+  }
+
 
   .recurrence-days {
     grid-template-columns:
@@ -1577,66 +1215,95 @@ body.dark-mode
     gap: 8px;
   }
 
+
   .day-option {
     min-height: 40px;
 
-    padding: 8px 5px;
-
-    font-size: 10px;
+    font-size: 11px;
   }
 
+
+  /* ACTIONS */
+
   .create-task-actions {
-    padding-top: 18px;
+    grid-column: auto;
 
     flex-direction: column-reverse;
 
     align-items: stretch;
+
+    gap: 9px;
+
+    padding-top: 15px;
   }
+
 
   .create-task-cancel-button,
   .create-task-submit-button {
     width: 100%;
+
+    min-height: 45px;
+
+    font-size: 13px;
+  }
+
+
+  /* SUCCESS / ERROR */
+
+  .create-task-success,
+  .create-task-error {
+    font-size: 12px;
+
+    padding: 10px 12px;
   }
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 400px) {
 
-  .create-task-header {
-    padding: 10px;
-  }
-
-  .create-task-header-content h1 {
-    font-size: 16px;
-  }
-
   .create-task-main {
-    padding: 12px 7px 30px;
+    padding: 0 9px;
   }
+
 
   .create-task-card {
-    padding: 14px;
+    padding: 15px 11px;
   }
 
-  .create-task-card-header h2 {
-    font-size: 15px;
+
+  .create-task-header {
+    padding: 12px;
   }
 
-  .create-task-info {
-    font-size: 10px;
+
+  .create-task-header-content h1 {
+    font-size: 18px;
   }
+
+
+  .create-task-header-content p {
+    font-size: 11px;
+  }
+
+
+  .create-task-form-group input,
+  .create-task-form-group textarea,
+  .create-task-form-group select {
+    font-size: 12px;
+  }
+
+
+  .create-task-time-select {
+    font-size: 13px !important;
+  }
+
 
   .recurrence-days {
-    grid-template-columns: 1fr;
-  }
-
-  .day-option {
-    justify-content: flex-start;
-
-    padding-left: 12px;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 }
