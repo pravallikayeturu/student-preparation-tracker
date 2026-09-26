@@ -1,521 +1,364 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
-  background: #f1f5f9;
-}
-
-
-/* =====================================================
-   HOMEPAGE
-===================================================== */
-
 .homepage {
   min-height: 100vh;
-  background: #f1f5f9;
-  display: flex;
+  background: #f7faff;
+  color: #172554;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 
-/* =====================================================
+/* =========================================================
    SIDEBAR
-===================================================== */
+========================================================= */
 
 .homepage-sidebar {
   position: fixed;
   top: 0;
   left: 0;
 
-  width: 255px;
+  width: 240px;
   height: 100vh;
 
-  background: #172554;
-  color: white;
+  background: #ffffff;
+  border-right: 1px solid #dbe7f5;
+
+  padding: 25px 15px;
 
   overflow-y: auto;
-  overflow-x: hidden;
-
   z-index: 1000;
-
-  padding: 25px 16px;
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.homepage-logo {
-  font-size: 21px;
-  line-height: 1.4;
-
+.sidebar-logo {
   text-align: center;
-
-  margin: 0 0 30px;
-
-  color: #ffffff;
-
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  margin-bottom: 30px;
 }
 
+.sidebar-logo h2 {
+  color: #172554;
+  font-size: 22px;
+  font-weight: 700;
+}
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+.sidebar-logo span {
+  color: #2563eb;
+}
 
-.sidebar-nav {
+.sidebar-menu {
   display: flex;
   flex-direction: column;
-
   gap: 8px;
 }
 
-
-/* =====================================================
-   SIDEBAR LINKS
-===================================================== */
-
-.sidebar-link,
-.home-sidebar-link {
+.sidebar-link {
   display: flex;
   align-items: center;
-
   gap: 12px;
 
   width: 100%;
-
-  padding: 13px 14px;
+  padding: 12px 14px;
 
   border-radius: 10px;
-
-  color: #dbeafe;
   text-decoration: none;
 
-  font-size: 15px;
+  color: #475569;
+  font-size: 14px;
   font-weight: 500;
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-
-/* =====================================================
-   ICON
-===================================================== */
-
-.nav-icon,
-.home-nav-icon {
-  width: 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 18px;
+.sidebar-link:hover {
+  background: #eff6ff;
+  color: #2563eb;
 }
-
-
-/* =====================================================
-   HOVER
-===================================================== */
-
-.sidebar-link:hover,
-.home-sidebar-link:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-
-  transform: translateX(3px);
-}
-
-
-/* =====================================================
-   ACTIVE
-===================================================== */
 
 .sidebar-link.active {
-  background: rgba(255, 255, 255, 0.18);
+  background: #2563eb;
   color: #ffffff;
+}
 
-  font-weight: 600;
+.sidebar-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
 }
 
 
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-.logout-link {
-  margin-top: 15px;
-}
-
-
-/* =====================================================
+/* =========================================================
    MAIN CONTENT
-===================================================== */
+========================================================= */
 
 .homepage-main {
-  margin-left: 255px;
-
-  width: calc(100% - 255px);
+  margin-left: 240px;
+  width: calc(100% - 240px);
 
   min-height: 100vh;
 
-  overflow-y: auto;
+  padding: 30px;
+
   overflow-x: hidden;
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* =========================================================
+   TOP BAR
+========================================================= */
 
-.homepage-header {
-  min-height: 82px;
-
-  padding: 18px 35px;
-
-  background: #f8fafc;
-
-  border-bottom: 1px solid #dbe3ef;
-
+.homepage-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 20px;
-
-  position: sticky;
-  top: 0;
-
-  z-index: 100;
+  width: 100%;
+  margin-bottom: 25px;
 }
 
-
-/* =====================================================
-   WELCOME
-===================================================== */
-
-.header-welcome p {
-  margin: 0;
-
-  font-size: 21px;
-
+.homepage-title {
   color: #172554;
-
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-.header-welcome strong {
-  color: #2563eb;
+.homepage-subtitle {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 14px;
 }
 
 
-/* =====================================================
-   PROFILE SECTION
-===================================================== */
+/* =========================================================
+   PROFILE
+========================================================= */
 
 .profile-section {
+  position: relative;
+}
+
+.profile-button {
   display: flex;
   align-items: center;
+  gap: 10px;
 
-  gap: 12px;
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
 }
 
-
-/* =====================================================
-   PROFILE WRAPPER
-===================================================== */
-
-.profile-picture-wrapper {
-  position: relative;
-
-  width: 48px;
-  height: 48px;
-
-  flex-shrink: 0;
-}
-
-
-/* =====================================================
-   PROFILE IMAGE
-===================================================== */
-
-.profile-picture,
-.profile-placeholder {
-  width: 48px;
-  height: 48px;
+.profile-image {
+  width: 45px;
+  height: 45px;
 
   border-radius: 50%;
-
   object-fit: cover;
 
   border: 2px solid #2563eb;
 }
 
-
-/* =====================================================
-   PLACEHOLDER
-===================================================== */
-
-.profile-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #dbeafe;
-
-  color: #1d4ed8;
-
-  font-size: 20px;
-  font-weight: 700;
-}
-
-
-/* =====================================================
-   EDIT ICON
-===================================================== */
-
-.profile-edit {
-  position: absolute;
-
-  right: -5px;
-  bottom: -4px;
-
-  width: 22px;
-  height: 22px;
-
-  border-radius: 50%;
-
-  background: #2563eb;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 11px;
-
-  cursor: pointer;
-
-  border: 2px solid #f8fafc;
-}
-
-
-/* =====================================================
-   PROFILE INFO
-===================================================== */
-
-.profile-info {
-  display: flex;
-  flex-direction: column;
-
-  gap: 3px;
-
-  min-width: 0;
-}
-
-.profile-info strong {
-  font-size: 14px;
-
+.profile-name {
   color: #172554;
-
-  font-weight: 700;
-
-  white-space: nowrap;
-}
-
-.profile-info span {
-  font-size: 12px;
-
-  color: #64748b;
-
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 
-/* =====================================================
-   CONTENT
-===================================================== */
+/* =========================================================
+   PROFILE VIEWER
+========================================================= */
 
-.homepage-content {
-  padding: 35px;
+.profile-viewer-overlay {
+  position: fixed;
+  inset: 0;
 
-  max-width: 1400px;
+  background: rgba(15, 23, 42, 0.75);
 
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3000;
 }
 
+.profile-viewer {
+  position: relative;
 
-/* =====================================================
-   WELCOME CARD
-===================================================== */
+  width: min(90vw, 700px);
+  height: min(80vh, 700px);
 
-.welcome-card {
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #4338ca
-  );
-
-  color: #ffffff;
-
+  background: #ffffff;
   border-radius: 18px;
 
-  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  margin-bottom: 30px;
-
-  box-shadow:
-    0 14px 30px rgba(37, 99, 235, 0.20);
+  overflow: hidden;
 }
 
-.welcome-card h2 {
-  margin: 0 0 10px;
+.profile-viewer img {
+  max-width: 100%;
+  max-height: 100%;
 
-  font-size: 28px;
+  object-fit: contain;
 
-  font-weight: 700;
+  user-select: none;
+}
+
+.profile-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  cursor: pointer;
+  font-size: 18px;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   WELCOME CARD
+========================================================= */
+
+.welcome-card {
+  width: 100%;
+
+  padding: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #eff6ff,
+    #ffffff
+  );
+
+  border: 1px solid #dbe7f5;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+  margin-bottom: 25px;
+}
+
+.welcome-card h1 {
+  color: #172554;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .welcome-card p {
-  margin: 0;
-
-  font-size: 16px;
-
+  color: #64748b;
+  font-size: 15px;
   line-height: 1.6;
-
-  opacity: 0.95;
 }
 
 
-/* =====================================================
-   TODAY'S MOTIVATION
-===================================================== */
+/* =========================================================
+   MOTIVATION CARD
+========================================================= */
 
-.today-motivation {
-  text-align: center;
+.motivation-card {
+  width: 100%;
 
-  padding: 45px 25px;
+  padding: 25px;
 
-  margin-bottom: 40px;
+  background: #ffffff;
 
-  background: linear-gradient(
-    135deg,
-    #dbeafe,
-    #e0e7ff
-  );
-
+  border: 1px solid #dbe7f5;
   border-radius: 18px;
 
-  border: 1px solid #bfdbfe;
+  margin-bottom: 30px;
 
-  box-shadow:
-    0 10px 25px rgba(37, 99, 235, 0.10);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
 }
 
-
-/* LABEL */
-
-.motivation-label {
-  display: inline-block;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 2px;
-
+.motivation-card h2 {
   color: #2563eb;
-
-  margin-bottom: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-
-/* MOTIVATION TITLE */
-
-.today-motivation h2 {
-  max-width: 700px;
-
-  margin: 0 auto 15px;
-
-  font-size: 28px;
-
-  line-height: 1.45;
-
-  color: #172554;
-
-  font-weight: 700;
-}
-
-
-/* MOTIVATION TEXT */
-
-.today-motivation p {
-  margin: 0;
-
-  font-size: 16px;
-
+.motivation-card p {
   color: #475569;
-
-  font-weight: 500;
+  line-height: 1.7;
 }
 
 
-/* =====================================================
-   STUDENTS WHO INSPIRE
-===================================================== */
+/* =========================================================
+   STUDENTS INSPIRE SECTION
+========================================================= */
 
 .students-inspire {
-  text-align: center;
-
-  margin-bottom: 45px;
+  width: 100%;
+  margin-bottom: 35px;
 }
 
-.students-inspire > h2 {
-  margin: 0 0 28px;
-
-  font-size: 25px;
+.students-inspire-title {
+  text-align: center;
 
   color: #172554;
 
+  font-size: 25px;
   font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.students-inspire-subtitle {
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
 }
 
 
-/* =====================================================
-   GRID
-===================================================== */
+/* =========================================================
+   LEARN / PRACTICE / ACHIEVE GRID
+========================================================= */
 
 .student-inspire-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 25px;
 
   width: 100%;
-
   max-width: 1200px;
 
   margin: 0 auto;
 }
 
 
-/* =====================================================
-   STUDENT CARDS
-===================================================== */
+/* =========================================================
+   INDIVIDUAL CARD
+========================================================= */
 
 .student-inspire-card {
+  width: 100%;
+  min-width: 0;
+
   background: #f8fbff;
 
   border-radius: 18px;
@@ -524,73 +367,39 @@ body {
 
   border: 1px solid #dbe7f5;
 
-  box-shadow:
-    0 8px 22px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-
-
-/* LEARN */
-
-.student-inspire-card:nth-child(1) {
-  background: linear-gradient(
-    135deg,
-    #dbeafe,
-    #eff6ff
-  );
-
-  border-color: #93c5fd;
-}
-
-
-/* PRACTICE */
-
-.student-inspire-card:nth-child(2) {
-  background: linear-gradient(
-    135deg,
-    #ede9fe,
-    #f5f3ff
-  );
-
-  border-color: #c4b5fd;
-}
-
-
-/* ACHIEVE */
-
-.student-inspire-card:nth-child(3) {
-  background: linear-gradient(
-    135deg,
-    #dcfce7,
-    #f0fdf4
-  );
-
-  border-color: #86efac;
-}
-
 
 .student-inspire-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
-  box-shadow:
-    0 16px 32px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
 }
 
 
-/* =====================================================
+/* =========================================================
    IMAGE WRAPPER
-===================================================== */
+========================================================= */
+
+/*
+   IMPORTANT:
+   Fixed height + object-fit: cover was cutting images.
+
+   aspect-ratio keeps the image area responsive.
+*/
 
 .student-image-wrapper {
   position: relative;
 
   width: 100%;
 
-  height: 230px;
+  aspect-ratio: 4 / 3;
+
+  height: auto;
 
   overflow: hidden;
 
@@ -599,33 +408,47 @@ body {
   margin-bottom: 15px;
 
   background: #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
-/* =====================================================
+/* =========================================================
    STUDENT IMAGE
-===================================================== */
+========================================================= */
 
 .student-inspire-image {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  /*
+     contain = complete image visible
+     No cutting on smaller screens.
+  */
+  object-fit: contain;
 
   display: block;
 
   transition: transform 0.3s ease;
-}
 
-.student-inspire-card:hover
-.student-inspire-image {
-  transform: scale(1.05);
+  background: #e2e8f0;
 }
 
 
-/* =====================================================
-   ICON
-===================================================== */
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.student-inspire-card:hover .student-inspire-image {
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   IMAGE ICON
+========================================================= */
 
 .student-icon {
   position: absolute;
@@ -638,7 +461,9 @@ body {
 
   border-radius: 50%;
 
-  background: #ffffff;
+  background: #2563eb;
+
+  color: #ffffff;
 
   display: flex;
   align-items: center;
@@ -646,514 +471,255 @@ body {
 
   font-size: 20px;
 
-  box-shadow:
-    0 4px 12px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
 
-/* =====================================================
-   CARD TITLE
-===================================================== */
+/* =========================================================
+   CARD TEXT
+========================================================= */
 
 .student-inspire-card h3 {
-  margin: 0;
-
-  font-size: 16px;
-
-  letter-spacing: 1.5px;
-
-  color: #1d4ed8;
-
-  font-weight: 800;
-}
-
-
-/* DIFFERENT TITLE COLORS */
-
-.student-inspire-card:nth-child(2) h3 {
-  color: #6d28d9;
-}
-
-.student-inspire-card:nth-child(3) h3 {
-  color: #15803d;
-}
-
-
-/* =====================================================
-   DISCIPLINE BANNER
-===================================================== */
-
-.discipline-banner {
-  width: 100%;
-  max-width: none;
-
-  height: 430px;
-
-  margin: 0 0 35px 0;
-
-  padding: 0;
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-  background: #ffffff;
-
-  border: 1px solid #7dd3fc;
-
-  box-shadow:
-    0 8px 22px rgba(14, 116, 144, 0.10);
-
-  display: block;
-
-  align-self: stretch;
-}
-
-
-/* =====================================================
-   DISCIPLINE IMAGE
-===================================================== */
-
-.discipline-banner img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  margin: 0;
-  padding: 0;
-
-  object-fit: fill;
-  object-position: center;
-
-  transform: none !important;
-}
-
-
-/* NO HOVER ZOOM */
-
-.discipline-banner:hover img {
-  transform: none !important;
-}
-
-
-/* =====================================================
-   FINAL MOTIVATION
-===================================================== */
-
-.final-motivation {
-  text-align: center;
-
-  padding: 45px 20px 55px;
-
-  margin-bottom: 10px;
-
-  background: linear-gradient(
-    135deg,
-    #172554,
-    #1e40af,
-    #312e81
-  );
-
-  border-radius: 20px;
-
-  box-shadow:
-    0 15px 35px rgba(23, 37, 84, 0.20);
-}
-
-.final-motivation h2 {
-  margin: 0 0 12px;
-
-  font-size: 27px;
-
-  color: #ffffff;
-
-  font-weight: 700;
-}
-
-.final-motivation p {
-  margin: 0 0 8px;
-
-  font-size: 17px;
-
-  color: #dbeafe;
-
-  font-weight: 500;
-}
-
-.final-motivation span {
-  font-size: 14px;
-
-  color: #bfdbfe;
-}
-
-
-/* =====================================================
-   PROFILE PHOTO VIEWER
-===================================================== */
-
-.profile-view-overlay {
-  position: fixed;
-
-  inset: 0;
-
-  background: rgba(15, 23, 42, 0.82);
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  z-index: 2000;
-
-  padding: 20px;
-}
-
-
-/* REMOVE WHITE BOX */
-
-.profile-view-container {
-  position: relative;
-
-  width: auto;
-
-  max-width: none;
-
-  max-height: none;
-
-  overflow: visible;
-
-  background: transparent;
-
-  border-radius: 0;
-
-  padding: 0;
-
-  text-align: center;
-}
-
-
-/* CLOSE */
-
-.profile-view-close {
-  position: absolute;
-
-  top: -15px;
-  right: -15px;
-
-  width: 38px;
-  height: 38px;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background: #ef4444;
-
-  color: #ffffff;
+  color: #172554;
 
   font-size: 18px;
 
-  cursor: pointer;
+  margin-bottom: 7px;
 
-  z-index: 10;
+  letter-spacing: 1px;
+}
+
+.student-inspire-card p {
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
 }
 
 
-/* COMPLETE CIRCLE PHOTO */
+/* =========================================================
+   DISCIPLINE BANNER
+========================================================= */
 
-.profile-view-image-wrapper {
-  width: 450px;
-  height: 450px;
+.discipline-banner {
+  width: 100%;
+  max-width: 1200px;
 
-  max-width: 80vw;
-  max-height: 80vw;
+  height: 360px;
 
-  overflow: hidden;
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  margin: 0;
+  margin: 0 auto 35px;
 
   position: relative;
 
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #e2e8f0;
 }
 
-
-.profile-view-image-wrapper.adjusting {
-  cursor: grab;
-}
-
-
-.profile-view-image-wrapper.adjusting:active {
-  cursor: grabbing;
-}
-
-
-/* LARGE IMAGE */
-
-.profile-view-large {
+.discipline-banner img {
   width: 100%;
   height: 100%;
 
   object-fit: cover;
 
   display: block;
-
-  border-radius: 50%;
-
-  user-select: none;
-
-  -webkit-user-drag: none;
-
-  transition: transform 0.15s ease;
 }
 
 
-/* REMOVE NAME */
+/* =========================================================
+   FINAL MOTIVATION
+========================================================= */
 
-.profile-view-name {
-  display: none;
-}
+.final-motivation {
+  width: 100%;
 
+  max-width: 1000px;
 
-/* REMOVE EMAIL */
+  margin: 0 auto 30px;
 
-.profile-view-email {
-  display: none;
-}
+  padding: 30px;
 
+  text-align: center;
 
-/* REMOVE DOUBLE CLICK TEXT */
-
-.profile-view-hint {
-  display: none !important;
-}
-
-.adjusting-hint {
-  display: none !important;
-}
-
-
-/* =====================================================
-   DARK MODE
-===================================================== */
-
-body.dark-mode {
-  background: #0f172a;
-}
-
-
-body.dark-mode .homepage {
-  background: #0f172a;
-}
-
-
-/* SIDEBAR */
-
-body.dark-mode .homepage-sidebar {
-  background: #020617;
-}
-
-
-/* HEADER */
-
-body.dark-mode .homepage-header {
-  background: #0f172a;
-
-  border-bottom-color: #334155;
-}
-
-
-body.dark-mode .header-welcome p {
-  color: #f8fafc;
-}
-
-
-body.dark-mode .header-welcome strong {
-  color: #60a5fa;
-}
-
-
-body.dark-mode .profile-info strong {
-  color: #f8fafc;
-}
-
-
-body.dark-mode .profile-info span {
-  color: #94a3b8;
-}
-
-
-body.dark-mode .profile-placeholder {
-  background: #1e3a8a;
-
-  color: #bfdbfe;
-}
-
-
-/* WELCOME CARD */
-
-body.dark-mode .welcome-card {
   background: linear-gradient(
     135deg,
-    #1d4ed8,
-    #4338ca
+    #eff6ff,
+    #ffffff
   );
+
+  border-radius: 20px;
+
+  border: 1px solid #dbe7f5;
+
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+}
+
+.final-motivation h2 {
+  color: #2563eb;
+
+  font-size: 24px;
+
+  margin-bottom: 10px;
+}
+
+.final-motivation p {
+  color: #475569;
+
+  font-size: 15px;
+
+  line-height: 1.7;
 }
 
 
-/* COMMON CARDS */
+/* =========================================================
+   LOGOUT MODAL
+========================================================= */
 
-body.dark-mode .today-motivation,
-body.dark-mode .student-inspire-card {
-  background: #1e293b;
+.logout-overlay {
+  position: fixed;
 
-  border-color: #334155;
+  inset: 0;
 
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.25);
+  background: rgba(15, 23, 42, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5000;
+}
+
+.logout-modal {
+  width: min(90%, 400px);
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+.logout-modal h3 {
+  color: #172554;
+
+  font-size: 21px;
+
+  margin-bottom: 10px;
+}
+
+.logout-modal p {
+  color: #64748b;
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.logout-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.logout-buttons button {
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.logout-cancel {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.logout-confirm {
+  background: #ef4444;
+  color: #ffffff;
 }
 
 
-/* DISCIPLINE IMAGE CARD */
-
-body.dark-mode .discipline-banner {
-  background: #1e293b;
-
-  border-color: #334155;
-
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-
-/* MOTIVATION */
-
-body.dark-mode .today-motivation h2 {
-  color: #f8fafc;
-}
-
-
-body.dark-mode .today-motivation p {
-  color: #cbd5e1;
-}
-
-
-/* STUDENTS */
-
-body.dark-mode .students-inspire > h2 {
-  color: #f8fafc;
-}
-
-
-body.dark-mode .student-inspire-card h3 {
-  color: #60a5fa;
-}
-
-
-body.dark-mode .student-icon {
-  background: #f8fafc;
-}
-
-
-/* FINAL */
-
-body.dark-mode .final-motivation {
-  background: linear-gradient(
-    135deg,
-    #020617,
-    #172554
-  );
-}
-
-
-body.dark-mode .final-motivation h2 {
-  color: #f8fafc;
-}
-
-
-body.dark-mode .final-motivation p {
-  color: #cbd5e1;
-}
-
-
-body.dark-mode .final-motivation span {
-  color: #94a3b8;
-}
-
-
-/* PROFILE VIEWER */
-
-body.dark-mode .profile-view-container {
-  background: transparent;
-}
-
-
-body.dark-mode .profile-view-name {
-  color: #f8fafc;
-}
-
-
-body.dark-mode .profile-view-email,
-body.dark-mode .profile-view-hint {
-  color: #94a3b8;
-}
-
-
-body.dark-mode .adjusting-hint {
-  color: #60a5fa;
-}
-
-
-/* =====================================================
+/* =========================================================
    TABLET / HALF LAPTOP
-   1100px
-===================================================== */
+========================================================= */
 
 @media (max-width: 1100px) {
 
   .homepage-sidebar {
-    width: 220px;
+    width: 210px;
   }
-
 
   .homepage-main {
-    margin-left: 220px;
+    margin-left: 210px;
 
-    width: calc(100% - 220px);
+    width: calc(100% - 210px);
+
+    padding: 22px;
   }
-
-
-  .homepage-content {
-    padding: 28px;
-  }
-
 
   .student-inspire-grid {
-    max-width: 100%;
+    gap: 15px;
   }
 
+  .student-inspire-card {
+    padding: 12px;
+  }
 
-  /* DISCIPLINE */
+  .student-image-wrapper {
+    /*
+       Responsive height.
+       Images will not be cut.
+    */
+    aspect-ratio: 4 / 3;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+  }
+
+  .student-inspire-card h3 {
+    font-size: 15px;
+  }
+
+  .student-inspire-card p {
+    font-size: 13px;
+  }
+
+  .student-icon {
+    width: 34px;
+    height: 34px;
+
+    bottom: 7px;
+    left: 7px;
+
+    font-size: 16px;
+  }
 
   .discipline-banner {
-    width: 100%;
-
-    height: 380px;
+    height: 300px;
   }
-
 }
 
 
-/* =====================================================
-   SMALL TABLET / HALF LAPTOP
-   900px
-===================================================== */
+/* =========================================================
+   SMALLER HALF SCREEN
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -1163,234 +729,168 @@ body.dark-mode .adjusting-hint {
     padding: 20px 12px;
   }
 
-
   .homepage-main {
     margin-left: 190px;
 
     width: calc(100% - 190px);
+
+    padding: 18px;
   }
 
+  .sidebar-link {
+    padding: 10px;
 
-  .homepage-logo {
-    font-size: 17px;
-  }
-
-
-  .sidebar-link,
-  .home-sidebar-link {
     font-size: 13px;
 
-    padding: 11px 10px;
+    gap: 8px;
   }
 
-
-  .homepage-header {
-    padding: 16px 22px;
+  .sidebar-logo h2 {
+    font-size: 18px;
   }
 
+  .homepage-title {
+    font-size: 23px;
+  }
 
-  .homepage-content {
+  .welcome-card {
     padding: 22px;
   }
 
+  .welcome-card h1 {
+    font-size: 24px;
+  }
+
+  .motivation-card {
+    padding: 20px;
+  }
+
+  /*
+     IMPORTANT:
+     Keep Learn / Practice / Achieve
+     in 3 columns for laptop half-screen.
+  */
 
   .student-inspire-grid {
-    gap: 15px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
   }
 
+  .student-inspire-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 10px;
+
+    border-radius: 14px;
+  }
 
   .student-image-wrapper {
-    height: 180px;
-  }
-
-
-  /* DISCIPLINE */
-
-  .discipline-banner {
     width: 100%;
 
-    height: 330px;
-  }
-
-}
-
-
-/* =====================================================
-   MOBILE
-   HORIZONTAL SCROLL NAVBAR
-===================================================== */
-
-@media (max-width: 800px) {
-
-  .homepage {
-    display: block;
-
-    width: 100%;
-
-    overflow-x: hidden;
-  }
-
-
-  /* =================================================
-     SIDEBAR → TOP NAVBAR
-  ================================================= */
-
-  .homepage-sidebar {
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    width: 100%;
+    /*
+       This automatically adjusts according
+       to available card width.
+    */
+    aspect-ratio: 4 / 3;
 
     height: auto;
 
-    max-height: none;
+    margin-bottom: 10px;
 
-    padding: 16px 15px;
-
-    overflow: hidden;
-
-    z-index: 1000;
+    border-radius: 11px;
   }
 
-
-  /* =================================================
-     LOGO
-  ================================================= */
-
-  .homepage-logo {
-    margin: 0 0 15px;
-
-    font-size: 19px;
-
-    text-align: center;
-
-    white-space: nowrap;
-  }
-
-
-  /* =================================================
-     HORIZONTAL NAVIGATION
-  ================================================= */
-
-  .sidebar-nav {
-    display: flex;
-
-    flex-direction: row;
-
-    flex-wrap: nowrap;
-
-    gap: 8px;
-
+  .student-inspire-image {
     width: 100%;
+    height: 100%;
 
-    overflow-x: auto;
+    object-fit: contain;
 
-    overflow-y: hidden;
-
-    padding: 4px 2px 10px;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: thin;
+    background: #e2e8f0;
   }
 
+  .student-icon {
+    width: 32px;
+    height: 32px;
 
-  /* =================================================
-     NAVBAR SCROLLBAR
-  ================================================= */
-
-  .sidebar-nav::-webkit-scrollbar {
-    height: 5px;
-  }
-
-
-  .sidebar-nav::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.35);
-
-    border-radius: 10px;
-  }
-
-
-  .sidebar-nav::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-
-  /* =================================================
-     NAV LINKS
-  ================================================= */
-
-  .sidebar-link,
-  .home-sidebar-link {
-    flex: 0 0 auto;
-
-    width: auto;
-
-    min-width: max-content;
-
-    padding: 10px 14px;
-
-    border-radius: 10px;
-
-    font-size: 13px;
-
-    justify-content: center;
-
-    white-space: nowrap;
-
-    transform: none !important;
-  }
-
-
-  .nav-icon,
-  .home-nav-icon {
-    width: auto;
-
-    min-width: 20px;
+    bottom: 7px;
+    left: 7px;
 
     font-size: 16px;
   }
 
+  .student-inspire-card h3 {
+    font-size: 14px;
 
-  .sidebar-link:hover,
-  .home-sidebar-link:hover {
-    transform: none !important;
+    letter-spacing: 1px;
   }
 
-
-  .logout-link {
-    margin-top: 0;
+  .student-inspire-card p {
+    font-size: 12px;
   }
 
+  .discipline-banner {
+    width: 100%;
 
-  /* =================================================
-     MAIN
-  ================================================= */
+    height: 270px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .homepage-sidebar {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
+    padding: 12px;
+
+    border-right: none;
+    border-bottom: 1px solid #dbe7f5;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 15px;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 6px;
+  }
+
+  .sidebar-link {
+    width: auto;
+
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
 
   .homepage-main {
     margin-left: 0;
 
     width: 100%;
 
-    min-height: auto;
-
-    overflow-x: hidden;
+    padding: 15px;
   }
 
-
-  /* =================================================
-     HEADER
-  ================================================= */
-
-  .homepage-header {
-    position: relative;
-
-    width: 100%;
-
-    padding: 18px;
-
+  .homepage-topbar {
     flex-direction: column;
 
     align-items: flex-start;
@@ -1398,744 +898,215 @@ body.dark-mode .adjusting-hint {
     gap: 15px;
   }
 
-
-  /* =================================================
-     PROFILE
-     PHOTO + NAME + EMAIL
-  ================================================= */
-
-  .profile-section {
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-  }
-
-
-  .profile-info {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    justify-content: center;
-
-    gap: 3px;
-
-    min-width: 0;
-  }
-
-
-  .profile-info strong {
-    display: block;
-
-    font-size: 14px;
-
-    line-height: 1.3;
-
-    white-space: nowrap;
-  }
-
-
-  .profile-info span {
-    display: block;
-
-    font-size: 12px;
-
-    line-height: 1.3;
-
-    max-width: 220px;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-  }
-
-
-  /* =================================================
-     CONTENT
-  ================================================= */
-
-  .homepage-content {
-    width: 100%;
-
-    padding: 18px;
-
-    overflow-x: hidden;
-  }
-
-
-  /* =================================================
-     WELCOME
-  ================================================= */
-
-  .welcome-card {
-    width: 100%;
-
-    padding: 25px;
-
-    border-radius: 15px;
-  }
-
-
-  .welcome-card h2 {
-    font-size: 23px;
-  }
-
-
-  .welcome-card p {
-    font-size: 14px;
-  }
-
-
-  /* =================================================
-     TODAY'S MOTIVATION
-  ================================================= */
-
-  .today-motivation {
-    width: 100%;
-
-    padding: 35px 18px;
-
-    margin-bottom: 30px;
-  }
-
-
-  .today-motivation h2 {
-    font-size: 22px;
-  }
-
-
-  /* =================================================
-     STUDENTS
-  ================================================= */
-
   .student-inspire-grid {
     grid-template-columns: 1fr;
-
-    max-width: 100%;
 
     gap: 18px;
   }
 
-
-  .student-image-wrapper {
-    height: 220px;
-  }
-
-
-  /* =================================================
-     DISCIPLINE
-  ================================================= */
-
-  .discipline-banner {
-    width: 100%;
-
-    max-width: none;
-
-    height: 280px;
-
-    min-height: 280px;
-
-    margin: 0 0 25px 0;
-
-    border-radius: 15px;
-
-    display: block;
-  }
-
-
-  .discipline-banner img {
-    width: 100%;
-
-    height: 100%;
-
-    max-width: none;
-
-    max-height: none;
-
-    display: block;
-
-    object-fit: fill;
-
-    object-position: center;
-
-    transform: none !important;
-  }
-
-
-  /* =================================================
-     FINAL MOTIVATION
-  ================================================= */
-
-  .final-motivation {
-    width: 100%;
-
-    padding: 35px 10px 45px;
-  }
-
-
-  .final-motivation h2 {
-    font-size: 22px;
-  }
-
-
-  .final-motivation p {
-    font-size: 15px;
-  }
-
-
-  /* =================================================
-     PROFILE VIEWER
-  ================================================= */
-
-  .profile-view-container {
-    padding: 0;
-
-    background: transparent;
-  }
-
-
-  .profile-view-image-wrapper {
-    width: 330px;
-
-    height: 330px;
-
-    max-width: 82vw;
-
-    max-height: 82vw;
-
-    border-radius: 50%;
-  }
-
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 480px) {
-
-  /* =================================================
-     SIDEBAR
-  ================================================= */
-
-  .homepage-sidebar {
-    padding: 14px 12px;
-  }
-
-
-  /* =================================================
-     LOGO
-  ================================================= */
-
-  .homepage-logo {
-    font-size: 17px;
-
-    margin-bottom: 12px;
-  }
-
-
-  /* =================================================
-     HORIZONTAL NAVBAR
-  ================================================= */
-
-  .sidebar-nav {
-    display: flex;
-
-    flex-direction: row;
-
-    flex-wrap: nowrap;
-
-    gap: 7px;
-
-    overflow-x: auto;
-
-    overflow-y: hidden;
-
-    padding-bottom: 9px;
-  }
-
-
-  .sidebar-link,
-  .home-sidebar-link {
-    flex: 0 0 auto;
-
-    width: auto;
-
-    min-width: max-content;
-
-    padding: 10px 13px;
-
-    font-size: 13px;
-
-    white-space: nowrap;
-  }
-
-
-  .nav-icon,
-  .home-nav-icon {
-    font-size: 15px;
-  }
-
-
-  /* =================================================
-     HEADER
-  ================================================= */
-
-  .homepage-header {
-    padding: 15px;
-
-    gap: 12px;
-  }
-
-
-  .header-welcome p {
-    font-size: 18px;
-  }
-
-
-  /* =================================================
-     PROFILE
-  ================================================= */
-
-  .profile-section {
-    width: 100%;
-
-    gap: 10px;
-  }
-
-
-  .profile-picture-wrapper {
-    width: 45px;
-
-    height: 45px;
-  }
-
-
-  .profile-picture,
-  .profile-placeholder {
-    width: 45px;
-
-    height: 45px;
-  }
-
-
-  .profile-info {
-    gap: 2px;
-
-    min-width: 0;
-  }
-
-
-  .profile-info strong {
-    font-size: 13px;
-
-    line-height: 1.3;
-  }
-
-
-  .profile-info span {
-    font-size: 11px;
-
-    line-height: 1.3;
-
-    max-width: 230px;
-  }
-
-
-  /* =================================================
-     CONTENT
-  ================================================= */
-
-  .homepage-content {
+  .student-inspire-card {
     padding: 14px;
   }
 
+  .student-image-wrapper {
+    aspect-ratio: 16 / 10;
 
-  /* =================================================
-     WELCOME
-  ================================================= */
+    height: auto;
+  }
+
+  .student-inspire-image {
+    object-fit: contain;
+  }
+
+  .discipline-banner {
+    height: 230px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE SMALL
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .homepage-main {
+    padding: 12px;
+  }
 
   .welcome-card {
-    padding: 22px;
-
-    margin-bottom: 20px;
+    padding: 18px;
   }
 
-
-  .welcome-card h2 {
+  .welcome-card h1 {
     font-size: 21px;
   }
 
-
-  /* =================================================
-     TODAY'S MOTIVATION
-  ================================================= */
-
-  .today-motivation {
-    padding: 30px 15px;
+  .motivation-card {
+    padding: 17px;
   }
 
-
-  .today-motivation h2 {
-    font-size: 20px;
-  }
-
-
-  /* =================================================
-     STUDENTS
-  ================================================= */
-
-  .students-inspire > h2 {
+  .students-inspire-title {
     font-size: 21px;
   }
 
+  .students-inspire-subtitle {
+    font-size: 13px;
+  }
+
+  .student-inspire-grid {
+    grid-template-columns: 1fr;
+  }
 
   .student-image-wrapper {
+    aspect-ratio: 16 / 10;
+
+    height: auto;
+
+    min-height: 180px;
+  }
+
+  .discipline-banner {
     height: 200px;
   }
 
-
-  /* =================================================
-     DISCIPLINE
-  ================================================= */
-
-  .discipline-banner {
-    width: 100%;
-
-    max-width: none;
-
-    height: 220px;
-
-    min-height: 220px;
-
-    border-radius: 13px;
-
-    margin: 0 0 25px 0;
+  .final-motivation {
+    padding: 20px;
   }
-
-
-  .discipline-banner img {
-    width: 100%;
-
-    height: 100%;
-
-    max-width: none;
-
-    max-height: none;
-
-    object-fit: fill;
-
-    object-position: center;
-
-    transform: none !important;
-  }
-
-
-  /* =================================================
-     FINAL MOTIVATION
-  ================================================= */
 
   .final-motivation h2 {
     font-size: 20px;
   }
-
-
-  /* =================================================
-     PROFILE PHOTO
-  ================================================= */
-
-  .profile-view-image-wrapper {
-    width: 280px;
-
-    height: 280px;
-
-    max-width: 85vw;
-
-    max-height: 85vw;
-
-    border-radius: 50%;
-  }
-
-}
-
-/* =====================================================
-   LOGOUT CONFIRMATION
-===================================================== */
-
-.logout-confirm-overlay {
-  position: fixed;
-  inset: 0;
-
-  background: rgba(2, 6, 23, 0.72);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 99999;
-
-  padding: 20px;
-
-  backdrop-filter: blur(5px);
 }
 
 
-.logout-confirm-box {
-  width: 100%;
-  max-width: 400px;
-
-  background: #ffffff;
-
-  border-radius: 18px;
-
-  padding: 30px 25px;
-
-  text-align: center;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.25);
-
-  animation: logoutPopup 0.2s ease-out;
-}
-
-
-@keyframes logoutPopup {
-
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-}
-
-
-.logout-confirm-icon {
-  width: 65px;
-  height: 65px;
-
-  margin: 0 auto 15px;
-
-  border-radius: 50%;
-
-  background: #dbeafe;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 30px;
-}
-
-
-.logout-confirm-box h2 {
-  margin: 0 0 10px;
-
-  color: #172554;
-
-  font-size: 22px;
-}
-
-
-.logout-confirm-box p {
-  margin: 0 0 25px;
-
-  color: #64748b;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
-
-
-.logout-confirm-buttons {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 12px;
-}
-
-
-.logout-confirm-buttons button {
-  border: none;
-
-  min-width: 110px;
-
-  padding: 11px 20px;
-
-  border-radius: 9px;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.2s ease;
-}
-
-
-.logout-cancel-btn {
-  background: #e2e8f0;
-
-  color: #334155;
-}
-
-
-.logout-cancel-btn:hover {
-  background: #cbd5e1;
-
-  transform: translateY(-1px);
-}
-
-
-.logout-ok-btn {
-  background: #2563eb;
-
-  color: white;
-}
-
-
-.logout-ok-btn:hover {
-  background: #1d4ed8;
-
-  transform: translateY(-1px);
-}
-
-
-/* =====================================================
+/* =========================================================
    DARK MODE
-===================================================== */
+========================================================= */
 
-body.dark-mode .logout-confirm-box {
-  background: #1e293b;
-}
-
-
-body.dark-mode .logout-confirm-box h2 {
-  color: #f1f5f9;
-}
-
-
-body.dark-mode .logout-confirm-box p {
-  color: #94a3b8;
-}
-
-
-body.dark-mode .logout-confirm-icon {
-  background: #172554;
-}
-
-
-body.dark-mode .logout-cancel-btn {
-  background: #334155;
+body.dark-mode .homepage {
+  background: #020617;
 
   color: #e2e8f0;
 }
 
+body.dark-mode .homepage-sidebar {
+  background: #0f172a;
 
-body.dark-mode .logout-cancel-btn:hover {
-  background: #475569;
+  border-color: #1e293b;
 }
 
+body.dark-mode .sidebar-logo h2 {
+  color: #e2e8f0;
+}
 
-body.dark-mode .logout-ok-btn {
+body.dark-mode .sidebar-link {
+  color: #cbd5e1;
+}
+
+body.dark-mode .sidebar-link:hover {
+  background: #172554;
+
+  color: #60a5fa;
+}
+
+body.dark-mode .sidebar-link.active {
   background: #2563eb;
 
-  color: white;
+  color: #ffffff;
+}
+
+body.dark-mode .homepage-title {
+  color: #e2e8f0;
+}
+
+body.dark-mode .homepage-subtitle {
+  color: #94a3b8;
+}
+
+body.dark-mode .profile-name {
+  color: #e2e8f0;
+}
+
+body.dark-mode .welcome-card {
+  background: #0f172a;
+
+  border-color: #1e293b;
+}
+
+body.dark-mode .welcome-card h1 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .welcome-card p {
+  color: #94a3b8;
+}
+
+body.dark-mode .motivation-card {
+  background: #0f172a;
+
+  border-color: #1e293b;
+}
+
+body.dark-mode .motivation-card p {
+  color: #94a3b8;
+}
+
+body.dark-mode .students-inspire-title {
+  color: #e2e8f0;
+}
+
+body.dark-mode .students-inspire-subtitle {
+  color: #94a3b8;
+}
+
+body.dark-mode .student-inspire-card {
+  background: #0f172a;
+
+  border-color: #1e293b;
+}
+
+body.dark-mode .student-inspire-card h3 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .student-inspire-card p {
+  color: #94a3b8;
+}
+
+body.dark-mode .student-image-wrapper {
+  background: #1e293b;
+}
+
+body.dark-mode .student-inspire-image {
+  background: #1e293b;
+}
+
+body.dark-mode .final-motivation {
+  background: #0f172a;
+
+  border-color: #1e293b;
+}
+
+body.dark-mode .final-motivation p {
+  color: #94a3b8;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
-@media (max-width: 600px) {
-
-  .logout-confirm-overlay {
-    padding: 18px;
-  }
-
-
-  .logout-confirm-box {
-    max-width: 340px;
-
-    padding: 25px 20px;
-
-    border-radius: 16px;
-  }
-
-
-  .logout-confirm-icon {
-    width: 58px;
-    height: 58px;
-
-    font-size: 27px;
-
-    margin-bottom: 13px;
-  }
-
-
-  .logout-confirm-box h2 {
-    font-size: 19px;
-  }
-
-
-  .logout-confirm-box p {
-    font-size: 13px;
-
-    margin-bottom: 22px;
-  }
-
-
-  .logout-confirm-buttons {
-    gap: 10px;
-  }
-
-
-  .logout-confirm-buttons button {
-    min-width: 100px;
-
-    padding: 10px 16px;
-
-    font-size: 13px;
-  }
-
+.homepage-sidebar::-webkit-scrollbar {
+  width: 6px;
 }
 
+.homepage-sidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
 
-/* =====================================================
-   EXTRA SMALL MOBILE
-===================================================== */
+  border-radius: 10px;
+}
 
-@media (max-width: 380px) {
-
-  .logout-confirm-box {
-    padding: 22px 16px;
-  }
-
-
-  .logout-confirm-box h2 {
-    font-size: 18px;
-  }
-
-
-  .logout-confirm-buttons button {
-    min-width: 90px;
-  }
-
+body.dark-mode .homepage-sidebar::-webkit-scrollbar-thumb {
+  background: #334155;
 }
