@@ -1,3 +1,4 @@
+
 /* =========================================================
    GLOBAL
 ========================================================= */
@@ -8,8 +9,19 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
 .homepage {
   min-height: 100vh;
+  width: 100%;
   background: #f7faff;
   color: #172554;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -34,62 +46,104 @@
   padding: 25px 15px;
 
   overflow-y: auto;
+  overflow-x: hidden;
+
   z-index: 1000;
 }
 
-.sidebar-logo {
-  text-align: center;
-  margin-bottom: 30px;
-}
 
-.sidebar-logo h2 {
+/* LOGO */
+
+.homepage-logo {
+  text-align: center;
+
+  margin: 0 0 30px 0;
+
   color: #172554;
+
   font-size: 22px;
   font-weight: 700;
+
+  line-height: 1.3;
 }
 
-.sidebar-logo span {
-  color: #2563eb;
-}
 
-.sidebar-menu {
+/* NAVIGATION */
+
+.sidebar-nav {
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  width: 100%;
 }
 
-.sidebar-link {
+
+/* ALL SIDEBAR LINKS */
+
+.sidebar-link,
+.home-sidebar-link {
   display: flex;
   align-items: center;
+
   gap: 12px;
 
   width: 100%;
+
   padding: 12px 14px;
 
   border-radius: 10px;
+
   text-decoration: none;
 
   color: #475569;
+
   font-size: 14px;
   font-weight: 500;
 
-  transition: all 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+
+  cursor: pointer;
 }
 
-.sidebar-link:hover {
+
+/* HOVER */
+
+.sidebar-link:hover,
+.home-sidebar-link:hover {
   background: #eff6ff;
   color: #2563eb;
 }
+
+
+/* ACTIVE */
 
 .sidebar-link.active {
   background: #2563eb;
   color: #ffffff;
 }
 
-.sidebar-icon {
-  font-size: 18px;
+
+/* ICONS */
+
+.nav-icon,
+.home-nav-icon {
   width: 24px;
+  min-width: 24px;
+
   text-align: center;
+
+  font-size: 18px;
+}
+
+
+/* LOGOUT */
+
+.logout-link {
+  margin-top: 5px;
 }
 
 
@@ -99,6 +153,7 @@
 
 .homepage-main {
   margin-left: 240px;
+
   width: calc(100% - 240px);
 
   min-height: 100vh;
@@ -110,28 +165,41 @@
 
 
 /* =========================================================
-   TOP BAR
+   HEADER
 ========================================================= */
 
-.homepage-topbar {
+.homepage-header {
+  width: 100%;
+
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
-  margin-bottom: 25px;
+  gap: 25px;
+
+  margin-bottom: 30px;
 }
 
-.homepage-title {
+
+/* WELCOME TEXT */
+
+.header-welcome {
+  flex: 1;
+}
+
+.header-welcome p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.header-welcome strong {
   color: #172554;
-  font-size: 28px;
   font-weight: 700;
-}
-
-.homepage-subtitle {
-  margin-top: 5px;
-  color: #64748b;
-  font-size: 14px;
 }
 
 
@@ -140,98 +208,140 @@
 ========================================================= */
 
 .profile-section {
-  position: relative;
-}
-
-.profile-button {
   display: flex;
+
   align-items: center;
-  gap: 10px;
 
-  border: none;
-  background: transparent;
+  gap: 12px;
 
-  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.profile-image {
-  width: 45px;
-  height: 45px;
+
+/* PROFILE IMAGE WRAPPER */
+
+.profile-picture-wrapper {
+  position: relative;
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-picture {
+  width: 52px;
+  height: 52px;
 
   border-radius: 50%;
+
   object-fit: cover;
 
   border: 2px solid #2563eb;
+
+  cursor: pointer;
+
+  display: block;
 }
 
-.profile-name {
+
+/* PROFILE PLACEHOLDER */
+
+.profile-placeholder {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  border: 2px solid #dbe7f5;
+}
+
+
+/* EDIT ICON */
+
+.profile-edit {
+  position: absolute;
+
+  right: -4px;
+  bottom: -4px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe7f5;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.12);
+}
+
+
+/* PROFILE INFORMATION */
+
+.profile-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.profile-info strong {
   color: #172554;
-  font-weight: 600;
+
   font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.profile-info span {
+  color: #64748b;
+
+  font-size: 12px;
+
+  max-width: 220px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
 /* =========================================================
-   PROFILE VIEWER
+   MAIN CONTENT AREA
 ========================================================= */
 
-.profile-viewer-overlay {
-  position: fixed;
-  inset: 0;
-
-  background: rgba(15, 23, 42, 0.75);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 3000;
-}
-
-.profile-viewer {
-  position: relative;
-
-  width: min(90vw, 700px);
-  height: min(80vh, 700px);
-
-  background: #ffffff;
-  border-radius: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-}
-
-.profile-viewer img {
-  max-width: 100%;
-  max-height: 100%;
-
-  object-fit: contain;
-
-  user-select: none;
-}
-
-.profile-close {
-  position: absolute;
-
-  top: 15px;
-  right: 15px;
-
-  width: 35px;
-  height: 35px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #ef4444;
-  color: #ffffff;
-
-  cursor: pointer;
-  font-size: 18px;
-
-  z-index: 5;
+.homepage-content {
+  width: 100%;
 }
 
 
@@ -251,112 +361,159 @@
   );
 
   border: 1px solid #dbe7f5;
+
   border-radius: 20px;
 
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06);
 
   margin-bottom: 25px;
 }
 
-.welcome-card h1 {
+.welcome-card h2 {
   color: #172554;
+
   font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
   margin-bottom: 10px;
 }
 
 .welcome-card p {
   color: #64748b;
+
   font-size: 15px;
+
   line-height: 1.6;
+
+  margin: 0;
 }
 
 
 /* =========================================================
-   MOTIVATION CARD
+   TODAY'S MOTIVATION
 ========================================================= */
 
-.motivation-card {
+.today-motivation {
   width: 100%;
 
-  padding: 25px;
+  padding: 28px;
 
   background: #ffffff;
 
   border: 1px solid #dbe7f5;
+
   border-radius: 18px;
 
   margin-bottom: 30px;
 
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+  text-align: center;
+
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.05);
 }
 
-.motivation-card h2 {
+
+/* LABEL */
+
+.motivation-label {
+  display: block;
+
   color: #2563eb;
-  font-size: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 12px;
+}
+
+
+/* QUOTE */
+
+.today-motivation h2 {
+  color: #172554;
+
+  font-size: 23px;
+
+  line-height: 1.5;
+
+  font-weight: 600;
+
   margin-bottom: 10px;
 }
 
-.motivation-card p {
-  color: #475569;
-  line-height: 1.7;
+
+/* TEXT */
+
+.today-motivation p {
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  margin: 0;
 }
 
 
 /* =========================================================
-   STUDENTS INSPIRE SECTION
+   STUDENTS WHO INSPIRE
 ========================================================= */
 
 .students-inspire {
   width: 100%;
+
   margin-bottom: 35px;
+
+  text-align: center;
 }
 
-.students-inspire-title {
-  text-align: center;
 
+/* SECTION HEADING */
+
+.students-inspire h2 {
   color: #172554;
 
   font-size: 25px;
+
   font-weight: 700;
-
-  margin-bottom: 8px;
-}
-
-.students-inspire-subtitle {
-  text-align: center;
-
-  color: #64748b;
-
-  font-size: 14px;
 
   margin-bottom: 25px;
 }
 
 
-/* =========================================================
-   LEARN / PRACTICE / ACHIEVE GRID
-========================================================= */
+/* GRID */
 
 .student-inspire-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
   gap: 25px;
 
   width: 100%;
+
   max-width: 1200px;
 
   margin: 0 auto;
+
+  text-align: left;
 }
 
 
 /* =========================================================
-   INDIVIDUAL CARD
+   STUDENT CARD
 ========================================================= */
 
 .student-inspire-card {
   width: 100%;
+
   min-width: 0;
 
   background: #f8fbff;
@@ -367,7 +524,8 @@
 
   border: 1px solid #dbe7f5;
 
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.06);
 
   transition:
     transform 0.3s ease,
@@ -377,7 +535,8 @@
 .student-inspire-card:hover {
   transform: translateY(-5px);
 
-  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
+  box-shadow:
+    0 14px 30px rgba(37, 99, 235, 0.12);
 }
 
 
@@ -385,21 +544,12 @@
    IMAGE WRAPPER
 ========================================================= */
 
-/*
-   IMPORTANT:
-   Fixed height + object-fit: cover was cutting images.
-
-   aspect-ratio keeps the image area responsive.
-*/
-
 .student-image-wrapper {
   position: relative;
 
   width: 100%;
 
   aspect-ratio: 4 / 3;
-
-  height: auto;
 
   overflow: hidden;
 
@@ -410,6 +560,7 @@
   background: #e2e8f0;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -423,25 +574,21 @@
   width: 100%;
   height: 100%;
 
-  /*
-     contain = complete image visible
-     No cutting on smaller screens.
-  */
   object-fit: contain;
 
   display: block;
 
-  transition: transform 0.3s ease;
-
   background: #e2e8f0;
+
+  transition:
+    transform 0.3s ease;
 }
 
 
-/* =========================================================
-   IMAGE HOVER
-========================================================= */
+/* IMAGE HOVER */
 
-.student-inspire-card:hover .student-inspire-image {
+.student-inspire-card:hover
+.student-inspire-image {
   transform: scale(1.03);
 }
 
@@ -466,17 +613,19 @@
   color: #ffffff;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   font-size: 20px;
 
-  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
 
 /* =========================================================
-   CARD TEXT
+   STUDENT CARD TEXT
 ========================================================= */
 
 .student-inspire-card h3 {
@@ -484,7 +633,9 @@
 
   font-size: 18px;
 
-  margin-bottom: 7px;
+  font-weight: 700;
+
+  margin: 0 0 7px 0;
 
   letter-spacing: 1px;
 }
@@ -495,6 +646,8 @@
   font-size: 14px;
 
   line-height: 1.6;
+
+  margin: 0;
 }
 
 
@@ -504,6 +657,7 @@
 
 .discipline-banner {
   width: 100%;
+
   max-width: 1200px;
 
   height: 360px;
@@ -554,7 +708,8 @@
 
   border: 1px solid #dbe7f5;
 
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.05);
 }
 
 .final-motivation h2 {
@@ -571,28 +726,198 @@
   font-size: 15px;
 
   line-height: 1.7;
+
+  margin-bottom: 8px;
+}
+
+.final-motivation span {
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
 }
 
 
 /* =========================================================
-   LOGOUT MODAL
+   PROFILE PHOTO VIEWER
 ========================================================= */
 
-.logout-overlay {
+.profile-view-overlay {
   position: fixed;
 
   inset: 0;
 
+  width: 100%;
+  height: 100%;
+
+  background: rgba(15, 23, 42, 0.75);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 3000;
+}
+
+.profile-view-container {
+  position: relative;
+
+  width: min(90vw, 650px);
+
+  max-height: 90vh;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.3);
+}
+
+
+/* CLOSE BUTTON */
+
+.profile-view-close {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+
+/* IMAGE WRAPPER */
+
+.profile-view-image-wrapper {
+  width: 100%;
+
+  height: min(60vh, 500px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #e2e8f0;
+}
+
+
+/* LARGE IMAGE */
+
+.profile-view-large {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+.profile-view-image-wrapper.adjusting
+.profile-view-large {
+  cursor: grab;
+}
+
+.profile-view-image-wrapper.adjusting
+.profile-view-large:active {
+  cursor: grabbing;
+}
+
+
+/* NAME */
+
+.profile-view-name {
+  color: #172554;
+
+  font-size: 22px;
+
+  margin-top: 18px;
+}
+
+
+/* EMAIL */
+
+.profile-view-email {
+  color: #64748b;
+
+  font-size: 14px;
+
+  margin-top: 5px;
+}
+
+
+/* HINT */
+
+.profile-view-hint {
+  color: #64748b;
+
+  font-size: 12px;
+
+  margin-top: 15px;
+}
+
+.adjusting-hint {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   LOGOUT CONFIRMATION
+========================================================= */
+
+.logout-confirm-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   background: rgba(15, 23, 42, 0.6);
 
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  padding: 20px;
 
   z-index: 5000;
 }
 
-.logout-modal {
+.logout-confirm-box {
   width: min(90%, 400px);
 
   padding: 30px;
@@ -603,10 +928,23 @@
 
   text-align: center;
 
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.2);
 }
 
-.logout-modal h3 {
+
+/* LOGOUT ICON */
+
+.logout-confirm-icon {
+  font-size: 38px;
+
+  margin-bottom: 10px;
+}
+
+
+/* TITLE */
+
+.logout-confirm-box h2 {
   color: #172554;
 
   font-size: 21px;
@@ -614,15 +952,23 @@
   margin-bottom: 10px;
 }
 
-.logout-modal p {
+
+/* TEXT */
+
+.logout-confirm-box p {
   color: #64748b;
 
   font-size: 14px;
 
+  line-height: 1.6;
+
   margin-bottom: 25px;
 }
 
-.logout-buttons {
+
+/* BUTTON CONTAINER */
+
+.logout-confirm-buttons {
   display: flex;
 
   justify-content: center;
@@ -630,7 +976,13 @@
   gap: 12px;
 }
 
-.logout-buttons button {
+
+/* BUTTONS */
+
+.logout-cancel-btn,
+.logout-ok-btn {
+  min-width: 90px;
+
   padding: 10px 20px;
 
   border-radius: 8px;
@@ -644,33 +996,114 @@
   font-weight: 600;
 }
 
-.logout-cancel {
+
+/* CANCEL */
+
+.logout-cancel-btn {
   background: #e2e8f0;
+
   color: #334155;
 }
 
-.logout-confirm {
+.logout-cancel-btn:hover {
+  background: #cbd5e1;
+}
+
+
+/* OK */
+
+.logout-ok-btn {
   background: #ef4444;
+
   color: #ffffff;
+}
+
+.logout-ok-btn:hover {
+  background: #dc2626;
 }
 
 
 /* =========================================================
-   TABLET / HALF LAPTOP
+   FULL LAPTOP
+   1200px+
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (min-width: 1200px) {
+
+  .homepage-main {
+    padding: 35px 40px;
+  }
+
+  .homepage-header {
+    margin-bottom: 32px;
+  }
+
+  .welcome-card {
+    padding: 35px;
+  }
+
+  .student-inspire-grid {
+    gap: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   HALF LAPTOP / SMALL LAPTOP
+   901px - 1199px
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1199px) {
 
   .homepage-sidebar {
-    width: 210px;
+    width: 220px;
+
+    padding: 22px 12px;
   }
 
   .homepage-main {
-    margin-left: 210px;
+    margin-left: 220px;
 
-    width: calc(100% - 210px);
+    width: calc(100% - 220px);
 
-    padding: 22px;
+    padding: 24px;
+  }
+
+  .homepage-logo {
+    font-size: 19px;
+
+    margin-bottom: 25px;
+  }
+
+  .sidebar-link,
+  .home-sidebar-link {
+    padding: 11px 10px;
+
+    gap: 9px;
+
+    font-size: 13px;
+  }
+
+  .nav-icon,
+  .home-nav-icon {
+    font-size: 17px;
+  }
+
+  .welcome-card {
+    padding: 25px;
+  }
+
+  .welcome-card h2 {
+    font-size: 27px;
+  }
+
+  .today-motivation {
+    padding: 23px;
+  }
+
+  .today-motivation h2 {
+    font-size: 21px;
   }
 
   .student-inspire-grid {
@@ -678,55 +1111,47 @@
   }
 
   .student-inspire-card {
-    padding: 12px;
+    padding: 13px;
   }
 
   .student-image-wrapper {
-    /*
-       Responsive height.
-       Images will not be cut.
-    */
-    aspect-ratio: 4 / 3;
-
-    margin-bottom: 10px;
+    margin-bottom: 11px;
 
     border-radius: 12px;
+  }
+
+  .student-icon {
+    width: 35px;
+    height: 35px;
+
+    bottom: 7px;
+    left: 7px;
+
+    font-size: 17px;
   }
 
   .student-inspire-card h3 {
     font-size: 15px;
   }
 
-  .student-inspire-card p {
-    font-size: 13px;
-  }
-
-  .student-icon {
-    width: 34px;
-    height: 34px;
-
-    bottom: 7px;
-    left: 7px;
-
-    font-size: 16px;
-  }
-
   .discipline-banner {
     height: 300px;
   }
+
 }
 
 
 /* =========================================================
-   SMALLER HALF SCREEN
+   SMALL HALF LAPTOP
+   801px - 900px
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (min-width: 801px) and (max-width: 900px) {
 
   .homepage-sidebar {
     width: 190px;
 
-    padding: 20px 12px;
+    padding: 20px 10px;
   }
 
   .homepage-main {
@@ -737,113 +1162,106 @@
     padding: 18px;
   }
 
-  .sidebar-link {
-    padding: 10px;
+  .homepage-logo {
+    font-size: 17px;
 
-    font-size: 13px;
-
-    gap: 8px;
+    margin-bottom: 22px;
   }
 
-  .sidebar-logo h2 {
-    font-size: 18px;
+  .sidebar-link,
+  .home-sidebar-link {
+    padding: 9px 8px;
+
+    gap: 7px;
+
+    font-size: 12px;
   }
 
-  .homepage-title {
-    font-size: 23px;
-  }
-
-  .welcome-card {
-    padding: 22px;
-  }
-
-  .welcome-card h1 {
-    font-size: 24px;
-  }
-
-  .motivation-card {
-    padding: 20px;
-  }
-
-  /*
-     IMPORTANT:
-     Keep Learn / Practice / Achieve
-     in 3 columns for laptop half-screen.
-  */
-
-  .student-inspire-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 12px;
-
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .student-inspire-card {
-    width: 100%;
-    min-width: 0;
-
-    padding: 10px;
-
-    border-radius: 14px;
-  }
-
-  .student-image-wrapper {
-    width: 100%;
-
-    /*
-       This automatically adjusts according
-       to available card width.
-    */
-    aspect-ratio: 4 / 3;
-
-    height: auto;
-
-    margin-bottom: 10px;
-
-    border-radius: 11px;
-  }
-
-  .student-inspire-image {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    background: #e2e8f0;
-  }
-
-  .student-icon {
-    width: 32px;
-    height: 32px;
-
-    bottom: 7px;
-    left: 7px;
+  .nav-icon,
+  .home-nav-icon {
+    width: 21px;
+    min-width: 21px;
 
     font-size: 16px;
   }
 
-  .student-inspire-card h3 {
-    font-size: 14px;
-
-    letter-spacing: 1px;
+  .header-welcome p {
+    font-size: 15px;
   }
 
-  .student-inspire-card p {
-    font-size: 12px;
+  .profile-info {
+    display: none;
+  }
+
+  .welcome-card {
+    padding: 21px;
+  }
+
+  .welcome-card h2 {
+    font-size: 23px;
+  }
+
+  .welcome-card p {
+    font-size: 14px;
+  }
+
+  .today-motivation {
+    padding: 20px;
+  }
+
+  .today-motivation h2 {
+    font-size: 19px;
+  }
+
+  .student-inspire-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .student-inspire-card {
+    padding: 9px;
+
+    border-radius: 13px;
+  }
+
+  .student-image-wrapper {
+    aspect-ratio: 4 / 3;
+
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+  }
+
+  .student-icon {
+    width: 30px;
+    height: 30px;
+
+    bottom: 6px;
+    left: 6px;
+
+    font-size: 15px;
+  }
+
+  .student-inspire-card h3 {
+    font-size: 13px;
   }
 
   .discipline-banner {
-    width: 100%;
-
-    height: 270px;
+    height: 250px;
   }
+
+  .final-motivation {
+    padding: 24px;
+  }
+
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
+   800px and below
 ========================================================= */
 
 @media (max-width: 800px) {
@@ -851,20 +1269,28 @@
   .homepage-sidebar {
     position: relative;
 
+    top: auto;
+    left: auto;
+
     width: 100%;
     height: auto;
 
-    padding: 12px;
+    padding: 15px;
 
     border-right: none;
+
     border-bottom: 1px solid #dbe7f5;
+
+    overflow: visible;
   }
 
-  .sidebar-logo {
+  .homepage-logo {
     margin-bottom: 15px;
+
+    font-size: 20px;
   }
 
-  .sidebar-menu {
+  .sidebar-nav {
     flex-direction: row;
 
     flex-wrap: wrap;
@@ -874,12 +1300,23 @@
     gap: 6px;
   }
 
-  .sidebar-link {
+  .sidebar-link,
+  .home-sidebar-link {
     width: auto;
 
     padding: 8px 10px;
 
     font-size: 12px;
+
+    gap: 6px;
+  }
+
+  .nav-icon,
+  .home-nav-icon {
+    width: auto;
+    min-width: auto;
+
+    font-size: 15px;
   }
 
   .homepage-main {
@@ -890,12 +1327,32 @@
     padding: 15px;
   }
 
-  .homepage-topbar {
+  .homepage-header {
     flex-direction: column;
 
     align-items: flex-start;
 
     gap: 15px;
+  }
+
+  .profile-section {
+    width: 100%;
+  }
+
+  .profile-info {
+    display: flex;
+  }
+
+  .welcome-card {
+    padding: 20px;
+  }
+
+  .welcome-card h2 {
+    font-size: 24px;
+  }
+
+  .today-motivation {
+    padding: 20px;
   }
 
   .student-inspire-grid {
@@ -910,73 +1367,189 @@
 
   .student-image-wrapper {
     aspect-ratio: 16 / 10;
-
-    height: auto;
-  }
-
-  .student-inspire-image {
-    object-fit: contain;
   }
 
   .discipline-banner {
     height: 230px;
   }
+
+  .final-motivation {
+    padding: 22px;
+  }
+
 }
 
 
 /* =========================================================
-   MOBILE SMALL
+   MOBILE
+   481px - 600px
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
+  .homepage-sidebar {
+    padding: 12px 10px;
+  }
+
+  .homepage-logo {
+    font-size: 18px;
+  }
+
+  .sidebar-nav {
+    gap: 5px;
+  }
+
+  .sidebar-link,
+  .home-sidebar-link {
+    padding: 7px 8px;
+
+    font-size: 11px;
+  }
 
   .homepage-main {
     padding: 12px;
   }
 
-  .welcome-card {
-    padding: 18px;
+  .header-welcome p {
+    font-size: 15px;
   }
 
-  .welcome-card h1 {
-    font-size: 21px;
+  .profile-picture-wrapper,
+  .profile-picture,
+  .profile-placeholder {
+    width: 48px;
+    height: 48px;
   }
 
-  .motivation-card {
-    padding: 17px;
-  }
-
-  .students-inspire-title {
-    font-size: 21px;
-  }
-
-  .students-inspire-subtitle {
+  .profile-info strong {
     font-size: 13px;
   }
 
-  .student-inspire-grid {
-    grid-template-columns: 1fr;
+  .profile-info span {
+    font-size: 11px;
+
+    max-width: 200px;
+  }
+
+  .welcome-card {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .welcome-card h2 {
+    font-size: 21px;
+  }
+
+  .welcome-card p {
+    font-size: 13px;
+  }
+
+  .today-motivation {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .motivation-label {
+    font-size: 11px;
+  }
+
+  .today-motivation h2 {
+    font-size: 17px;
+  }
+
+  .today-motivation p {
+    font-size: 13px;
+  }
+
+  .students-inspire h2 {
+    font-size: 21px;
   }
 
   .student-image-wrapper {
     aspect-ratio: 16 / 10;
 
-    height: auto;
-
-    min-height: 180px;
+    min-height: 170px;
   }
 
   .discipline-banner {
     height: 200px;
+
+    border-radius: 16px;
   }
 
   .final-motivation {
-    padding: 20px;
+    padding: 18px;
+
+    border-radius: 16px;
   }
 
   .final-motivation h2 {
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .homepage-logo {
+    font-size: 17px;
+  }
+
+  .sidebar-nav {
+    justify-content: flex-start;
+  }
+
+  .sidebar-link,
+  .home-sidebar-link {
+    font-size: 10px;
+
+    padding: 6px 7px;
+  }
+
+  .homepage-header {
+    gap: 12px;
+  }
+
+  .profile-info span {
+    max-width: 160px;
+  }
+
+  .welcome-card h2 {
     font-size: 20px;
   }
+
+  .today-motivation h2 {
+    font-size: 16px;
+  }
+
+  .students-inspire h2 {
+    font-size: 20px;
+  }
+
+  .student-inspire-card {
+    padding: 12px;
+  }
+
+  .student-image-wrapper {
+    min-height: 150px;
+  }
+
+  .discipline-banner {
+    height: 180px;
+  }
+
+  .final-motivation h2 {
+    font-size: 18px;
+  }
+
 }
 
 
@@ -996,15 +1569,17 @@ body.dark-mode .homepage-sidebar {
   border-color: #1e293b;
 }
 
-body.dark-mode .sidebar-logo h2 {
+body.dark-mode .homepage-logo {
   color: #e2e8f0;
 }
 
-body.dark-mode .sidebar-link {
+body.dark-mode .sidebar-link,
+body.dark-mode .home-sidebar-link {
   color: #cbd5e1;
 }
 
-body.dark-mode .sidebar-link:hover {
+body.dark-mode .sidebar-link:hover,
+body.dark-mode .home-sidebar-link:hover {
   background: #172554;
 
   color: #60a5fa;
@@ -1016,16 +1591,30 @@ body.dark-mode .sidebar-link.active {
   color: #ffffff;
 }
 
-body.dark-mode .homepage-title {
+body.dark-mode .header-welcome p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .header-welcome strong {
   color: #e2e8f0;
 }
 
-body.dark-mode .homepage-subtitle {
+body.dark-mode .profile-info strong {
+  color: #e2e8f0;
+}
+
+body.dark-mode .profile-info span {
   color: #94a3b8;
 }
 
-body.dark-mode .profile-name {
-  color: #e2e8f0;
+body.dark-mode .profile-placeholder {
+  border-color: #334155;
+}
+
+body.dark-mode .profile-edit {
+  background: #0f172a;
+
+  border-color: #334155;
 }
 
 body.dark-mode .welcome-card {
@@ -1034,7 +1623,7 @@ body.dark-mode .welcome-card {
   border-color: #1e293b;
 }
 
-body.dark-mode .welcome-card h1 {
+body.dark-mode .welcome-card h2 {
   color: #e2e8f0;
 }
 
@@ -1042,22 +1631,22 @@ body.dark-mode .welcome-card p {
   color: #94a3b8;
 }
 
-body.dark-mode .motivation-card {
+body.dark-mode .today-motivation {
   background: #0f172a;
 
   border-color: #1e293b;
 }
 
-body.dark-mode .motivation-card p {
-  color: #94a3b8;
-}
-
-body.dark-mode .students-inspire-title {
+body.dark-mode .today-motivation h2 {
   color: #e2e8f0;
 }
 
-body.dark-mode .students-inspire-subtitle {
+body.dark-mode .today-motivation p {
   color: #94a3b8;
+}
+
+body.dark-mode .students-inspire h2 {
+  color: #e2e8f0;
 }
 
 body.dark-mode .student-inspire-card {
@@ -1082,14 +1671,39 @@ body.dark-mode .student-inspire-image {
   background: #1e293b;
 }
 
+body.dark-mode .discipline-banner {
+  background: #1e293b;
+}
+
 body.dark-mode .final-motivation {
   background: #0f172a;
 
   border-color: #1e293b;
 }
 
-body.dark-mode .final-motivation p {
+body.dark-mode .final-motivation p,
+body.dark-mode .final-motivation span {
   color: #94a3b8;
+}
+
+body.dark-mode .profile-view-container,
+body.dark-mode .logout-confirm-box {
+  background: #0f172a;
+}
+
+body.dark-mode .profile-view-name,
+body.dark-mode .logout-confirm-box h2 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .profile-view-email,
+body.dark-mode .profile-view-hint,
+body.dark-mode .logout-confirm-box p {
+  color: #94a3b8;
+}
+
+body.dark-mode .profile-view-image-wrapper {
+  background: #1e293b;
 }
 
 
@@ -1101,12 +1715,33 @@ body.dark-mode .final-motivation p {
   width: 6px;
 }
 
+.homepage-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .homepage-sidebar::-webkit-scrollbar-thumb {
   background: #cbd5e1;
 
   border-radius: 10px;
 }
 
+.homepage-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
 body.dark-mode .homepage-sidebar::-webkit-scrollbar-thumb {
   background: #334155;
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+.homepage,
+.homepage-main,
+.homepage-content,
+.student-inspire-grid,
+.student-inspire-card {
+  max-width: 100%;
 }
