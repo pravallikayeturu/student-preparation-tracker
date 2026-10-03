@@ -56,7 +56,9 @@ body {
 }
 
 
-/* LOGO */
+/* =========================================================
+   SIDEBAR LOGO
+========================================================= */
 
 .homepage-logo {
   text-align: center;
@@ -72,7 +74,9 @@ body {
 }
 
 
-/* SIDEBAR NAV */
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
 
 .sidebar-nav {
   display: flex;
@@ -85,7 +89,9 @@ body {
 
 
 /* =========================================================
-   SIDEBAR ITEMS
+   ALL SIDEBAR ITEMS
+   HOME → MY TASKS → CREATE TASK → PROGRESS
+   → NOTIFICATIONS → SETTINGS → LOGOUT
 ========================================================= */
 
 .sidebar-link,
@@ -102,6 +108,10 @@ body {
   border-radius: 10px;
 
   text-decoration: none;
+
+  color: #bfdbfe;
+
+  background: rgba(59, 130, 246, 0.12);
 
   font-size: 14px;
   font-weight: 600;
@@ -121,84 +131,51 @@ body {
 ========================================================= */
 
 .sidebar-link[href="#home"] {
-  color: #bfdbfe;
-  background: rgba(59, 130, 246, 0.12);
+  color: #ffffff;
+
+  background: #2563eb;
 }
 
 .sidebar-link[href="#home"]:hover {
   color: #ffffff;
+
   background: #2563eb;
 
   transform: translateX(3px);
-}
 
-.sidebar-link[href="#home"].active {
-  color: #ffffff;
-  background: #2563eb;
-
-  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.35);
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.35);
 }
 
 
 /* =========================================================
-   MY TASKS
+   ACTIVE ITEM
 ========================================================= */
 
-.sidebar-nav .home-sidebar-link:nth-child(2) {
-  color: #c4b5fd;
-  background: rgba(139, 92, 246, 0.10);
-}
-
-.sidebar-nav .home-sidebar-link:nth-child(2):hover {
+.sidebar-link.active {
   color: #ffffff;
-  background: #7c3aed;
 
-  transform: translateX(3px);
+  background: #2563eb;
 
-  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.30);
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.35);
 }
 
 
 /* =========================================================
-   OTHER SIDEBAR LINKS
+   ALL OTHER ITEMS HOVER
 ========================================================= */
 
-.sidebar-nav .sidebar-link:nth-child(3) {
-  color: #a7f3d0;
-  background: rgba(16, 185, 129, 0.10);
-}
-
-.sidebar-nav .sidebar-link:nth-child(3):hover {
+.sidebar-link:hover,
+.home-sidebar-link:hover {
   color: #ffffff;
-  background: #059669;
+
+  background: #2563eb;
 
   transform: translateX(3px);
-}
 
-
-.sidebar-nav .sidebar-link:nth-child(4) {
-  color: #fde68a;
-  background: rgba(245, 158, 11, 0.10);
-}
-
-.sidebar-nav .sidebar-link:nth-child(4):hover {
-  color: #ffffff;
-  background: #d97706;
-
-  transform: translateX(3px);
-}
-
-
-.sidebar-nav .sidebar-link:nth-child(5) {
-  color: #f9a8d4;
-  background: rgba(236, 72, 153, 0.10);
-}
-
-.sidebar-nav .sidebar-link:nth-child(5):hover {
-  color: #ffffff;
-  background: #db2777;
-
-  transform: translateX(3px);
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.25);
 }
 
 
@@ -207,19 +184,22 @@ body {
 ========================================================= */
 
 .sidebar-link.logout-link {
-  color: #fecaca;
-  background: rgba(239, 68, 68, 0.10);
+  color: #bfdbfe;
+
+  background: rgba(59, 130, 246, 0.12);
 
   margin-top: 10px;
 }
 
 .sidebar-link.logout-link:hover {
   color: #ffffff;
-  background: #dc2626;
+
+  background: #2563eb;
 
   transform: translateX(3px);
 
-  box-shadow: 0 5px 15px rgba(220, 38, 38, 0.30);
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.25);
 }
 
 
@@ -372,7 +352,8 @@ body {
 
   cursor: pointer;
 
-  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.12);
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.12);
 }
 
 .profile-info {
@@ -434,7 +415,8 @@ body {
 
   border-radius: 20px;
 
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06);
 
   margin-bottom: 25px;
 }
@@ -566,7 +548,8 @@ body {
 
 
 /* =========================================================
-   LEARN / PRACTICE / ACHIEVE CARDS
+   LEARN / PRACTICE / ACHIEVE
+   ALL SAME ATTRACTIVE LIGHT BLUE
 ========================================================= */
 
 .student-inspire-card {
@@ -574,12 +557,16 @@ body {
 
   min-width: 0;
 
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
   border-radius: 18px;
 
   padding: 18px;
 
   box-shadow:
-    0 8px 22px rgba(15, 23, 42, 0.06);
+    0 8px 22px rgba(37, 99, 235, 0.08);
 
   transition:
     transform 0.3s ease,
@@ -587,42 +574,18 @@ body {
 }
 
 
-/* LEARN - BLUE */
+/* ALL THREE HEADINGS SAME BLUE */
 
-.student-inspire-card:nth-child(1) {
-  background: #eff6ff;
-
-  border: 1px solid #bfdbfe;
-}
-
-.student-inspire-card:nth-child(1) h3 {
+.student-inspire-card h3 {
   color: #1d4ed8;
-}
 
+  font-size: 18px;
 
-/* PRACTICE - GREEN */
+  font-weight: 700;
 
-.student-inspire-card:nth-child(2) {
-  background: #f0fdf4;
+  margin: 0 0 7px 0;
 
-  border: 1px solid #bbf7d0;
-}
-
-.student-inspire-card:nth-child(2) h3 {
-  color: #15803d;
-}
-
-
-/* ACHIEVE - YELLOW */
-
-.student-inspire-card:nth-child(3) {
-  background: #fefce8;
-
-  border: 1px solid #fde68a;
-}
-
-.student-inspire-card:nth-child(3) h3 {
-  color: #b45309;
+  letter-spacing: 1px;
 }
 
 
@@ -632,7 +595,17 @@ body {
   transform: translateY(-6px);
 
   box-shadow:
-    0 14px 30px rgba(15, 23, 42, 0.12);
+    0 14px 30px rgba(37, 99, 235, 0.16);
+}
+
+.student-inspire-card p {
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  margin: 0;
 }
 
 
@@ -678,7 +651,9 @@ body {
 }
 
 
-/* ICON */
+/* =========================================================
+   STUDENT ICON
+========================================================= */
 
 .student-icon {
   position: absolute;
@@ -703,26 +678,6 @@ body {
 
   box-shadow:
     0 5px 15px rgba(37, 99, 235, 0.3);
-}
-
-.student-inspire-card h3 {
-  font-size: 18px;
-
-  font-weight: 700;
-
-  margin: 0 0 7px 0;
-
-  letter-spacing: 1px;
-}
-
-.student-inspire-card p {
-  color: #64748b;
-
-  font-size: 14px;
-
-  line-height: 1.6;
-
-  margin: 0;
 }
 
 
@@ -1080,7 +1035,7 @@ body {
 
 
 /* =========================================================
-   SMALLER LAPTOP / TABLET LANDSCAPE
+   SMALLER LAPTOP / TABLET
 ========================================================= */
 
 @media (min-width: 801px) and (max-width: 900px) {
@@ -1156,8 +1111,9 @@ body {
   }
 
   /*
-     On mobile only, sidebar becomes top navigation.
-     Laptop sidebar remains LEFT.
+     Mobile only:
+     sidebar becomes top navigation.
+     Laptop remains LEFT.
   */
 
   .homepage-sidebar {
@@ -1385,9 +1341,29 @@ body.dark-mode .homepage-logo {
   color: #ffffff;
 }
 
-body.dark-mode .sidebar-link[href="#home"] {
+
+/* SIDEBAR SAME BLUE IN DARK MODE */
+
+body.dark-mode .sidebar-link,
+body.dark-mode .home-sidebar-link {
   color: #bfdbfe;
+
+  background: rgba(59, 130, 246, 0.12);
 }
+
+body.dark-mode .sidebar-link:hover,
+body.dark-mode .home-sidebar-link:hover,
+body.dark-mode .sidebar-link.active,
+body.dark-mode .sidebar-link[href="#home"] {
+  color: #ffffff;
+
+  background: #2563eb;
+}
+
+
+/* =========================================================
+   DARK WELCOME
+========================================================= */
 
 body.dark-mode .homepage-main {
   background: #020617;
@@ -1428,7 +1404,9 @@ body.dark-mode .welcome-card p {
 }
 
 
-/* DARK MOTIVATION */
+/* =========================================================
+   DARK MOTIVATION
+========================================================= */
 
 body.dark-mode .today-motivation {
   background: linear-gradient(
@@ -1442,46 +1420,32 @@ body.dark-mode .today-motivation {
 }
 
 
-/* DARK INSPIRE CARDS */
+/* =========================================================
+   DARK LEARN / PRACTICE / ACHIEVE
+========================================================= */
 
-body.dark-mode .student-inspire-card:nth-child(1) {
+body.dark-mode .student-inspire-card {
   background: #0c2345;
 
   border-color: #1e40af;
 }
 
-body.dark-mode .student-inspire-card:nth-child(2) {
-  background: #0b2b1d;
-
-  border-color: #166534;
-}
-
-body.dark-mode .student-inspire-card:nth-child(3) {
-  background: #332a08;
-
-  border-color: #a16207;
+body.dark-mode .student-inspire-card h3 {
+  color: #60a5fa;
 }
 
 body.dark-mode .student-inspire-card p {
   color: #94a3b8;
 }
 
-body.dark-mode .student-inspire-card:nth-child(1) h3 {
-  color: #60a5fa;
-}
-
-body.dark-mode .student-inspire-card:nth-child(2) h3 {
-  color: #4ade80;
-}
-
-body.dark-mode .student-inspire-card:nth-child(3) h3 {
-  color: #facc15;
-}
-
-
 body.dark-mode .students-inspire h2 {
   color: #e2e8f0;
 }
+
+
+/* =========================================================
+   DARK FINAL MOTIVATION
+========================================================= */
 
 body.dark-mode .final-motivation {
   background: linear-gradient(
